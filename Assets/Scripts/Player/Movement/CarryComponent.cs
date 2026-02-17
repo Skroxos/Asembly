@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody), typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 public class CarryComponent : MonoBehaviour
 {
     public Vector3 HoldPosition = new Vector3(0, 0, 1.5f);
@@ -9,6 +9,10 @@ public class CarryComponent : MonoBehaviour
     
     private Rigidbody _rigidbody;
     private Collider _collider;
+    
+
+    public bool IsPickedUp;
+    
 
     private void Awake()
     {
@@ -18,6 +22,7 @@ public class CarryComponent : MonoBehaviour
 
     public void OnPickedUp()
     {
+        IsPickedUp = true;
         if (_rigidbody != null)
         {
             _rigidbody.isKinematic = true;
@@ -31,7 +36,11 @@ public class CarryComponent : MonoBehaviour
 
     public void OnDropped()
     {
+        IsPickedUp = false;
         _rigidbody.isKinematic = false;
         _collider.isTrigger = false;
     }
 }
+
+
+
