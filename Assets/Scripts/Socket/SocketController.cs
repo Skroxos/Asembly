@@ -4,6 +4,7 @@ public class SocketController : MonoBehaviour
 {
     [SerializeField] private SocketIDSO typeID;
     [SerializeField] private Transform snapPoint;
+    [SerializeField] private SocketStepValidationSO stepValidationSO;
     private AsemblyPart attachedPart;
     public bool IsOccupied;
     
@@ -51,7 +52,12 @@ public class SocketController : MonoBehaviour
     private bool TrySnapPart(AsemblyPart part)
     {
         if (IsOccupied || part.socketIDSO != typeID || part.isPickedUp) return false;
-            
+        
+        if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID))
+        {
+            return false;
+        }
+        
         IsOccupied = true;
         attachedPart = part;
         ShowGhost(false);

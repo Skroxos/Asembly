@@ -3,6 +3,7 @@ using UnityEngine;
 public class StepManager : MonoBehaviour
 {
     [SerializeField] private ProcedureSO procedure;
+    [SerializeField] private SocketStepValidationSO stepValidation;
     private int currentStepIndex = 0;
     private Step currentStep;
     [SerializeField] private EventRadio eventRadio;
@@ -62,8 +63,9 @@ public class StepManager : MonoBehaviour
         {
             currentStep = procedure.steps[currentStepIndex];
         }
-        
+
         BroadCastStepInfo();
+        UpdateAllowedSockets();
         
     }
     
@@ -74,7 +76,18 @@ public class StepManager : MonoBehaviour
         {
             req.currentAmount = 0;
         }
+
         BroadCastStepInfo();
+        UpdateAllowedSockets();
+    }
+    
+    private void UpdateAllowedSockets()
+    {
+        if (stepValidation != null && currentStep != null)
+        {
+            var allowedSockets = currentStep.requiredParts.Select(req => req.requiredPartID).ToList();
+            stepValidation.UpdateAllowedSockets(allowedSockets);
+        }
     }
     
     private void BroadCastStepInfo()
