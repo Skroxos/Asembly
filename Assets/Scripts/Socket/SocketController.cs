@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SocketController : MonoBehaviour
 {
@@ -12,7 +11,8 @@ public class SocketController : MonoBehaviour
     
     private GameObject ghostInstance;
 
-
+    [SerializeField] private EventRadio eventRadio;
+    
     private void Awake()
     {
         ghostManager = new GhostPreviewManager();
@@ -23,17 +23,22 @@ public class SocketController : MonoBehaviour
         if (IsOccupied) return;
             
         AsemblyPart part = other.GetComponent<AsemblyPart>();
-        if (part != null && part.socketIDSO == typeID)
+        if (part != null && part.socketIDSO == typeID && !part.isPickedUp)
         {
-            attachedPart = part;
-            ShowGhost(true);
-            TrySnapPart(part);
+            bool snapped = TrySnapPart(part);
+            if (snapped)
+            {
+                SnapToSocket();
+            }
+           
+           
         }
           
     }
 
     private void OnTriggerExit(Collider other)
     {
+        if (IsOccupied) return;
         if (attachedPart != null && other.gameObject == attachedPart.gameObject)
         {
             ShowGhost(false);
@@ -47,8 +52,8 @@ public class SocketController : MonoBehaviour
     {
         if (IsOccupied || part.socketIDSO != typeID || part.isPickedUp) return false;
             
+        IsOccupied = true;
         attachedPart = part;
-        SnapToSocket();
         ShowGhost(false);
         return true;
     }
@@ -56,7 +61,7 @@ public class SocketController : MonoBehaviour
     private void SnapToSocket()
     {
         attachedPart.AttachToSocket(snapPoint);
-        IsOccupied = true;
+        eventRadio.RaiseSnap(attachedPart.socketIDSO);
     }
     
     private void ShowGhost(bool show)
