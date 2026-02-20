@@ -4,12 +4,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Event/IteractionRadioSO")]
 public class IteractionRadioSO : ScriptableObject
 {
-    public Action<SocketIDSO> OnPickUp;
+    public Action<AsemblyPart> OnPickUp;
     public Action OnDrop;
     
-    public void RaisePickUp(SocketIDSO socketID)
+    public void RaisePickUp(AsemblyPart part)
     {
-        OnPickUp?.Invoke(socketID);
+        OnPickUp?.Invoke(part);
     }
     
     public void RaiseDrop()

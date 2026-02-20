@@ -17,22 +17,23 @@ public class SocketController : MonoBehaviour
 
     private void OnEnable()
     {
-      //  iteractionRadioSO.OnPickUp += HandlePartPickedUp;
+      iteractionRadioSO.OnPickUp += HandlePartPickedUp;
         iteractionRadioSO.OnDrop += HandlePartDropped;
     }
 
     private void HandlePartDropped()
     {
         ShowGhost(false);
-        Debug.Log("Part dropped, hiding ghost");
     }
 
-    // private void HandlePartPickedUp(SocketIDSO obj)
-    // {
-    //     if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID)) return;
-    //     if (obj != typeID) return;
-    //     ShowGhost(true);
-    // }
+    private void HandlePartPickedUp(AsemblyPart obj)
+    {
+        if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID)) return;
+        if (obj.socketIDSO != typeID) return;
+        if (IsOccupied) return;
+        attachedPart = obj;
+        ShowGhost(true);
+    }
 
     private void Awake()
     {

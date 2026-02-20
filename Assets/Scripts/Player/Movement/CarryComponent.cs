@@ -32,7 +32,7 @@ public class CarryComponent : MonoBehaviour
         {
             _collider.isTrigger = true;
         }
-        //iteractionRadioSO.RaisePickUp(null);
+        iteractionRadioSO.RaisePickUp(gameObject.GetComponent<AsemblyPart>());
     }
 
     public void OnDropped()

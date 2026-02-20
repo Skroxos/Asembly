@@ -48,6 +48,7 @@ MonoBehaviour:
   typeID: {fileID: 11400000, guid: 166760a64aba70d4cbb95067b0efa2e3, type: 2}
   snapPoint: {fileID: 5630313069092662178}
   stepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
+  iteractionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
   IsOccupied: 0
   eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
 --- !u!135 &2667053297642857774

@@ -3,38 +3,36 @@
 public class GhostPreviewManager
 {
     private GameObject ghostInstance;
-    
+    private Material mat;
     public GameObject ghost => ghostInstance;
     
     public void ShowGhost(GameObject prefab, Transform snapPoint)
     {
         if (ghostInstance != null) return;
+
+        if (mat == null)
+        {
+            mat = Resources.Load<Material>("GhostPreviewMat");
+        }
         
         ghostInstance = GameObject.Instantiate(prefab, snapPoint.position, snapPoint.rotation);
         ghostInstance.GetComponent<Collider>().enabled = false;
         ghostInstance.GetComponent<Rigidbody>().isKinematic = true;
-        SetGhostTransparency(0.5f);
+        SetGhostMaterial(mat);
+    }
+    
+    private void SetGhostMaterial(Material material)
+    {
+        if (ghostInstance == null) return;
+        
+        Renderer[] renderers = ghostInstance.GetComponentsInChildren<Renderer>();
+        foreach (var renderer in renderers)
+        {
+            renderer.material = material;
+        }
     }
 
-    private void SetGhostTransparency(float alpha)
-    {
-        Renderer[] renderers = ghostInstance.GetComponentsInChildren<Renderer>();
-        foreach (Renderer renderer in renderers)
-        {
-            Material mat = renderer.material;
-            Color color = mat.color;
-            color.a = alpha;
-            mat.color = color;
-            mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            mat.SetInt("_ZWrite", 0);
-            mat.DisableKeyword("_ALPHATEST_ON");
-            mat.EnableKeyword("_ALPHABLEND_ON");
-            mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            mat.renderQueue = 3000;
-        }
-        
-    }
+    
     
     public void HideGhost()
     {
