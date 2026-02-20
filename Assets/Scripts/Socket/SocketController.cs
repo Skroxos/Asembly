@@ -1,10 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SocketController : MonoBehaviour
 {
     [SerializeField] private SocketIDSO typeID;
     [SerializeField] private Transform snapPoint;
+    [SerializeField] private SocketStepValidationSO stepValidationSO;
+    [SerializeField] private IteractionRadioSO iteractionRadioSO;
     private AsemblyPart attachedPart;
     public bool IsOccupied;
     
@@ -12,6 +13,27 @@ public class SocketController : MonoBehaviour
     
     private GameObject ghostInstance;
 
+    [SerializeField] private EventRadio eventRadio;
+
+    private void OnEnable()
+    {
+      iteractionRadioSO.OnPickUp += HandlePartPickedUp;
+        iteractionRadioSO.OnDrop += HandlePartDropped;
+    }
+
+    private void HandlePartDropped()
+    {
+        ShowGhost(false);
+    }
+
+    private void HandlePartPickedUp(AsemblyPart obj)
+    {
+        if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID)) return;
+        if (obj.socketIDSO != typeID) return;
+        if (IsOccupied) return;
+        attachedPart = obj;
+        ShowGhost(true);
+    }
 
     private void Awake()
     {
@@ -23,20 +45,24 @@ public class SocketController : MonoBehaviour
         if (IsOccupied) return;
             
         AsemblyPart part = other.GetComponent<AsemblyPart>();
-        if (part != null && part.socketIDSO == typeID)
+        if (part != null && part.socketIDSO == typeID && !part.isPickedUp)
         {
-            attachedPart = part;
-            ShowGhost(true);
-            TrySnapPart(part);
+            bool snapped = TrySnapPart(part);
+            if (snapped)
+            {
+                SnapToSocket();
+            }
+           
+           
         }
           
     }
 
     private void OnTriggerExit(Collider other)
     {
+        if (IsOccupied) return;
         if (attachedPart != null && other.gameObject == attachedPart.gameObject)
         {
-            ShowGhost(false);
             attachedPart = null;
             IsOccupied = false;
         }
@@ -46,17 +72,21 @@ public class SocketController : MonoBehaviour
     private bool TrySnapPart(AsemblyPart part)
     {
         if (IsOccupied || part.socketIDSO != typeID || part.isPickedUp) return false;
-            
+        
+        if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID))
+        {
+            return false;
+        }
+        
+        IsOccupied = true;
         attachedPart = part;
-        SnapToSocket();
-        ShowGhost(false);
         return true;
     }
         
     private void SnapToSocket()
     {
         attachedPart.AttachToSocket(snapPoint);
-        IsOccupied = true;
+        eventRadio.RaiseSnap(attachedPart.socketIDSO);
     }
     
     private void ShowGhost(bool show)

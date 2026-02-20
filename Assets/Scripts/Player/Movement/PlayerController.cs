@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Player.Movement
@@ -6,72 +7,75 @@ namespace Player.Movement
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private CharacterController controller;
-        [SerializeField] private Transform playerCamera;
-
-        [Header("Movement Settings")] [SerializeField]
-        private float speed = 6.0f;
-
-        [SerializeField] private float gravity = -9.81f;
-        [SerializeField] private float jumpHeight = 1.0f;
-
-        [Header("Mouse Settings")] [SerializeField]
-        private float mouseSensitivity = 100f;
-
-        private Vector3 _velocity;
+        [SerializeField] private Camera playerCamera;
+        [SerializeField] private InputReader inputReader;
+        [SerializeField] private float verticalLookLimit = 80f;
+        [SerializeField] private float speed = 5f;
+        [SerializeField] private float mouseSensitivity = 360f;
+        
         private float _xRotation;
+        private Vector3 _moveDirection;
+
+        private void OnEnable()
+        {
+            inputReader.MoveEvent += OnMove;
+            inputReader.LookEvent += OnLook;
+        }
+
+        private void OnDisable()
+        {
+            inputReader.MoveEvent -= OnMove;
+            inputReader.LookEvent -= OnLook;
+        }
+        private void OnLook(Vector2 obj)
+        {
+            HandleLook(obj);
+        }
+
+        private void OnMove(Vector3 obj)
+        {
+            _moveDirection = obj;
+        }
 
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
-
-            if (playerCamera == null && Camera.main != null)
-            {
-                playerCamera = Camera.main.transform;
-            }
         }
 
         private void Update()
         {
-            HandleLook();
             HandleMovement();
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                TryToInteract();
-            }
         }
 
-        private void HandleLook()
+        private void HandleLook(Vector2 lookInput)
         {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            float mouseX = lookInput.x * mouseSensitivity * Time.deltaTime;
+            float mouseY = lookInput.y * mouseSensitivity * Time.deltaTime;
 
+       
             _xRotation -= mouseY;
-            _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+            _xRotation = Mathf.Clamp(_xRotation, -verticalLookLimit, verticalLookLimit);
+            playerCamera.transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
 
-            if (playerCamera != null)
-            {
-                playerCamera.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
-            }
-
+        
             transform.Rotate(Vector3.up * mouseX);
         }
 
         private void HandleMovement()
         {
-            if (controller.isGrounded && _velocity.y < 0)
-            {
-                _velocity.y = -2f;
-            }
-
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
-
-            Vector3 move = transform.right * x + transform.forward * z;
-
-            controller.Move(speed * Time.deltaTime * move);
-
-            _velocity.y += gravity * Time.deltaTime;
-            controller.Move(_velocity * Time.deltaTime);
+            Vector3 forward = playerCamera.transform.forward;
+            Vector3 right = playerCamera.transform.right;
+        
+            forward.y = 0f;
+            right.y = 0f;
+            forward.Normalize();
+            right.Normalize();
+        
+            Vector3 moveDirection = (forward * _moveDirection.z + right * _moveDirection.x);
+        
+            moveDirection.y = _moveDirection.y;
+        
+            controller.Move(moveDirection * speed * Time.deltaTime);
         }
 
 
