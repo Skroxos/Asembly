@@ -4,22 +4,48 @@ public class CarrySystem : MonoBehaviour
 {
     [SerializeField] private Transform holdPoint;
     [SerializeField] private Camera playerCamera;
-    
+    [SerializeField] private float distanceStep = 0.5f;
+    [SerializeField] private InputReader inputReader;
     private CarryComponent _carriedObject;
-    
-    private void Update()
+
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        inputReader.InteractEvent += HandleInteract;
+        inputReader.MoveItemEvent += HandleMoveItem;
+    }
+    public void OnDisable()
+    {
+        inputReader.InteractEvent -= HandleInteract;
+        inputReader.MoveItemEvent -= HandleMoveItem;
+    }
+
+    private void HandleMoveItem(Vector2 obj)
+    {
+        MoveCarriedObject(obj);
+    }
+
+    private void HandleInteract()
+    {
+        if (_carriedObject == null)
         {
-            if (_carriedObject == null)
-            {
-                TryToPickUp();
-            }
-            else
-            {
-                Drop();
-            }
+            TryToPickUp();
         }
+        else
+        {
+            Drop();
+        }
+    }
+
+    private void MoveCarriedObject(Vector2 input)
+    {
+        if (_carriedObject == null) return;
+
+        Vector3 newPosition = holdPoint.localPosition;
+        newPosition.z += input.y * distanceStep;
+        
+        newPosition.z = Mathf.Clamp(newPosition.z, 0.5f, 5f); 
+
+        holdPoint.localPosition = newPosition;
     }
     
     private void TryToPickUp()

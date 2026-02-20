@@ -661,11 +661,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.Movement.PlayerController
   controller: {fileID: 261854182}
-  playerCamera: {fileID: 330585546}
+  playerCamera: {fileID: 330585545}
+  inputReader: {fileID: 11400000, guid: fcd89501bea654c4baf5088034b7acfe, type: 2}
+  verticalLookLimit: 80
   speed: 6
-  gravity: -9.81
-  jumpHeight: 1
-  mouseSensitivity: 360
+  mouseSensitivity: 5
 --- !u!143 &261854182
 CharacterController:
   m_ObjectHideFlags: 0
@@ -722,6 +722,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CarrySystem
   holdPoint: {fileID: 1055806941}
   playerCamera: {fileID: 330585545}
+  distanceStep: 0.5
+  inputReader: {fileID: 11400000, guid: fcd89501bea654c4baf5088034b7acfe, type: 2}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
