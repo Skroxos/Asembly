@@ -5,6 +5,7 @@ public class SocketController : MonoBehaviour
     [SerializeField] private SocketIDSO typeID;
     [SerializeField] private Transform snapPoint;
     [SerializeField] private SocketStepValidationSO stepValidationSO;
+    [SerializeField] private IteractionRadioSO iteractionRadioSO;
     private AsemblyPart attachedPart;
     public bool IsOccupied;
     
@@ -13,7 +14,26 @@ public class SocketController : MonoBehaviour
     private GameObject ghostInstance;
 
     [SerializeField] private EventRadio eventRadio;
-    
+
+    private void OnEnable()
+    {
+      //  iteractionRadioSO.OnPickUp += HandlePartPickedUp;
+        iteractionRadioSO.OnDrop += HandlePartDropped;
+    }
+
+    private void HandlePartDropped()
+    {
+        ShowGhost(false);
+        Debug.Log("Part dropped, hiding ghost");
+    }
+
+    // private void HandlePartPickedUp(SocketIDSO obj)
+    // {
+    //     if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID)) return;
+    //     if (obj != typeID) return;
+    //     ShowGhost(true);
+    // }
+
     private void Awake()
     {
         ghostManager = new GhostPreviewManager();
@@ -42,7 +62,6 @@ public class SocketController : MonoBehaviour
         if (IsOccupied) return;
         if (attachedPart != null && other.gameObject == attachedPart.gameObject)
         {
-            ShowGhost(false);
             attachedPart = null;
             IsOccupied = false;
         }
@@ -60,7 +79,6 @@ public class SocketController : MonoBehaviour
         
         IsOccupied = true;
         attachedPart = part;
-        ShowGhost(false);
         return true;
     }
         

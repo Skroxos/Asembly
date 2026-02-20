@@ -1,11 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class CarryComponent : MonoBehaviour
 {
     public Vector3 HoldPosition = new Vector3(0, 0, 1.5f);
     public Quaternion HoldRotation = Quaternion.identity;
+    [SerializeField] private IteractionRadioSO iteractionRadioSO;
     
     private Rigidbody _rigidbody;
     private Collider _collider;
@@ -32,6 +32,7 @@ public class CarryComponent : MonoBehaviour
         {
             _collider.isTrigger = true;
         }
+        //iteractionRadioSO.RaisePickUp(null);
     }
 
     public void OnDropped()
@@ -39,8 +40,6 @@ public class CarryComponent : MonoBehaviour
         IsPickedUp = false;
         _rigidbody.isKinematic = false;
         _collider.isTrigger = false;
+        iteractionRadioSO.RaiseDrop();
     }
 }
-
-
-
