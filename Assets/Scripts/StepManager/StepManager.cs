@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 public class StepManager : MonoBehaviour
@@ -10,6 +11,11 @@ public class StepManager : MonoBehaviour
     [SerializeField] private StepInfoRadio uiChannel;
 
     private void Awake()
+    {
+        
+    }
+
+    private void Start()
     {
         InitializeSteps();
     }

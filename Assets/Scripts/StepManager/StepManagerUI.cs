@@ -17,7 +17,7 @@ public class StepManagerUI : MonoBehaviour
         uiChannel.OnStepInfoUpdate -= UpdateUI;
     }
 
-    public void UpdateUI(string description, int stepIndex, int totalSteps)
+    private void UpdateUI(string description, int stepIndex, int totalSteps)
     {
         stepDescriptionText.text = description;
         if (stepIndex >= totalSteps)
