@@ -9,12 +9,7 @@ public class StepManager : MonoBehaviour
     private Step currentStep;
     [SerializeField] private EventRadio eventRadio;
     [SerializeField] private StepInfoRadio uiChannel;
-
-    private void Awake()
-    {
-        
-    }
-
+    
     private void Start()
     {
         InitializeSteps();
