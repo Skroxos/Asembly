@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3225c8e1b0fe48c39d56301c034de495, type: 3}
   m_Name: First Step
   m_EditorClassIdentifier: Assembly-CSharp::ProcedureSO
-  procedureName: Bolts
+  procedureName: Drone Assembly
   steps:
-  - description: Pin Bolts
+  - description: 'Mount
+
+'
     requiredParts:
-    - requiredPartID: {fileID: 11400000, guid: 166760a64aba70d4cbb95067b0efa2e3, type: 2}
-      amountRequired: 2
-  - description: Set Nails
+    - requiredPartID: {fileID: 11400000, guid: d7028c0a20da7a940bb54bb3a803af9d, type: 2}
+      amountRequired: 4
+  - description: 'Mount
+
+'
     requiredParts:
-    - requiredPartID: {fileID: 11400000, guid: 758e215a3a75a3c46bcbb82a16a79da4, type: 2}
+    - requiredPartID: {fileID: 11400000, guid: bc52c2b35d7b90b4fa029f5f25ebc14f, type: 2}
       amountRequired: 1

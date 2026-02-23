@@ -3,7 +3,7 @@
 public class SocketController : MonoBehaviour
 {
     [SerializeField] private SocketIDSO typeID;
-    [SerializeField] private Transform snapPoint;
+     private Transform snapPoint;
     [SerializeField] private SocketStepValidationSO stepValidationSO;
     [SerializeField] private IteractionRadioSO iteractionRadioSO;
     private AsemblyPart attachedPart;
@@ -38,6 +38,7 @@ public class SocketController : MonoBehaviour
     private void Awake()
     {
         ghostManager = new GhostPreviewManager();
+        snapPoint = gameObject.transform;
     }
 
     private void OnTriggerEnter(Collider other)
