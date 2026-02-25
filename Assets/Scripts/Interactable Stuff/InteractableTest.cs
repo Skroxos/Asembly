@@ -4,6 +4,6 @@ public class InteractableTest : MonoBehaviour, IInteractible
 {
     public void Interact()
     {
-        Debug.Log("Interacted with " + gameObject.name);g
+        Debug.Log("Interacted with " + gameObject.name);
     }
 }
