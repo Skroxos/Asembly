@@ -12,13 +12,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3225c8e1b0fe48c39d56301c034de495, type: 3}
   m_Name: First Step
   m_EditorClassIdentifier: Assembly-CSharp::ProcedureSO
-  procedureName: Bolts
+  procedureName: Drone Assembly
   steps:
-  - description: Pin Bolts
+  - description: 'Mount
+
+'
     requiredParts:
-    - requiredPartID: {fileID: 11400000, guid: 166760a64aba70d4cbb95067b0efa2e3, type: 2}
-      amountRequired: 2
-  - description: Set Nails
+    - requiredPartID: {fileID: 11400000, guid: d7028c0a20da7a940bb54bb3a803af9d, type: 2}
+      amountRequired: 4
+  - description: 'Mount
+
+'
     requiredParts:
-    - requiredPartID: {fileID: 11400000, guid: 758e215a3a75a3c46bcbb82a16a79da4, type: 2}
+    - requiredPartID: {fileID: 11400000, guid: 45143466566bfdc42a2c5db304d9e984, type: 2}
       amountRequired: 1
+  - description: Bell
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 0b1575f200e0dae4f9efa22364a89b37, type: 2}
+      amountRequired: 4
+  - description: 'Propeller
+
+'
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: fc4bc5ee9c98f74488ed456d4e823f63, type: 2}
+      amountRequired: 4
+  - description: 'Nuts
+
+'
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 705ef80dc2946cc478aa2c5be6e4cb68, type: 2}
+      amountRequired: 4
+  - description: 'DroneStand
+
+'
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 0805e607e55ef1949be9ae0d5aea823c, type: 2}
+      amountRequired: 4
+  - description: 'Screw
+
+'
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 082b71a620b1d454db14f0efda346e11, type: 2}
+      amountRequired: 8
+  - description: 'Screw
+
+'
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
+      amountRequired: 16
