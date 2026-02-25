@@ -20,6 +20,7 @@ public class AsemblyPart : MonoBehaviour
     {
         if (carryComponent != null && carryComponent.IsPickedUp) return;
         rigidBody.isKinematic = true;
+        collider.enabled = false;
             
         transform.position = snapPoint.position;
         transform.rotation = snapPoint.rotation;

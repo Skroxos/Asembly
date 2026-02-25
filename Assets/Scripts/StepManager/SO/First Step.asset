@@ -24,5 +24,39 @@ MonoBehaviour:
 
 '
     requiredParts:
-    - requiredPartID: {fileID: 11400000, guid: bc52c2b35d7b90b4fa029f5f25ebc14f, type: 2}
+    - requiredPartID: {fileID: 11400000, guid: 45143466566bfdc42a2c5db304d9e984, type: 2}
       amountRequired: 1
+  - description: Bell
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 0b1575f200e0dae4f9efa22364a89b37, type: 2}
+      amountRequired: 4
+  - description: 'Propeller
+
+'
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: fc4bc5ee9c98f74488ed456d4e823f63, type: 2}
+      amountRequired: 4
+  - description: 'Nuts
+
+'
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 705ef80dc2946cc478aa2c5be6e4cb68, type: 2}
+      amountRequired: 4
+  - description: 'DroneStand
+
+'
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 0805e607e55ef1949be9ae0d5aea823c, type: 2}
+      amountRequired: 4
+  - description: 'Screw
+
+'
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 082b71a620b1d454db14f0efda346e11, type: 2}
+      amountRequired: 8
+  - description: 'Screw
+
+'
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
+      amountRequired: 16

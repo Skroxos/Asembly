@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class SocketController : MonoBehaviour
 {
@@ -20,6 +21,13 @@ public class SocketController : MonoBehaviour
       iteractionRadioSO.OnPickUp += HandlePartPickedUp;
         iteractionRadioSO.OnDrop += HandlePartDropped;
     }
+    
+    private void OnDisable()
+    {
+        iteractionRadioSO.OnPickUp -= HandlePartPickedUp;
+        iteractionRadioSO.OnDrop -= HandlePartDropped;
+    }
+    
 
     private void HandlePartDropped()
     {
