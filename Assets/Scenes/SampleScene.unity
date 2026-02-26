@@ -1285,7 +1285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CarrySystem
   holdPoint: {fileID: 1055806941}
   playerCamera: {fileID: 330585545}
-  distanceStep: 0.5
+  distanceStep: 0.25
   inputReader: {fileID: 11400000, guid: fcd89501bea654c4baf5088034b7acfe, type: 2}
 --- !u!1001 &300990345
 PrefabInstance:

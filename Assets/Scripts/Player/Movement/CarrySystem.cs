@@ -4,19 +4,20 @@ public class CarrySystem : MonoBehaviour
 {
     [SerializeField] private Transform holdPoint;
     [SerializeField] private Camera playerCamera;
-    [SerializeField] private float distanceStep = 0.5f;
+    [SerializeField] private float distanceStep = 0.25f;
+    [SerializeField] private float minHoldDistance;
+    [SerializeField] private float maxHoldDistance;
     [SerializeField] private InputReader inputReader;
     private CarryComponent _carriedObject;
     private bool _allowRotation;
 
     private void OnEnable()
-    {
-        inputReader.InteractEvent += HandleInteract;
-      //  inputReader.MoveItemEvent += HandleMoveItem;
-      inputReader.RotateButtonStartedEvent += HandleRotateStarted;
-      inputReader.RotateButtonCanceledEvent += HandleRotateCanceled;
-      inputReader.MouseDeltaEvent += HandleRotation;
-      
+    { 
+        inputReader.InteractEvent += HandleInteract; 
+        inputReader.MoveItemEvent += HandleMoveItem;
+        inputReader.RotateButtonStartedEvent += HandleRotateStarted;
+        inputReader.RotateButtonCanceledEvent += HandleRotateCanceled;
+        inputReader.MouseDeltaEvent += HandleRotation;
     }
 
     private void HandleRotateCanceled()
@@ -51,7 +52,7 @@ public class CarrySystem : MonoBehaviour
         inputReader.RotateButtonStartedEvent -= HandleRotateStarted;
         inputReader.RotateButtonCanceledEvent -= HandleRotateCanceled;
         inputReader.MouseDeltaEvent -= HandleRotation;
-      //  inputReader.MoveItemEvent -= HandleMoveItem;
+        inputReader.MoveItemEvent -= HandleMoveItem;
        
     }
 
@@ -71,8 +72,7 @@ public class CarrySystem : MonoBehaviour
             Drop();
         }
     }
-
-    // Improve
+    
     private void MoveCarriedObject(Vector2 input)
     {
         if (_carriedObject == null) return;
@@ -80,7 +80,7 @@ public class CarrySystem : MonoBehaviour
         Vector3 newPosition = holdPoint.localPosition;
         newPosition.z += input.y * distanceStep;
         
-        newPosition.z = Mathf.Clamp(newPosition.z, 0.5f, 5f); 
+        newPosition.z = Mathf.Clamp(newPosition.z, minHoldDistance, maxHoldDistance); 
 
         holdPoint.localPosition = newPosition;
     }

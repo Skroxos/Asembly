@@ -242,7 +242,7 @@ public partial class @MyActions: IInputActionCollection2, IDisposable
                     ""id"": ""146b8cdb-82e3-4212-8bb6-52c5c50dcc2b"",
                     ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
-                    ""processors"": ""NormalizeVector2"",
+                    ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Distance"",
                     ""isComposite"": false,
