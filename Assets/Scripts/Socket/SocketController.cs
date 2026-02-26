@@ -54,15 +54,19 @@ public class SocketController : MonoBehaviour
         if (IsOccupied) return;
             
         AsemblyPart part = other.GetComponent<AsemblyPart>();
-        if (part != null && part.socketIDSO == typeID && !part.isPickedUp)
+        if (part != null && part.socketIDSO == typeID)
         {
-            bool snapped = TrySnapPart(part);
-            if (snapped)
+            ghostManager.SetValidGhostMaterial();
+            if (!part.isPickedUp)
             {
-                SnapToSocket();
+                bool snapped = TrySnapPart(part);
+                if (snapped)
+                {
+                    SnapToSocket();
+                }
             }
-           
-           
+
+
         }
           
     }
@@ -70,6 +74,7 @@ public class SocketController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (IsOccupied) return;
+        ghostManager.DisableValidGhostMaterial();
         if (attachedPart != null && other.gameObject == attachedPart.gameObject)
         {
             attachedPart = null;
