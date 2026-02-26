@@ -3,22 +3,24 @@
 public class GhostPreviewManager
 {
     private GameObject ghostInstance;
-    private Material mat;
+    private Material defaultMat = Resources.Load<Material>("GhostPreviewMat");
+    private Material validMat = Resources.Load<Material>("GhostValidPreviewMat");
     public GameObject ghost => ghostInstance;
-    
+
     public void ShowGhost(GameObject prefab, Transform snapPoint)
     {
         if (ghostInstance != null) return;
 
-        if (mat == null)
+        if (defaultMat == null)
         {
-            mat = Resources.Load<Material>("GhostPreviewMat");
+            defaultMat = Resources.Load<Material>("GhostPreviewMat");
         }
-        
+
         ghostInstance = GameObject.Instantiate(prefab, snapPoint.position, snapPoint.rotation);
         ghostInstance.GetComponent<Collider>().enabled = false;
         ghostInstance.GetComponent<Rigidbody>().isKinematic = true;
-        SetGhostMaterial(mat);
+        
+        SetGhostMaterial(defaultMat);
     }
     
     private void SetGhostMaterial(Material material)
@@ -31,7 +33,26 @@ public class GhostPreviewManager
             renderer.material = material;
         }
     }
+    
+    public void SetValidGhostMaterial()
+    {
+        if (validMat == null) 
+        {
+            validMat = Resources.Load<Material>("GhostValidPreviewMat");
+        }
+        SetGhostMaterial(validMat);
+    }
+    
+    public void DisableValidGhostMaterial()
+    {
 
+        if (defaultMat == null)
+        {
+            defaultMat = Resources.Load<Material>("GhostPreviewMat");
+        }
+        SetGhostMaterial(defaultMat);
+    }
+    
     
     
     public void HideGhost()
