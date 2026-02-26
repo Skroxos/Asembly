@@ -255,24 +255,44 @@ public partial class @MyActions: IInputActionCollection2, IDisposable
             ""id"": ""6a4fcc8e-ccd2-43d2-b56e-92e9c37bb928"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""RotateButton"",
                     ""type"": ""Button"",
-                    ""id"": ""af43bbb9-387f-4aca-a8f6-8bc2fd8671b1"",
+                    ""id"": ""6a7bd850-3739-4497-b6b7-595c098d64a2"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""5e8b1c0c-a0f7-4b46-85f3-256a2bc36417"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""f47ab553-e8c6-4955-afbe-fc0c7f6027d1"",
-                    ""path"": """",
+                    ""id"": ""9bcb63de-ba84-4a9f-bb3a-a3ed0bae3f3d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""62ce9e21-ceb6-4672-a1bd-cc0670b94a1a"",
+                    ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""MouseDelta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -291,7 +311,8 @@ public partial class @MyActions: IInputActionCollection2, IDisposable
         m_Interactions_Distance = m_Interactions.FindAction("Distance", throwIfNotFound: true);
         // Other
         m_Other = asset.FindActionMap("Other", throwIfNotFound: true);
-        m_Other_Newaction = m_Other.FindAction("New action", throwIfNotFound: true);
+        m_Other_RotateButton = m_Other.FindAction("RotateButton", throwIfNotFound: true);
+        m_Other_MouseDelta = m_Other.FindAction("MouseDelta", throwIfNotFound: true);
     }
 
     ~@MyActions()
@@ -588,7 +609,8 @@ public partial class @MyActions: IInputActionCollection2, IDisposable
     // Other
     private readonly InputActionMap m_Other;
     private List<IOtherActions> m_OtherActionsCallbackInterfaces = new List<IOtherActions>();
-    private readonly InputAction m_Other_Newaction;
+    private readonly InputAction m_Other_RotateButton;
+    private readonly InputAction m_Other_MouseDelta;
     /// <summary>
     /// Provides access to input actions defined in input action map "Other".
     /// </summary>
@@ -601,9 +623,13 @@ public partial class @MyActions: IInputActionCollection2, IDisposable
         /// </summary>
         public OtherActions(@MyActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Other/Newaction".
+        /// Provides access to the underlying input action "Other/RotateButton".
         /// </summary>
-        public InputAction @Newaction => m_Wrapper.m_Other_Newaction;
+        public InputAction @RotateButton => m_Wrapper.m_Other_RotateButton;
+        /// <summary>
+        /// Provides access to the underlying input action "Other/MouseDelta".
+        /// </summary>
+        public InputAction @MouseDelta => m_Wrapper.m_Other_MouseDelta;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -630,9 +656,12 @@ public partial class @MyActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_OtherActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_OtherActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
+            @RotateButton.started += instance.OnRotateButton;
+            @RotateButton.performed += instance.OnRotateButton;
+            @RotateButton.canceled += instance.OnRotateButton;
+            @MouseDelta.started += instance.OnMouseDelta;
+            @MouseDelta.performed += instance.OnMouseDelta;
+            @MouseDelta.canceled += instance.OnMouseDelta;
         }
 
         /// <summary>
@@ -644,9 +673,12 @@ public partial class @MyActions: IInputActionCollection2, IDisposable
         /// <seealso cref="OtherActions" />
         private void UnregisterCallbacks(IOtherActions instance)
         {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
+            @RotateButton.started -= instance.OnRotateButton;
+            @RotateButton.performed -= instance.OnRotateButton;
+            @RotateButton.canceled -= instance.OnRotateButton;
+            @MouseDelta.started -= instance.OnMouseDelta;
+            @MouseDelta.performed -= instance.OnMouseDelta;
+            @MouseDelta.canceled -= instance.OnMouseDelta;
         }
 
         /// <summary>
@@ -732,11 +764,18 @@ public partial class @MyActions: IInputActionCollection2, IDisposable
     public interface IOtherActions
     {
         /// <summary>
-        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "RotateButton" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnRotateButton(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MouseDelta" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMouseDelta(InputAction.CallbackContext context);
     }
 }

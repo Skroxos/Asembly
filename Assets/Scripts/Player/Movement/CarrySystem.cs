@@ -7,16 +7,52 @@ public class CarrySystem : MonoBehaviour
     [SerializeField] private float distanceStep = 0.5f;
     [SerializeField] private InputReader inputReader;
     private CarryComponent _carriedObject;
+    private bool _allowRotation;
 
     private void OnEnable()
     {
         inputReader.InteractEvent += HandleInteract;
       //  inputReader.MoveItemEvent += HandleMoveItem;
+      inputReader.RotateButtonStartedEvent += HandleRotateStarted;
+      inputReader.RotateButtonCanceledEvent += HandleRotateCanceled;
+      inputReader.MouseDeltaEvent += HandleRotation;
+      
     }
+
+    private void HandleRotateCanceled()
+    {
+         _allowRotation = false;
+    }
+
+    private void HandleRotateStarted()
+    {
+         _allowRotation = true;
+    }
+
+    private void HandleRotation(Vector2 obj)
+    {
+        if (_carriedObject == null || !_allowRotation ) return;
+        Vector2 rotationInput = obj; 
+
+        float rotationSpeed = 0.5f; 
+        float mouseX = rotationInput.x * rotationSpeed;
+        float mouseY = rotationInput.y * rotationSpeed;
+        
+        
+        
+        _carriedObject.transform.Rotate(playerCamera.transform.up, -mouseX, Space.World);
+        _carriedObject.transform.Rotate(playerCamera.transform.right, mouseY, Space.World);
+    }
+
+
     public void OnDisable()
     {
         inputReader.InteractEvent -= HandleInteract;
+        inputReader.RotateButtonStartedEvent -= HandleRotateStarted;
+        inputReader.RotateButtonCanceledEvent -= HandleRotateCanceled;
+        inputReader.MouseDeltaEvent -= HandleRotation;
       //  inputReader.MoveItemEvent -= HandleMoveItem;
+       
     }
 
     private void HandleMoveItem(Vector2 obj)

@@ -169,24 +169,44 @@
             "id": "6a4fcc8e-ccd2-43d2-b56e-92e9c37bb928",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "RotateButton",
                     "type": "Button",
-                    "id": "af43bbb9-387f-4aca-a8f6-8bc2fd8671b1",
+                    "id": "6a7bd850-3739-4497-b6b7-595c098d64a2",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MouseDelta",
+                    "type": "Value",
+                    "id": "5e8b1c0c-a0f7-4b46-85f3-256a2bc36417",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "f47ab553-e8c6-4955-afbe-fc0c7f6027d1",
-                    "path": "",
+                    "id": "9bcb63de-ba84-4a9f-bb3a-a3ed0bae3f3d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "62ce9e21-ceb6-4672-a1bd-cc0670b94a1a",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "MouseDelta",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
