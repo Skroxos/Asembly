@@ -11,12 +11,12 @@ public class CarrySystem : MonoBehaviour
     private void OnEnable()
     {
         inputReader.InteractEvent += HandleInteract;
-        inputReader.MoveItemEvent += HandleMoveItem;
+      //  inputReader.MoveItemEvent += HandleMoveItem;
     }
     public void OnDisable()
     {
         inputReader.InteractEvent -= HandleInteract;
-        inputReader.MoveItemEvent -= HandleMoveItem;
+      //  inputReader.MoveItemEvent -= HandleMoveItem;
     }
 
     private void HandleMoveItem(Vector2 obj)
@@ -36,6 +36,7 @@ public class CarrySystem : MonoBehaviour
         }
     }
 
+    // Improve
     private void MoveCarriedObject(Vector2 input)
     {
         if (_carriedObject == null) return;
