@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CarrySystem
   holdPoint: {fileID: 8242195148063853768}
   playerCamera: {fileID: 4913423393427744287}
-  distanceStep: 0.25
+  distanceStep: 0.1
   minHoldDistance: -0.8
   maxHoldDistance: 0.3
   inputReader: {fileID: 11400000, guid: fcd89501bea654c4baf5088034b7acfe, type: 2}
