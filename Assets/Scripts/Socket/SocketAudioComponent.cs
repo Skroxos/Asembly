@@ -5,7 +5,7 @@ public class SocketAudioComponent : MonoBehaviour
 {
     private SocketController socketController;
     [SerializeField] private AudioConfig snapSound;
-    [SerializeField] private AudioClipRadio audioClipRadio; 
+    [SerializeField] private AudioClipRadio audioClipRadio;
     
     
     private void Awake()

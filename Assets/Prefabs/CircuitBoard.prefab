@@ -821,6 +821,8 @@ GameObject:
   - component: {fileID: 5808181636584645485}
   - component: {fileID: 2692653721313851021}
   - component: {fileID: 1505595418683257524}
+  - component: {fileID: 3254743072489122870}
+  - component: {fileID: 8016471280788820448}
   m_Layer: 0
   m_Name: ScrewSocket (1)
   m_TagString: Untagged
@@ -878,9 +880,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketController
   typeID: {fileID: 11400000, guid: d7fe777cb08543a4782a86764b413568, type: 2}
   stepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
-  iteractionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
-  IsOccupied: 0
   eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+--- !u!114 &3254743072489122870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998104626009395847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+--- !u!114 &8016471280788820448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998104626009395847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3499f2c82749919123103ef55e21d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
+  interactionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
 --- !u!1 &1122986113536261006
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,6 +3799,8 @@ GameObject:
   - component: {fileID: 5540315764951556903}
   - component: {fileID: 8398718990604305278}
   - component: {fileID: 2757433657362884281}
+  - component: {fileID: 5944171183758697101}
+  - component: {fileID: 7140862532631100227}
   m_Layer: 0
   m_Name: ScrewSocket
   m_TagString: Untagged
@@ -3829,9 +3858,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketController
   typeID: {fileID: 11400000, guid: d7fe777cb08543a4782a86764b413568, type: 2}
   stepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
-  iteractionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
-  IsOccupied: 0
   eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+--- !u!114 &5944171183758697101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3502572235702554341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+--- !u!114 &7140862532631100227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3502572235702554341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3499f2c82749919123103ef55e21d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
+  interactionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
 --- !u!1 &3508230521321377068
 GameObject:
   m_ObjectHideFlags: 0
@@ -4653,6 +4707,8 @@ GameObject:
   - component: {fileID: 4824840637793258375}
   - component: {fileID: 5883285788589929662}
   - component: {fileID: 2138038155621524254}
+  - component: {fileID: 3807985321557721540}
+  - component: {fileID: 2977557637626271612}
   m_Layer: 0
   m_Name: ScrewSocket (2)
   m_TagString: Untagged
@@ -4710,9 +4766,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketController
   typeID: {fileID: 11400000, guid: d7fe777cb08543a4782a86764b413568, type: 2}
   stepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
-  iteractionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
-  IsOccupied: 0
   eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+--- !u!114 &3807985321557721540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488630738391574341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+--- !u!114 &2977557637626271612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488630738391574341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3499f2c82749919123103ef55e21d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
+  interactionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
 --- !u!1 &4511307280906817329
 GameObject:
   m_ObjectHideFlags: 0
@@ -7204,6 +7285,8 @@ GameObject:
   - component: {fileID: 7013612607736595557}
   - component: {fileID: 1505828303098923624}
   - component: {fileID: 4733865832351797723}
+  - component: {fileID: 2489681267753924043}
+  - component: {fileID: 554413451568797197}
   m_Layer: 0
   m_Name: ScrewSocket (3)
   m_TagString: Untagged
@@ -7261,9 +7344,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketController
   typeID: {fileID: 11400000, guid: d7fe777cb08543a4782a86764b413568, type: 2}
   stepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
-  iteractionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
-  IsOccupied: 0
   eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+--- !u!114 &2489681267753924043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6602392793113851324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+--- !u!114 &554413451568797197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6602392793113851324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3499f2c82749919123103ef55e21d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
+  interactionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
 --- !u!1 &6688399834578204229
 GameObject:
   m_ObjectHideFlags: 0

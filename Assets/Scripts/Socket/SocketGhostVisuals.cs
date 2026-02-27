@@ -67,7 +67,7 @@ public class SocketGhostVisuals : MonoBehaviour
         if (socketController.IsPartValid(obj))
         {
             currentPart = obj;
-            ghostPreviewManager.ShowGhost(obj.gameObject, snapPoint);
+            ghostPreviewManager.ShowGhost(currentPart.gameObject, snapPoint);
         }
     }
 

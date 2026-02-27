@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e4f18affdc49d2bfc2d05b3b43f798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarryComponent
-  HoldPosition: {x: 0, y: 0, z: 0.5}
+  HoldPosition: {x: 0, y: 0, z: 1.5}
   HoldRotation: {x: 0, y: 0, z: 0, w: 1}
   iteractionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
   IsPickedUp: 0

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
   audioClips:
   - {fileID: 8300000, guid: 23aff80fd5f70d247885eb79e3ef3665, type: 3}
-  volume: 0
+  volume: 0.5
   minPitch: 0.9
   maxPitch: 1.1
