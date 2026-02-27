@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Event/IteractionRadioSO")]
+[CreateAssetMenu(menuName = "Event/InteractionRadioSO")]
 public class IteractionRadioSO : ScriptableObject
 {
     public Action<AsemblyPart> OnPickUp;

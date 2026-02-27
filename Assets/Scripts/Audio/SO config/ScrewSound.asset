@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67230a23692b4e30b079c6da3b9f6406, type: 3}
+  m_Name: ScrewSound
+  m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
+  audioClips:
+  - {fileID: 8300000, guid: 23aff80fd5f70d247885eb79e3ef3665, type: 3}
+  volume: 0
+  minPitch: 0.9
+  maxPitch: 1.1
