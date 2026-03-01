@@ -105,7 +105,7 @@ public class StepManager : MonoBehaviour
                     progress += $"{req.requiredPartID.name}: {req.currentAmount}/{req.amountRequired}\n";
                 }
             }
-            uiChannel.RaiseStepInfoUpdate($"{description}\n{progress}", currentStepIndex, procedure.steps.Count);
+            uiChannel.RaiseStepInfoUpdate(description, progress , currentStepIndex, procedure.steps.Count);
         }
     }
 }

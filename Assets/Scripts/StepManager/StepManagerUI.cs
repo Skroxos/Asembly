@@ -4,6 +4,7 @@ using TMPro;
 public class StepManagerUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI stepDescriptionText;
+    [SerializeField] private TextMeshProUGUI stepMissionProgressText;
     [SerializeField] private TextMeshProUGUI stepCounterText;
     [SerializeField] private StepInfoRadio uiChannel;
     
@@ -17,9 +18,10 @@ public class StepManagerUI : MonoBehaviour
         uiChannel.OnStepInfoUpdate -= UpdateUI;
     }
 
-    private void UpdateUI(string description, int stepIndex, int totalSteps)
+    private void UpdateUI(string description,string progress , int stepIndex, int totalSteps)
     {
         stepDescriptionText.text = description;
+        stepMissionProgressText.text = progress;
         if (stepIndex >= totalSteps)
         {
             stepCounterText.text = "Procedure Completed!";

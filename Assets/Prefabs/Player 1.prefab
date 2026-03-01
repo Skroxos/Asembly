@@ -56,8 +56,8 @@ CharacterController:
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_SlopeLimit: 0
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
@@ -95,7 +95,7 @@ MonoBehaviour:
   playerCamera: {fileID: 4913423393427744287}
   distanceStep: 0.1
   minHoldDistance: -0.8
-  maxHoldDistance: 0.5
+  maxHoldDistance: 0.8
   inputReader: {fileID: 11400000, guid: fcd89501bea654c4baf5088034b7acfe, type: 2}
 --- !u!1 &4577458091858423566
 GameObject:
