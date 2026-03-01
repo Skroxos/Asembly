@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProcedureSO
   procedureName: Drone Assembly
   steps:
-  - description: 'Mount
-
-'
+  - description: "Pohul mi k\xE1r"
     requiredParts:
     - requiredPartID: {fileID: 11400000, guid: d7028c0a20da7a940bb54bb3a803af9d, type: 2}
       amountRequired: 4
