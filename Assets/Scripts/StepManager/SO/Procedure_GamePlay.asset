@@ -12,5 +12,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3225c8e1b0fe48c39d56301c034de495, type: 3}
   m_Name: Procedure_GamePlay
   m_EditorClassIdentifier: Assembly-CSharp::ProcedureSO
-  procedureName: 
-  steps: []
+  procedureName: Drone Assembly
+  steps:
+  - description: Prepare Screws for Motor Mounts
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
+      amountRequired: 16
+  - description: Attach motorn mounts to drone body and put drone stands on
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: d7028c0a20da7a940bb54bb3a803af9d, type: 2}
+      amountRequired: 4
+    - requiredPartID: {fileID: 11400000, guid: 0805e607e55ef1949be9ae0d5aea823c, type: 2}
+      amountRequired: 4
+  - description: 'Attach Second Drone Body
+
+'
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 45143466566bfdc42a2c5db304d9e984, type: 2}
+      amountRequired: 1
+  - description: 'Screw the stands to the motor mounts and put on Bells '
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 082b71a620b1d454db14f0efda346e11, type: 2}
+      amountRequired: 8
+    - requiredPartID: {fileID: 11400000, guid: 0b1575f200e0dae4f9efa22364a89b37, type: 2}
+      amountRequired: 4
+  - description: Attach propellers to the bells
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: fc4bc5ee9c98f74488ed456d4e823f63, type: 2}
+      amountRequired: 4
+  - description: Screw nuts and fix the proppelers
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 705ef80dc2946cc478aa2c5be6e4cb68, type: 2}
+      amountRequired: 4
+  - description: Attach pixplate to the droneBody
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: be72f47e79d391440b961303f5aa1047, type: 2}
+      amountRequired: 1
+  - description: Screw on the pixplate
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 082b71a620b1d454db14f0efda346e11, type: 2}
+      amountRequired: 8
+  - description: Attach placa to the pixplate
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 6cebfcafc5cc8204b812e83af74db9f6, type: 2}
+      amountRequired: 1
+  - description: Screw the placa to the pixplate
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: c00fa2d1fd21151459fae762f3ccc844, type: 2}
+      amountRequired: 4
+  - description: Attach the second plate to the first one
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 906304ab170a8304d9d759ef74b00d40, type: 2}
+      amountRequired: 1
+  - description: Attach pixhawk to the second plate
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: 912a4eab1fb680648a455a8777b81399, type: 2}
+      amountRequired: 1
+  - description: Attach the circuit board to the mounting plate and battery to the
+      top plate
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: f43484eae230f514f8c1a74d59705ab5, type: 2}
+      amountRequired: 1
+    - requiredPartID: {fileID: 11400000, guid: 44216d897936c4c4795c66a0cabca129, type: 2}
+      amountRequired: 1
+  - description: Screw the circuit board on
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: d7fe777cb08543a4782a86764b413568, type: 2}
+      amountRequired: 4
+  - description: Attach the mounting plate and top plate to the drone
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: de1f3bf5b73b66040b761830e4f6d95b, type: 2}
+      amountRequired: 1
+    - requiredPartID: {fileID: 11400000, guid: 91e2cc9b7b261794aa54343bf5e97e26, type: 2}
+      amountRequired: 1
+  - description: Screw the top plate on
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: c00fa2d1fd21151459fae762f3ccc844, type: 2}
+      amountRequired: 4
