@@ -4,7 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(SocketController))]
 public class SocketGhostVisuals : MonoBehaviour
 {
-    [SerializeField] private IteractionRadioSO interactionRadioSO;
+    [SerializeField] private PickUpRadio pickUpRadioSO;
+    [SerializeField] private DropRadio dropRadioSO;
     private SocketController socketController;
     private GhostPreviewManager ghostPreviewManager;
     
@@ -20,18 +21,17 @@ public class SocketGhostVisuals : MonoBehaviour
 
     private void OnEnable()
     {
-        interactionRadioSO.OnPickUp += HandlePartPickedUp;
-        interactionRadioSO.OnDrop += HandlePartDropped;
-        
         socketController.OnPartSnapped += HandlePartSnapped;
         socketController.OnPartExited += HandlePartExited;
         socketController.OnValidPartEntered += HandleValidPartEntered;
+        pickUpRadioSO.OnEventRaised += HandlePartPickedUp;
+        dropRadioSO.OnRaised += HandlePartDropped;
     }
 
     private void OnDisable()
     {
-        interactionRadioSO.OnPickUp -= HandlePartPickedUp;
-        interactionRadioSO.OnDrop -= HandlePartDropped;
+        pickUpRadioSO.OnEventRaised -= HandlePartPickedUp;
+        dropRadioSO.OnRaised -= HandlePartDropped;
         
         socketController.OnPartSnapped -= HandlePartSnapped;
         socketController.OnPartExited -= HandlePartExited;

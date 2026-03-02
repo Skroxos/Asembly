@@ -12,12 +12,12 @@ public class AudioManager : MonoBehaviour
 
     private void OnEnable()
     {
-        audioClipRadio.OnAudioClipUpdate += HandleAudioClipUpdate;
+        audioClipRadio.OnEventRaised += HandleAudioClipUpdate;
     }
 
     private void OnDisable()
     {
-        audioClipRadio.OnAudioClipUpdate -= HandleAudioClipUpdate;
+        audioClipRadio.OnEventRaised -= HandleAudioClipUpdate;
     }
 
     private void HandleAudioClipUpdate(AudioConfig config)

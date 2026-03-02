@@ -73,7 +73,7 @@ public class SocketController : MonoBehaviour
     private void SnapToSocket()
     {
         attachedPart.AttachToSocket(snapPoint);
-        eventRadio.RaiseSnap(attachedPart.socketIDSO);
+        eventRadio.RaiseEvent(attachedPart.socketIDSO);
         OnPartSnapped?.Invoke();
     }
     
