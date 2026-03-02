@@ -31,7 +31,6 @@ public class SocketController : MonoBehaviour
 
         if (other.TryGetComponent(out AsemblyPart part))
         {
-            if (part.socketIDSO != typeID ) return;
             OnValidPartEntered?.Invoke(part);
             if (!part.isPickedUp)
             {
@@ -48,12 +47,12 @@ public class SocketController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (IsOccupied) return;
-            OnPartExited?.Invoke();
         if (attachedPart != null && other.gameObject == attachedPart.gameObject)
         {
             attachedPart = null;
             IsOccupied = false;
         }
+        OnPartExited?.Invoke();
     }
     
     
