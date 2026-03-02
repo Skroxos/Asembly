@@ -27,7 +27,7 @@ public class SocketAudioComponent : MonoBehaviour
     {
         if (snapSound != null && snapSound.audioClips.Length > 0)
         {
-            audioClipRadio.RaiseAudioClipUpdate(snapSound);
+            audioClipRadio.RaiseEvent(snapSound);
         }
     }
    

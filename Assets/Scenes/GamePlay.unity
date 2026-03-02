@@ -2094,41 +2094,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2545012772723494931, guid: 99a7c3d64cbf6194abc4d25b923e2a3d, type: 3}
---- !u!1 &506774228
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 506774229}
-  m_Layer: 5
-  m_Name: Procedure Stuff
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &506774229
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506774228}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 772658984}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &518991941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4864833620444741553, guid: 0da4097e7ae4f154b9ce1a0a6df4351f, type: 3}
@@ -2984,6 +2949,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1169454216258011154, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5511609868706834186, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3070,21 +3039,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6503380223848222551, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5511609868706834186, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 506774229}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
---- !u!224 &772658984 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5511609868706834186, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
-  m_PrefabInstance: {fileID: 772658983}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &815808746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6438,6 +6399,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 554413451568797197, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
+      propertyPath: dropRadioSO
+      value: 
+      objectReference: {fileID: 11400000, guid: f73856bc2a89ea34fa84c934f7cb1c46, type: 2}
+    - target: {fileID: 554413451568797197, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
+      propertyPath: pickUpRadioSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+    - target: {fileID: 2977557637626271612, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
+      propertyPath: dropRadioSO
+      value: 
+      objectReference: {fileID: 11400000, guid: f73856bc2a89ea34fa84c934f7cb1c46, type: 2}
+    - target: {fileID: 2977557637626271612, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
+      propertyPath: pickUpRadioSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+    - target: {fileID: 7140862532631100227, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
+      propertyPath: dropRadioSO
+      value: 
+      objectReference: {fileID: 11400000, guid: f73856bc2a89ea34fa84c934f7cb1c46, type: 2}
+    - target: {fileID: 7140862532631100227, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
+      propertyPath: pickUpRadioSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
     - target: {fileID: 8004758826088117351, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.9699736
@@ -6478,6 +6463,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8016471280788820448, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
+      propertyPath: dropRadioSO
+      value: 
+      objectReference: {fileID: 11400000, guid: f73856bc2a89ea34fa84c934f7cb1c46, type: 2}
+    - target: {fileID: 8016471280788820448, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
+      propertyPath: pickUpRadioSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
     - target: {fileID: 8912607415138656246, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
       propertyPath: m_Name
       value: CircuitBoard

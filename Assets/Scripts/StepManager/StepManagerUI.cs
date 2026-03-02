@@ -10,19 +10,19 @@ public class StepManagerUI : MonoBehaviour
     
     private void OnEnable()
     {
-        uiChannel.OnStepInfoUpdate += UpdateUI;
+        uiChannel.OnEventRaised += UpdateUI;
     }
     
     private void OnDisable()
     {
-        uiChannel.OnStepInfoUpdate -= UpdateUI;
+        uiChannel.OnEventRaised -= UpdateUI;
     }
 
-    private void UpdateUI(string description,string progress , int stepIndex, int totalSteps)
+    private void UpdateUI(StepInfoData infoData)
     {
-        stepDescriptionText.text = description;
-        stepMissionProgressText.text = progress;
-        if (stepIndex >= totalSteps)
+        stepDescriptionText.text = infoData.info;
+        stepMissionProgressText.text = infoData.progress;
+        if (infoData.stepIndex >= infoData.totalSteps)
         {
             stepCounterText.text = "Procedure Completed!";
             stepCounterText.color = Color.green;
@@ -30,7 +30,7 @@ public class StepManagerUI : MonoBehaviour
         }
         else
         {
-            stepCounterText.text = $"Step {stepIndex} of {totalSteps}";
+            stepCounterText.text = $"Step {infoData.stepIndex} of {infoData.totalSteps}";
         }
       
     }

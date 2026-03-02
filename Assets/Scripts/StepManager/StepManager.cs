@@ -27,12 +27,12 @@ public class StepManager : MonoBehaviour
 
     private void OnEnable()
     {
-        eventRadio.OnSnap += HandlePartSnapped;
+        eventRadio.OnEventRaised += HandlePartSnapped;
     }
 
     private void OnDisable()
     {
-        eventRadio.OnSnap -= HandlePartSnapped;
+        eventRadio.OnEventRaised -= HandlePartSnapped;
     }
 
     private void HandlePartSnapped(SocketIDSO obj)
@@ -105,7 +105,7 @@ public class StepManager : MonoBehaviour
                     progress += $"{req.requiredPartID.name}: {req.currentAmount}/{req.amountRequired}\n";
                 }
             }
-            uiChannel.RaiseStepInfoUpdate(description, progress , currentStepIndex, procedure.steps.Count);
+            uiChannel.RaiseEvent(new StepInfoData(description, progress, currentStepIndex, procedure.steps.Count));
         }
     }
 }

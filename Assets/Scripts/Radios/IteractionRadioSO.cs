@@ -4,8 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Event/InteractionRadioSO")]
 public class IteractionRadioSO : ScriptableObject
 {
-    public Action<AsemblyPart> OnPickUp;
-    public Action OnDrop;
+    public event Action<AsemblyPart> OnPickUp;
+    public event Action OnDrop;
     
     public void RaisePickUp(AsemblyPart part)
     {
