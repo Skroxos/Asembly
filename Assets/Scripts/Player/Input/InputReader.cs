@@ -56,6 +56,19 @@ public class InputReader : ScriptableObject, MyActions.ICoreActions, MyActions.I
         _inputActions.Interactions.Enable();
     }
     
+    public void EnableGameplayInput()
+    {
+        _inputActions.Core.Enable();
+        _inputActions.Interactions.Enable();
+        _inputActions.Other.Enable();
+    }
+    
+    public void DisableGameplayInput()
+    {
+        _inputActions.Core.Disable();
+        _inputActions.Interactions.Disable();
+        _inputActions.Other.Disable();
+    }
     
     public void OnMove(InputAction.CallbackContext context)
     {
