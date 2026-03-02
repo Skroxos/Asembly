@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(menuName = "Input/InputReader")]
-public class InputReader : ScriptableObject, MyActions.ICoreActions, MyActions.IInteractionsActions, MyActions.IOtherActions
+public class InputReader : ScriptableObject, MyActions.ICoreActions, MyActions.IInteractionsActions, MyActions.IOtherActions, MyActions.IUIActions
 {
     public event Action<Vector3> MoveEvent;
     public event Action<Vector2> LookEvent;
@@ -11,6 +11,8 @@ public class InputReader : ScriptableObject, MyActions.ICoreActions, MyActions.I
     public event Action RotateButtonCanceledEvent;
     public event Action<Vector2> MouseDeltaEvent;
     public event Action<Vector2> MoveItemEvent;
+    
+    public event Action MenuToggleEvent;
    
     public event Action InteractEvent;
     
@@ -25,11 +27,13 @@ public class InputReader : ScriptableObject, MyActions.ICoreActions, MyActions.I
             _inputActions.Core.SetCallbacks(this);
             _inputActions.Interactions.SetCallbacks(this);
             _inputActions.Other.SetCallbacks(this);
+            _inputActions.UI.SetCallbacks(this);
         }
         
         _inputActions.Core.Enable();
         _inputActions.Interactions.Enable();
         _inputActions.Other.Enable();
+        _inputActions.UI.Enable();
     }
 
     private void OnDisable()
@@ -37,6 +41,7 @@ public class InputReader : ScriptableObject, MyActions.ICoreActions, MyActions.I
         _inputActions.Core.Disable();
         _inputActions.Interactions.Disable();
         _inputActions.Other.Disable();
+        _inputActions.UI.Disable();
     }
     
     private void EnableRotationMode()
@@ -51,6 +56,19 @@ public class InputReader : ScriptableObject, MyActions.ICoreActions, MyActions.I
         _inputActions.Interactions.Enable();
     }
     
+    public void EnableGameplayInput()
+    {
+        _inputActions.Core.Enable();
+        _inputActions.Interactions.Enable();
+        _inputActions.Other.Enable();
+    }
+    
+    public void DisableGameplayInput()
+    {
+        _inputActions.Core.Disable();
+        _inputActions.Interactions.Disable();
+        _inputActions.Other.Disable();
+    }
     
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -95,5 +113,10 @@ public class InputReader : ScriptableObject, MyActions.ICoreActions, MyActions.I
     public void OnMouseDelta(InputAction.CallbackContext context)
     {
         MouseDeltaEvent?.Invoke(context.ReadValue<Vector2>());
+    }
+
+    public void OnMenuToggle(InputAction.CallbackContext context)
+    {
+        MenuToggleEvent?.Invoke();
     }
 }
