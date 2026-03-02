@@ -211,6 +211,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "40cb75eb-0970-4a63-b962-148233feae6d",
+            "actions": [
+                {
+                    "name": "MenuToggle",
+                    "type": "Button",
+                    "id": "2267cdcf-6c25-4552-82cb-90bfc2729b80",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "52314fdd-c4e0-4cb4-b69c-f8c249056108",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
