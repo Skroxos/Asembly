@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Assembly/SocketID")]
+[CreateAssetMenu(menuName = "Part/SocketID")]
 public class SocketIDSO : ScriptableObject
 {
     
