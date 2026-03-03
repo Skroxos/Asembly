@@ -105,7 +105,37 @@ public class StepManager : MonoBehaviour
                     progress += $"{req.requiredPartID.name}: {req.currentAmount}/{req.amountRequired}\n";
                 }
             }
-            uiChannel.RaiseEvent(new StepInfoData(description, progress, currentStepIndex, procedure.steps.Count));
+            uiChannel.RaiseEvent(new StepInfoData(description, progress, currentStepIndex + 1, procedure.steps.Count));
         }
     }
+    
+    
+    #if UNITY_EDITOR
+    public void AdvanceStepDebug() =>  AdvanceStep();
+
+    public void ResetStepsDebug()
+    {
+        currentStepIndex = 0;
+        LoadStep(currentStepIndex);
+    }
+    
+    public void JumpToStepDebug(int stepIndex)
+    {
+        if (stepIndex >= 0 && stepIndex <= procedure.steps.Count)
+        {
+            currentStepIndex = stepIndex - 1;
+            LoadStep(currentStepIndex);
+        }
+    }
+
+    public int GetTotalStepsDebug()
+    {
+        if (procedure != null && procedure.steps != null)
+        {
+            return procedure.steps.Count;
+        }
+        return 0;
+    }
+    #endif
+    
 }

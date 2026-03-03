@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435aff6064cd8fe4388fe0187a888b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StepManager
-  procedure: {fileID: 11400000, guid: 3964f9d3602a3eb4c8ea4c8d94bc335a, type: 2}
+  procedure: {fileID: 11400000, guid: 44f78678442ac0b4c85dae791b7f8014, type: 2}
   stepValidation: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
   uiChannel: {fileID: 11400000, guid: 88bdd23798bab574eb9b42f3f18695ed, type: 2}
@@ -62,5 +62,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StepManagerUI
   stepDescriptionText: {fileID: 0}
+  stepMissionProgressText: {fileID: 0}
   stepCounterText: {fileID: 0}
   uiChannel: {fileID: 11400000, guid: 88bdd23798bab574eb9b42f3f18695ed, type: 2}
