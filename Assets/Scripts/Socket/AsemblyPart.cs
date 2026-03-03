@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using DG.Tweening;
 
 [RequireComponent(typeof(Rigidbody)), RequireComponent(typeof(CarryComponent))]
 public class AsemblyPart : MonoBehaviour
@@ -21,9 +22,11 @@ public class AsemblyPart : MonoBehaviour
         if (carryComponent != null && carryComponent.IsPickedUp) return;
         rigidBody.isKinematic = true;
         collider.enabled = false;
-            
-        transform.position = snapPoint.position;
-        transform.rotation = snapPoint.rotation;
+        
+        transform.DOMove(snapPoint.position, 0.3f).SetEase(Ease.OutBack);
+        transform.DORotateQuaternion(snapPoint.rotation, 0.3f);
         transform.SetParent(snapPoint);
     }
+    
+  
 }
