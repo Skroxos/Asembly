@@ -788,10 +788,6 @@ PrefabInstance:
       propertyPath: stepMissionProgressText
       value: 
       objectReference: {fileID: 1477635009}
-    - target: {fileID: 3633274698928374401, guid: 03d9b0c5c92909a48b82a6a80d95f734, type: 3}
-      propertyPath: procedure
-      value: 
-      objectReference: {fileID: 11400000, guid: 44f78678442ac0b4c85dae791b7f8014, type: 2}
     - target: {fileID: 4265138528401059266, guid: 03d9b0c5c92909a48b82a6a80d95f734, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.83716
@@ -835,10 +831,6 @@ PrefabInstance:
     - target: {fileID: 6784497577585410584, guid: 03d9b0c5c92909a48b82a6a80d95f734, type: 3}
       propertyPath: m_Name
       value: StepManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784497577585410584, guid: 03d9b0c5c92909a48b82a6a80d95f734, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9368,12 +9360,12 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 192553073}
   - {fileID: 772658983}
   - {fileID: 142055740}
   - {fileID: 1166247521}
   - {fileID: 613469569}
   - {fileID: 1434277278}
-  - {fileID: 192553073}
   - {fileID: 331665023}
   - {fileID: 598820725}
   - {fileID: 2097999450}

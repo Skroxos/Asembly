@@ -22,7 +22,7 @@ public class StepManagerUI : MonoBehaviour
     {
         stepDescriptionText.text = infoData.info;
         stepMissionProgressText.text = infoData.progress;
-        if (infoData.stepIndex >= infoData.totalSteps)
+        if (infoData.stepIndex > infoData.totalSteps)
         {
             stepCounterText.text = "Procedure Completed!";
             stepCounterText.color = Color.green;
