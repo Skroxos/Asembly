@@ -17,7 +17,7 @@ public class DroneFinisher : MonoBehaviour
    }
 
    
-   public IEnumerator FinishSequence()
+   private IEnumerator FinishSequence()
    {
       OnFinish?.Invoke();
       yield return new WaitForSeconds(warmUpDuration);

@@ -27,7 +27,7 @@ public class SocketController : MonoBehaviour
         if (other.TryGetComponent(out AsemblyPart part))
         {
             OnValidPartEntered?.Invoke(part);
-            if (!part.isPickedUp)
+            if (!part.IsPickedUp)
                 if (TrySnapPart(part))
                     SnapToSocket();
         }
@@ -52,7 +52,7 @@ public class SocketController : MonoBehaviour
 
     private bool TrySnapPart(AsemblyPart part)
     {
-        if (IsOccupied || part.socketIDSO != typeID || part.isPickedUp) return false;
+        if (IsOccupied || part.socketIDSO != typeID || part.IsPickedUp) return false;
 
         if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID)) return false;
 

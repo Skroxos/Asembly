@@ -76,13 +76,6 @@ namespace Player.Movement
 
             controller.Move(moveDirection * speed * Time.deltaTime);
         }
-
-
-        private void TryToInteract()
-        {
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 3f))
-                if (hit.collider.TryGetComponent(out IInteractible interactible))
-                    interactible.Interact();
-        }
+        
     }
 }
