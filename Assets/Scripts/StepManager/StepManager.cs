@@ -9,6 +9,7 @@ public class StepManager : MonoBehaviour
     private Step currentStep;
     [SerializeField] private EventRadio eventRadio;
     [SerializeField] private StepInfoRadio uiChannel;
+    [SerializeField] private DeskSpawner deskSpawner;
     
     private void Start()
     {
@@ -63,6 +64,12 @@ public class StepManager : MonoBehaviour
         if (currentStepIndex < procedure.steps.Count)
         {
             currentStep = procedure.steps[currentStepIndex];
+
+            foreach (var req in currentStep.requiredParts)
+            {
+                req.currentAmount = 0;
+            }
+            deskSpawner.SpawnParts(currentStep.requiredParts);
         }
 
         BroadCastStepInfo();
@@ -77,7 +84,8 @@ public class StepManager : MonoBehaviour
         {
             req.currentAmount = 0;
         }
-
+        deskSpawner.SpawnParts(currentStep.requiredParts);
+        
         BroadCastStepInfo();
         UpdateAllowedSockets();
     }

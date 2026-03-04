@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67230a23692b4e30b079c6da3b9f6406, type: 3}
-  m_Name: ScrewSound
-  m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
+  m_Name: SpawnPartSound
+  m_EditorClassIdentifier: MainGameAssembly::AudioConfig
   audioClips:
-  - {fileID: 8300000, guid: cfc527f5a8917964ea98cc6b94c13184, type: 3}
-  volume: 0.5
-  minPitch: 0.9
-  maxPitch: 1.1
+  - {fileID: 8300000, guid: 7e46abf5492842843b1940ad9a2c1228, type: 3}
+  volume: 0.15
+  minPitch: 0.8
+  maxPitch: 1.2

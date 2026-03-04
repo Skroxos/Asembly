@@ -8,6 +8,8 @@ public class CarrySystem : MonoBehaviour
     [SerializeField] private float minHoldDistance;
     [SerializeField] private float maxHoldDistance;
     [SerializeField] private InputReader inputReader;
+    [SerializeField] private AudioClipRadio audioClipRadio;
+    [SerializeField] private AudioConfig pickUpSound;
     private CarryComponent _carriedObject;
     private bool _allowRotation;
 
@@ -98,11 +100,15 @@ public class CarrySystem : MonoBehaviour
     
     private void PickUp(CarryComponent carryComponent)
     {
-        _carriedObject = carryComponent;
-        _carriedObject.OnPickedUp();
-        _carriedObject.transform.SetParent(holdPoint);
-        _carriedObject.transform.localPosition = _carriedObject.HoldPosition;
-        _carriedObject.transform.localRotation = _carriedObject.HoldRotation;
+            if (pickUpSound != null && pickUpSound.audioClips.Length > 0)
+            {
+                audioClipRadio.RaiseEvent(pickUpSound);
+            }
+            _carriedObject = carryComponent;
+            _carriedObject.OnPickedUp();
+            _carriedObject.transform.SetParent(holdPoint);
+            _carriedObject.transform.localPosition = _carriedObject.HoldPosition;
+            _carriedObject.transform.localRotation = _carriedObject.HoldRotation;
     }
     
     private void Drop()
