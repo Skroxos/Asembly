@@ -26,9 +26,13 @@ public class DeskSpawner : MonoBehaviour
         var initialSpawnPos = spawnPoint.position;
         foreach (var req in requirements)
         {
+            var partPrefab = req.requiredPartID.partPrefab;
+            if (partPrefab == null) 
+            {
+                continue; 
+            }
             for (var i = 0; i < req.amountRequired; i++)
             {
-                var partPrefab = req.requiredPartID.partPrefab;
                 var spawnPos = initialSpawnPos + spawnPoint.right * (i * spacing);
                 var partInstance = Instantiate(partPrefab, spawnPos, Quaternion.identity);
                 var originalScale = partInstance.transform.localScale;

@@ -23,9 +23,8 @@ public class AsemblyPart : MonoBehaviour
         if (carryComponent != null && carryComponent.IsPickedUp) return;
         rigidBody.isKinematic = true;
         collider.enabled = false;
-
-        transform.DOMove(snapPoint.position, 0.3f).SetEase(Ease.OutBack);
-        transform.DORotateQuaternion(snapPoint.rotation, 0.3f);
         transform.SetParent(snapPoint);
+        transform.DOLocalMove(Vector3.zero, 0.3f).SetEase(Ease.OutBack);
+        transform.DOLocalRotateQuaternion(Quaternion.identity, 0.3f);
     }
 }

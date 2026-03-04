@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6908068620405096058}
   - component: {fileID: 6662509405685623504}
   - component: {fileID: 6774259999332294376}
+  - component: {fileID: 8135179064915712565}
   m_Layer: 0
   m_Name: Propeller
   m_TagString: Untagged
@@ -114,6 +115,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 15, y: 15, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8135179064915712565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561156188361447419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8d91aa694d41c09f863b02751627fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::PropellerFinisher
+  propellerRoot: {fileID: 8824804018578192518}
+  spinDuration: 1
+  spinSpeed: 1440
 --- !u!1 &8596322675242180734
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class StepManager : MonoBehaviour
     [SerializeField] private EventRadio eventRadio;
     [SerializeField] private StepInfoRadio uiChannel;
     [SerializeField] private DeskSpawner deskSpawner;
+    [SerializeField] private DroneFinisher droneFinisher;
     private Step currentStep;
     private int currentStepIndex;
 
@@ -64,6 +65,11 @@ public class StepManager : MonoBehaviour
 
             foreach (var req in currentStep.requiredParts) req.currentAmount = 0;
             deskSpawner.SpawnParts(currentStep.requiredParts);
+        }
+        else
+        {
+            currentStep = null;
+            droneFinisher.Finish();
         }
 
         BroadCastStepInfo();

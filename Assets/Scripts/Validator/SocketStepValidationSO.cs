@@ -14,10 +14,8 @@ public class SocketStepValidationSO : ScriptableObject
 
     public bool IsSocketAllowed(SocketIDSO socketID)
     {
-        if (_currentlyAllowedSockets.Count ==
-            0)
-            return
-                true; // can return true or false depends on design - if true then all sockets are allowed , if false then no sockets are allowed
+        if (_currentlyAllowedSockets.Count == 0)
+            return true; // can return true or false depends on design - if true then all sockets are allowed , if false then no sockets are allowed
 
         return _currentlyAllowedSockets.Contains(socketID);
     }

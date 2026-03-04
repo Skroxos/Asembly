@@ -907,7 +907,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3499f2c82749919123103ef55e21d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
-  interactionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
+  pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  dropRadioSO: {fileID: 11400000, guid: f73856bc2a89ea34fa84c934f7cb1c46, type: 2}
 --- !u!1 &1122986113536261006
 GameObject:
   m_ObjectHideFlags: 0
@@ -3885,7 +3886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3499f2c82749919123103ef55e21d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
-  interactionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
+  pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  dropRadioSO: {fileID: 11400000, guid: f73856bc2a89ea34fa84c934f7cb1c46, type: 2}
 --- !u!1 &3508230521321377068
 GameObject:
   m_ObjectHideFlags: 0
@@ -4793,7 +4795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3499f2c82749919123103ef55e21d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
-  interactionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
+  pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  dropRadioSO: {fileID: 11400000, guid: f73856bc2a89ea34fa84c934f7cb1c46, type: 2}
 --- !u!1 &4511307280906817329
 GameObject:
   m_ObjectHideFlags: 0
@@ -7371,7 +7374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3499f2c82749919123103ef55e21d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
-  interactionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
+  pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  dropRadioSO: {fileID: 11400000, guid: f73856bc2a89ea34fa84c934f7cb1c46, type: 2}
 --- !u!1 &6688399834578204229
 GameObject:
   m_ObjectHideFlags: 0
@@ -10277,7 +10281,6 @@ MonoBehaviour:
   HoldRotation: {x: 0, y: 0, z: 0, w: 1}
   pickupRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: f73856bc2a89ea34fa84c934f7cb1c46, type: 2}
-  iteractionRadioSO: {fileID: 11400000, guid: 43234c55d83d6f14f89ec37191f40b6c, type: 2}
   IsPickedUp: 0
 --- !u!114 &5170705711816479936
 MonoBehaviour:

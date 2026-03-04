@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ae8c36c09fee741837dee3a71e3642, type: 3}
   m_Name: CircuitBoard
   m_EditorClassIdentifier: Assembly-CSharp::SocketIDSO
+  partPrefab: {fileID: 8912607415138656246, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
