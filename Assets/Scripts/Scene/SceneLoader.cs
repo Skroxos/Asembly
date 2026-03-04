@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -18,20 +19,22 @@ public class SceneLoader : MonoBehaviour
     {
         sceneTransitionRadio.OnEventRaised -= HandleSceneTransition;
     }
+
     private void HandleSceneTransition(SceneDataSO obj)
     {
         StartCoroutine(LoadSceneAsync(obj));
     }
-    
+
     private IEnumerator LoadSceneAsync(SceneDataSO sceneData)
     {
-        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneData.SceneName);
+        var asyncLoad = SceneManager.LoadSceneAsync(sceneData.SceneName);
         asyncLoad.allowSceneActivation = false;
         while (asyncLoad.progress < 0.9f)
         {
             loadingProgressRadio.RaiseEvent(asyncLoad.progress);
             yield return null;
         }
+
         loadingProgressRadio.RaiseEvent(1f);
         asyncLoad.allowSceneActivation = true;
         sceneLoadedRadio.RaiseEvent();

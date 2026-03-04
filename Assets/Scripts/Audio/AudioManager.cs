@@ -22,9 +22,9 @@ public class AudioManager : MonoBehaviour
 
     private void HandleAudioClipUpdate(AudioConfig config)
     {
-      AudioClip clip = config.audioClips[Random.Range(0, config.audioClips.Length)];
-      audioSource.pitch = Random.Range(config.minPitch, config.maxPitch);
-      audioSource.volume = config.volume;
-      audioSource.PlayOneShot(clip, config.volume);
+        var clip = config.audioClips[Random.Range(0, config.audioClips.Length)];
+        audioSource.pitch = Random.Range(config.minPitch, config.maxPitch);
+        audioSource.volume = config.volume;
+        audioSource.PlayOneShot(clip, config.volume);
     }
 }

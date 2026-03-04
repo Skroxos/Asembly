@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Event/PickUpRadio")]
-public class PickUpRadio : GeneralRadio<AsemblyPart> { }
+public class PickUpRadio : GeneralRadio<AsemblyPart>
+{
+}

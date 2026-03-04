@@ -1,11 +1,15 @@
-using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private InputReader _inputReader;
     [SerializeField] private GameObject _menuUI;
-    
+
+    private void Start()
+    {
+        CloseMenu();
+    }
+
     private void OnEnable()
     {
         _inputReader.MenuToggleEvent += ToggleMenuUI;
@@ -17,24 +21,15 @@ public class GameManager : MonoBehaviour
         _inputReader.MenuToggleEvent -= ToggleMenuUI;
     }
 
-    private void Start()
-    {
-        CloseMenu();
-    }
-
     private void ToggleMenuUI()
     {
-          _menuUI.SetActive(!_menuUI.activeSelf);
-            if (_menuUI.activeSelf)
-            {
-                OpenMenu();
-            }
-            else
-            {
-                CloseMenu();
-            }
+        _menuUI.SetActive(!_menuUI.activeSelf);
+        if (_menuUI.activeSelf)
+            OpenMenu();
+        else
+            CloseMenu();
     }
-    
+
     private void OpenMenu()
     {
         _menuUI.SetActive(true);

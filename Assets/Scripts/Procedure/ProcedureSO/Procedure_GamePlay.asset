@@ -89,3 +89,7 @@ MonoBehaviour:
     requiredParts:
     - requiredPartID: {fileID: 11400000, guid: c00fa2d1fd21151459fae762f3ccc844, type: 2}
       amountRequired: 4
+  - description: Placed the Drone Outside
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: bc52c2b35d7b90b4fa029f5f25ebc14f, type: 2}
+      amountRequired: 1

@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class Step
 {
     [TextArea] public string description;
-    
+
     public List<StepRequirement> requiredParts;
 
     public bool IsCompleted()

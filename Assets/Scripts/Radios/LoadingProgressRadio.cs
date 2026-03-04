@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Event/LoadingProgressRadio")]
-public class LoadingProgressRadio : GeneralRadio<float> { }
+public class LoadingProgressRadio : GeneralRadio<float>
+{
+}

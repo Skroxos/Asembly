@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using TMPro;
+﻿using TMPro;
+using UnityEngine;
 
 public class StepManagerUI : MonoBehaviour
 {
@@ -7,12 +7,12 @@ public class StepManagerUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI stepMissionProgressText;
     [SerializeField] private TextMeshProUGUI stepCounterText;
     [SerializeField] private StepInfoRadio uiChannel;
-    
+
     private void OnEnable()
     {
         uiChannel.OnEventRaised += UpdateUI;
     }
-    
+
     private void OnDisable()
     {
         uiChannel.OnEventRaised -= UpdateUI;
@@ -32,6 +32,5 @@ public class StepManagerUI : MonoBehaviour
         {
             stepCounterText.text = $"Step {infoData.stepIndex} of {infoData.totalSteps}";
         }
-      
     }
 }

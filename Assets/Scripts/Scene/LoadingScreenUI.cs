@@ -5,12 +5,12 @@ public class LoadingScreenUI : MonoBehaviour
 {
     [SerializeField] private LoadingProgressRadio loadingProgressRadio;
     [SerializeField] private Slider progressSlider;
-    
+
     private void OnEnable()
     {
         loadingProgressRadio.OnEventRaised += UpdateProgress;
     }
-    
+
     private void OnDisable()
     {
         loadingProgressRadio.OnEventRaised -= UpdateProgress;

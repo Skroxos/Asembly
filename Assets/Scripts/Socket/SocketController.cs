@@ -1,28 +1,23 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
+using UnityEngine;
 
 public class SocketController : MonoBehaviour
 {
     [SerializeField] private SocketIDSO typeID;
-     public bool IsOccupied { get; private set; }
-     private Transform snapPoint;
-     
-     public event Action OnPartSnapped;
-     public event Action OnPartExited;
-     public event Action<AsemblyPart> OnValidPartEntered;
-     
-     
+
+
     [SerializeField] private SocketStepValidationSO stepValidationSO;
     [SerializeField] private EventRadio eventRadio;
-    
-    private AsemblyPart attachedPart;
-    private GameObject ghostInstance;
 
-    
+    private AsemblyPart _attachedPart;
+    private GameObject _ghostInstance;
+    private Transform _snapPoint;
+    public bool IsOccupied { get; private set; }
+
 
     private void Awake()
     {
-        snapPoint = gameObject.transform;
+        _snapPoint = gameObject.transform;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,50 +28,46 @@ public class SocketController : MonoBehaviour
         {
             OnValidPartEntered?.Invoke(part);
             if (!part.isPickedUp)
-            {
                 if (TrySnapPart(part))
-                {
                     SnapToSocket();
-                }
-            }
-            
         }
-          
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (IsOccupied) return;
-        if (attachedPart != null && other.gameObject == attachedPart.gameObject)
+        if (_attachedPart != null && other.gameObject == _attachedPart.gameObject)
         {
-            attachedPart = null;
+            _attachedPart = null;
             IsOccupied = false;
         }
+
         OnPartExited?.Invoke();
     }
-    
-    
+
+    public event Action OnPartSnapped;
+    public event Action OnPartExited;
+    public event Action<AsemblyPart> OnValidPartEntered;
+
+
     private bool TrySnapPart(AsemblyPart part)
     {
         if (IsOccupied || part.socketIDSO != typeID || part.isPickedUp) return false;
-        
-        if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID))
-        {
-            return false;
-        }
-        
+
+        if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID)) return false;
+
         IsOccupied = true;
-        attachedPart = part;
+        _attachedPart = part;
         return true;
     }
-        
+
     private void SnapToSocket()
     {
-        attachedPart.AttachToSocket(snapPoint);
-        eventRadio.RaiseEvent(attachedPart.socketIDSO);
+        _attachedPart.AttachToSocket(_snapPoint);
+        eventRadio.RaiseEvent(_attachedPart.socketIDSO);
         OnPartSnapped?.Invoke();
     }
-    
+
     public bool IsPartValid(AsemblyPart part)
     {
         if (part.socketIDSO != typeID) return false;

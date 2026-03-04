@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scene/SceneData")]
@@ -6,15 +7,12 @@ public class SceneDataSO : ScriptableObject
     public string SceneName { get; private set; }
     public int BuildIndex { get; private set; }
 
-#if  UNITY_EDITOR
-    [SerializeField] private UnityEditor.SceneAsset sceneAsset;
+#if UNITY_EDITOR
+    [SerializeField] private SceneAsset sceneAsset;
 
     private void OnValidate()
     {
-        if (sceneAsset != null)
-        {
-            SceneName = sceneAsset.name;
-        }
+        if (sceneAsset != null) SceneName = sceneAsset.name;
     }
 #endif
 }

@@ -1,16 +1,15 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(SocketController))]
 public class SocketGhostVisuals : MonoBehaviour
 {
     [SerializeField] private PickUpRadio pickUpRadioSO;
     [SerializeField] private DropRadio dropRadioSO;
-    private SocketController socketController;
-    private GhostPreviewManager ghostPreviewManager;
-    
-    private Transform snapPoint;
     private AsemblyPart currentPart;
+    private GhostPreviewManager ghostPreviewManager;
+
+    private Transform snapPoint;
+    private SocketController socketController;
 
     private void Awake()
     {
@@ -32,14 +31,15 @@ public class SocketGhostVisuals : MonoBehaviour
     {
         pickUpRadioSO.OnEventRaised -= HandlePartPickedUp;
         dropRadioSO.OnRaised -= HandlePartDropped;
-        
+
         socketController.OnPartSnapped -= HandlePartSnapped;
         socketController.OnPartExited -= HandlePartExited;
         socketController.OnValidPartEntered -= HandleValidPartEntered;
     }
+
     private void HandleValidPartEntered(AsemblyPart obj)
     {
-       ghostPreviewManager.SetValidGhostMaterial();
+        ghostPreviewManager.SetValidGhostMaterial();
     }
 
     private void HandlePartExited()
@@ -63,12 +63,11 @@ public class SocketGhostVisuals : MonoBehaviour
     private void HandlePartPickedUp(AsemblyPart obj)
     {
         if (socketController.IsOccupied) return;
-        
+
         if (socketController.IsPartValid(obj))
         {
             currentPart = obj;
             ghostPreviewManager.ShowGhost(currentPart.gameObject, snapPoint);
         }
     }
-
 }

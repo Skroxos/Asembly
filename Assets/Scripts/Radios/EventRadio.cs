@@ -1,5 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Event/SocketSnap")]
-public class EventRadio : GeneralRadio<SocketIDSO> {}
+public class EventRadio : GeneralRadio<SocketIDSO>
+{
+}

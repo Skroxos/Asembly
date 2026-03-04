@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     {
         inputReader.MenuToggleEvent -= ToggleUI;
     }
+
     private void ToggleUI()
     {
         uiPanel.SetActive(!uiPanel.activeSelf);

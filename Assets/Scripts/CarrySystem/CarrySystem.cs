@@ -10,41 +10,16 @@ public class CarrySystem : MonoBehaviour
     [SerializeField] private InputReader inputReader;
     [SerializeField] private AudioClipRadio audioClipRadio;
     [SerializeField] private AudioConfig pickUpSound;
-    private CarryComponent _carriedObject;
     private bool _allowRotation;
+    private CarryComponent _carriedObject;
 
     private void OnEnable()
-    { 
-        inputReader.InteractEvent += HandleInteract; 
+    {
+        inputReader.InteractEvent += HandleInteract;
         inputReader.MoveItemEvent += HandleMoveItem;
         inputReader.RotateButtonStartedEvent += HandleRotateStarted;
         inputReader.RotateButtonCanceledEvent += HandleRotateCanceled;
         inputReader.MouseDeltaEvent += HandleRotation;
-    }
-
-    private void HandleRotateCanceled()
-    {
-         _allowRotation = false;
-    }
-
-    private void HandleRotateStarted()
-    {
-         _allowRotation = true;
-    }
-
-    private void HandleRotation(Vector2 obj)
-    {
-        if (_carriedObject == null || !_allowRotation ) return;
-        Vector2 rotationInput = obj; 
-
-        float rotationSpeed = 0.5f; 
-        float mouseX = rotationInput.x * rotationSpeed;
-        float mouseY = rotationInput.y * rotationSpeed;
-        
-        
-        
-        _carriedObject.transform.Rotate(playerCamera.transform.up, -mouseX, Space.World);
-        _carriedObject.transform.Rotate(playerCamera.transform.right, mouseY, Space.World);
     }
 
 
@@ -55,7 +30,30 @@ public class CarrySystem : MonoBehaviour
         inputReader.RotateButtonCanceledEvent -= HandleRotateCanceled;
         inputReader.MouseDeltaEvent -= HandleRotation;
         inputReader.MoveItemEvent -= HandleMoveItem;
-       
+    }
+
+    private void HandleRotateCanceled()
+    {
+        _allowRotation = false;
+    }
+
+    private void HandleRotateStarted()
+    {
+        _allowRotation = true;
+    }
+
+    private void HandleRotation(Vector2 obj)
+    {
+        if (_carriedObject == null || !_allowRotation) return;
+        var rotationInput = obj;
+
+        var rotationSpeed = 0.5f;
+        var mouseX = rotationInput.x * rotationSpeed;
+        var mouseY = rotationInput.y * rotationSpeed;
+
+
+        _carriedObject.transform.Rotate(playerCamera.transform.up, -mouseX, Space.World);
+        _carriedObject.transform.Rotate(playerCamera.transform.right, mouseY, Space.World);
     }
 
     private void HandleMoveItem(Vector2 obj)
@@ -66,51 +64,40 @@ public class CarrySystem : MonoBehaviour
     private void HandleInteract()
     {
         if (_carriedObject == null)
-        {
             TryToPickUp();
-        }
         else
-        {
             Drop();
-        }
     }
-    
+
     private void MoveCarriedObject(Vector2 input)
     {
         if (_carriedObject == null) return;
 
-        Vector3 newPosition = holdPoint.localPosition;
+        var newPosition = holdPoint.localPosition;
         newPosition.z += input.y * distanceStep;
-        
-        newPosition.z = Mathf.Clamp(newPosition.z, minHoldDistance, maxHoldDistance); 
+
+        newPosition.z = Mathf.Clamp(newPosition.z, minHoldDistance, maxHoldDistance);
 
         holdPoint.localPosition = newPosition;
     }
-    
+
     private void TryToPickUp()
     {
-        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 3f))
-        {
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out var hit, 3f))
             if (hit.collider.TryGetComponent(out CarryComponent carryComponent))
-            {
                 PickUp(carryComponent);
-            }
-        }
     }
-    
+
     private void PickUp(CarryComponent carryComponent)
     {
-            if (pickUpSound != null && pickUpSound.audioClips.Length > 0)
-            {
-                audioClipRadio.RaiseEvent(pickUpSound);
-            }
-            _carriedObject = carryComponent;
-            _carriedObject.OnPickedUp();
-            _carriedObject.transform.SetParent(holdPoint);
-            _carriedObject.transform.localPosition = _carriedObject.HoldPosition;
-            _carriedObject.transform.localRotation = _carriedObject.HoldRotation;
+        if (pickUpSound != null && pickUpSound.audioClips.Length > 0) audioClipRadio.RaiseEvent(pickUpSound);
+        _carriedObject = carryComponent;
+        _carriedObject.OnPickedUp();
+        _carriedObject.transform.SetParent(holdPoint);
+        _carriedObject.transform.localPosition = _carriedObject.HoldPosition;
+        _carriedObject.transform.localRotation = _carriedObject.HoldRotation;
     }
-    
+
     private void Drop()
     {
         _carriedObject.OnDropped();
