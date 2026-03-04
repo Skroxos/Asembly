@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ScrewSound
   m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
   audioClips:
-  - {fileID: 8300000, guid: 23aff80fd5f70d247885eb79e3ef3665, type: 3}
+  - {fileID: 8300000, guid: cfc527f5a8917964ea98cc6b94c13184, type: 3}
   volume: 0.5
   minPitch: 0.9
   maxPitch: 1.1

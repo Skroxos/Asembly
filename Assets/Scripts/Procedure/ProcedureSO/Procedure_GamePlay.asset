@@ -68,6 +68,16 @@ MonoBehaviour:
     requiredParts:
     - requiredPartID: {fileID: 11400000, guid: 912a4eab1fb680648a455a8777b81399, type: 2}
       amountRequired: 1
+  - description: Attach the mounting plate and top plate to the drone
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: de1f3bf5b73b66040b761830e4f6d95b, type: 2}
+      amountRequired: 1
+    - requiredPartID: {fileID: 11400000, guid: 91e2cc9b7b261794aa54343bf5e97e26, type: 2}
+      amountRequired: 1
+  - description: Screw the top plate on
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: c00fa2d1fd21151459fae762f3ccc844, type: 2}
+      amountRequired: 4
   - description: Attach the circuit board to the mounting plate and battery to the
       top plate
     requiredParts:
@@ -79,13 +89,7 @@ MonoBehaviour:
     requiredParts:
     - requiredPartID: {fileID: 11400000, guid: d7fe777cb08543a4782a86764b413568, type: 2}
       amountRequired: 4
-  - description: Attach the mounting plate and top plate to the drone
+  - description: Place the complete drone outside
     requiredParts:
-    - requiredPartID: {fileID: 11400000, guid: de1f3bf5b73b66040b761830e4f6d95b, type: 2}
+    - requiredPartID: {fileID: 11400000, guid: bc52c2b35d7b90b4fa029f5f25ebc14f, type: 2}
       amountRequired: 1
-    - requiredPartID: {fileID: 11400000, guid: 91e2cc9b7b261794aa54343bf5e97e26, type: 2}
-      amountRequired: 1
-  - description: Screw the top plate on
-    requiredParts:
-    - requiredPartID: {fileID: 11400000, guid: c00fa2d1fd21151459fae762f3ccc844, type: 2}
-      amountRequired: 4

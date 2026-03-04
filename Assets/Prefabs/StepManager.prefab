@@ -49,6 +49,7 @@ MonoBehaviour:
   stepValidation: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
   uiChannel: {fileID: 11400000, guid: 88bdd23798bab574eb9b42f3f18695ed, type: 2}
+  deskSpawner: {fileID: 0}
 --- !u!114 &288250943558855819
 MonoBehaviour:
   m_ObjectHideFlags: 0

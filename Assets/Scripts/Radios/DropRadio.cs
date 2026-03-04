@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu (menuName = "Event/DropRadio")]
-public class DropRadio : SimpleEventRadio { }
+[CreateAssetMenu(menuName = "Event/DropRadio")]
+public class DropRadio : SimpleEventRadio
+{
+}

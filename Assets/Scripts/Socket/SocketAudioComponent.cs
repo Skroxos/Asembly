@@ -3,32 +3,29 @@
 [RequireComponent(typeof(SocketController))]
 public class SocketAudioComponent : MonoBehaviour
 {
-    private SocketController socketController;
     [SerializeField] private AudioConfig snapSound;
     [SerializeField] private AudioClipRadio audioClipRadio;
-    
-    
+    private SocketController _socketController;
+
+
     private void Awake()
     {
-        socketController = GetComponent<SocketController>();
+        _socketController = GetComponent<SocketController>();
     }
-    
+
     private void OnEnable()
     {
-        socketController.OnPartSnapped += HandlePartSnapped;
+        _socketController.OnPartSnapped += HandlePartSnapped;
     }
 
 
     private void OnDisable()
     {
-        socketController.OnPartSnapped -= HandlePartSnapped;
+        _socketController.OnPartSnapped -= HandlePartSnapped;
     }
+
     private void HandlePartSnapped()
     {
-        if (snapSound != null && snapSound.audioClips.Length > 0)
-        {
-            audioClipRadio.RaiseEvent(snapSound);
-        }
+        if (snapSound != null && snapSound.audioClips.Length > 0) audioClipRadio.RaiseEvent(snapSound);
     }
-   
 }

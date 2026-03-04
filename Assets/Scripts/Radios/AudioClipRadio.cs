@@ -1,5 +1,6 @@
-﻿using System;
-using UnityEngine;
-[CreateAssetMenu(menuName = "Event/AudioClipRadio")]
-public class AudioClipRadio : GeneralRadio<AudioConfig> { }
+﻿using UnityEngine;
 
+[CreateAssetMenu(menuName = "Event/AudioClipRadio")]
+public class AudioClipRadio : GeneralRadio<AudioConfig>
+{
+}

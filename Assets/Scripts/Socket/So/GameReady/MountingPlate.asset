@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ae8c36c09fee741837dee3a71e3642, type: 3}
   m_Name: MountingPlate
   m_EditorClassIdentifier: Assembly-CSharp::SocketIDSO
+  partPrefab: {fileID: 2159813249027929402, guid: 33456315eee4374428325303c5aee6ac, type: 3}
