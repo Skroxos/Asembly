@@ -1,6 +1,10 @@
-﻿using UnityEngine;
+﻿using DroneAssembly.Radios.GeneralRadios;
+using UnityEngine;
 
-[CreateAssetMenu(menuName = "Event/LoadingProgressRadio")]
-public class LoadingProgressRadio : GeneralRadio<float>
+namespace DroneAssembly.Radios
 {
+    [CreateAssetMenu(menuName = "Event/LoadingProgressRadio")]
+    public class LoadingProgressRadio : GeneralRadio<float>
+    {
+    }
 }

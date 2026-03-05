@@ -1,6 +1,10 @@
-﻿using UnityEngine;
+﻿using DroneAssembly.Radios.GeneralRadios;
+using UnityEngine;
 
-[CreateAssetMenu(menuName = "Event/DropRadio")]
-public class DropRadio : SimpleEventRadio
+namespace DroneAssembly.Radios
 {
+    [CreateAssetMenu(menuName = "Event/DropRadio")]
+    public class DropRadio : SimpleEventRadio
+    {
+    }
 }

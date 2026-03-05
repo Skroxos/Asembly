@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4043b76d95024160a2c6e0d330dc51e6, type: 3}
-  m_Name: DropRadio 1
-  m_EditorClassIdentifier: Assembly-CSharp::SimpleEventRadio
+  m_Name: FinisherRadio
+  m_EditorClassIdentifier: MainGameAssembly::SimpleEventRadio

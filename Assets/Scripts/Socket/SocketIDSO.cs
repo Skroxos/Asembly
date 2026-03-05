@@ -1,7 +1,10 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Part/SocketID")]
-public class SocketIDSO : ScriptableObject
+namespace DroneAssembly.Socket
 {
-    public GameObject partPrefab;
+    [CreateAssetMenu(menuName = "Part/SocketID")]
+    public class SocketIDSO : ScriptableObject
+    {
+        public GameObject partPrefab;
+    }
 }

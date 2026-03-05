@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89bf936873c24c7fb2bbcdf0dac31cd6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4043b76d95024160a2c6e0d330dc51e6, type: 3}
   m_Name: DropRadio
-  m_EditorClassIdentifier: Assembly-CSharp::DropRadio
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleEventRadio

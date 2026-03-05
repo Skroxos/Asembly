@@ -1,18 +1,21 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Event/SimpleEventRadio")]
-public class SimpleEventRadio : ScriptableObject
+namespace DroneAssembly.Radios.GeneralRadios
 {
-    private void OnDisable()
+    [CreateAssetMenu(menuName = "Event/SimpleEventRadio")]
+    public class SimpleEventRadio : ScriptableObject
     {
-        OnRaised = null;
-    }
+        private void OnDisable()
+        {
+            OnRaised = null;
+        }
 
-    public event Action OnRaised;
+        public event Action OnRaised;
 
-    public void RaiseEvent()
-    {
-        OnRaised?.Invoke();
+        public void RaiseEvent()
+        {
+            OnRaised?.Invoke();
+        }
     }
 }

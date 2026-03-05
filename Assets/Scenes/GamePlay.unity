@@ -815,7 +815,15 @@ PrefabInstance:
     - target: {fileID: 3633274698928374401, guid: 03d9b0c5c92909a48b82a6a80d95f734, type: 3}
       propertyPath: droneFinisher
       value: 
-      objectReference: {fileID: 1419165352}
+      objectReference: {fileID: 11400000, guid: 36db305920e6e2242a216c4edb74c390, type: 2}
+    - target: {fileID: 3633274698928374401, guid: 03d9b0c5c92909a48b82a6a80d95f734, type: 3}
+      propertyPath: spawnPartRadio
+      value: 
+      objectReference: {fileID: 11400000, guid: f001b66f00c62a54fad9789ab0ba23a9, type: 2}
+    - target: {fileID: 3633274698928374401, guid: 03d9b0c5c92909a48b82a6a80d95f734, type: 3}
+      propertyPath: procedureCompleteRadio
+      value: 
+      objectReference: {fileID: 11400000, guid: 36db305920e6e2242a216c4edb74c390, type: 2}
     - target: {fileID: 4265138528401059266, guid: 03d9b0c5c92909a48b82a6a80d95f734, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.83716
@@ -1462,7 +1470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: MainGameAssembly::SocketGhostVisuals
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
-  dropRadioSO: {fileID: 11400000, guid: f73856bc2a89ea34fa84c934f7cb1c46, type: 2}
+  dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
 --- !u!114 &313485602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6672,6 +6680,7 @@ MonoBehaviour:
   warmUpDuration: 2
   flightHeight: 50
   flightDuration: 10
+  droneFinisherRadio: {fileID: 11400000, guid: 36db305920e6e2242a216c4edb74c390, type: 2}
 --- !u!4 &1419165353
 Transform:
   m_ObjectHideFlags: 0
@@ -6834,6 +6843,10 @@ PrefabInstance:
     - target: {fileID: 3571512066783766542, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8786627927851545123, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9145522572251732616, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7914,6 +7927,7 @@ MonoBehaviour:
   groupSpacing: 0.5
   audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
   spawnSound: {fileID: 11400000, guid: 1296e998617523b4e812f1eaf83ccd1d, type: 2}
+  spawnPartRadio: {fileID: 11400000, guid: f001b66f00c62a54fad9789ab0ba23a9, type: 2}
 --- !u!4 &1705858645
 Transform:
   m_ObjectHideFlags: 0

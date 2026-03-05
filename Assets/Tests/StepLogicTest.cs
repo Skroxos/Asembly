@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DroneAssembly.StepManager;
 using NUnit.Framework;
 
 public class StepLogicTest

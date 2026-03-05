@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
+using DroneAssembly.StepManager;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Procedure")]
-public class ProcedureSO : ScriptableObject
+namespace DroneAssembly.Procedure
 {
-    public string procedureName;
-    public List<Step> steps;
+    [CreateAssetMenu(menuName = "Procedure")]
+    public class ProcedureSO : ScriptableObject
+    {
+        public string procedureName;
+        public List<Step> steps;
+    }
 }

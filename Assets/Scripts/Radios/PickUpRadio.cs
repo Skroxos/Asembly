@@ -1,6 +1,11 @@
-﻿using UnityEngine;
+﻿using DroneAssembly.Radios.GeneralRadios;
+using DroneAssembly.Socket;
+using UnityEngine;
 
-[CreateAssetMenu(menuName = "Event/PickUpRadio")]
-public class PickUpRadio : GeneralRadio<AsemblyPart>
+namespace DroneAssembly.Radios
 {
+    [CreateAssetMenu(menuName = "Event/PickUpRadio")]
+    public class PickUpRadio : GeneralRadio<AsemblyPart>
+    {
+    }
 }

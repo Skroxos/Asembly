@@ -1,42 +1,47 @@
 ﻿using System.Collections;
+using DroneAssembly.Radios;
+using DroneAssembly.Radios.GeneralRadios;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+namespace DroneAssembly.Scene
 {
-    [SerializeField] private SceneDataSO sceneData;
-    [SerializeField] private SceneTransitionRadio sceneTransitionRadio;
-    [SerializeField] private SimpleEventRadio sceneLoadedRadio;
-    [SerializeField] private LoadingProgressRadio loadingProgressRadio;
-
-    private void OnEnable()
+    public class SceneLoader : MonoBehaviour
     {
-        sceneTransitionRadio.OnEventRaised += HandleSceneTransition;
-    }
+        [SerializeField] private SceneDataSO sceneData;
+        [SerializeField] private SceneTransitionRadio sceneTransitionRadio;
+        [SerializeField] private SimpleEventRadio sceneLoadedRadio;
+        [SerializeField] private LoadingProgressRadio loadingProgressRadio;
 
-
-    private void OnDisable()
-    {
-        sceneTransitionRadio.OnEventRaised -= HandleSceneTransition;
-    }
-
-    private void HandleSceneTransition(SceneDataSO obj)
-    {
-        StartCoroutine(LoadSceneAsync(obj));
-    }
-
-    private IEnumerator LoadSceneAsync(SceneDataSO sceneData)
-    {
-        var asyncLoad = SceneManager.LoadSceneAsync(sceneData.SceneName);
-        asyncLoad.allowSceneActivation = false;
-        while (asyncLoad.progress < 0.9f)
+        private void OnEnable()
         {
-            loadingProgressRadio.RaiseEvent(asyncLoad.progress);
-            yield return null;
+            sceneTransitionRadio.OnEventRaised += HandleSceneTransition;
         }
 
-        loadingProgressRadio.RaiseEvent(1f);
-        asyncLoad.allowSceneActivation = true;
-        sceneLoadedRadio.RaiseEvent();
+
+        private void OnDisable()
+        {
+            sceneTransitionRadio.OnEventRaised -= HandleSceneTransition;
+        }
+
+        private void HandleSceneTransition(SceneDataSO obj)
+        {
+            StartCoroutine(LoadSceneAsync(obj));
+        }
+
+        private IEnumerator LoadSceneAsync(SceneDataSO sceneData)
+        {
+            var asyncLoad = SceneManager.LoadSceneAsync(sceneData.SceneName);
+            asyncLoad.allowSceneActivation = false;
+            while (asyncLoad.progress < 0.9f)
+            {
+                loadingProgressRadio.RaiseEvent(asyncLoad.progress);
+                yield return null;
+            }
+
+            loadingProgressRadio.RaiseEvent(1f);
+            asyncLoad.allowSceneActivation = true;
+            sceneLoadedRadio.RaiseEvent();
+        }
     }
 }

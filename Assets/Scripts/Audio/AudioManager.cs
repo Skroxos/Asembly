@@ -1,30 +1,34 @@
-﻿using UnityEngine;
+﻿using DroneAssembly.Radios;
+using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+namespace DroneAssembly.Audio
 {
-    [SerializeField] private AudioClipRadio audioClipRadio;
-    private AudioSource audioSource;
-
-    private void Awake()
+    public class AudioManager : MonoBehaviour
     {
-        audioSource = GetComponent<AudioSource>();
-    }
+        [SerializeField] private AudioClipRadio audioClipRadio;
+        private AudioSource audioSource;
 
-    private void OnEnable()
-    {
-        audioClipRadio.OnEventRaised += HandleAudioClipUpdate;
-    }
+        private void Awake()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
 
-    private void OnDisable()
-    {
-        audioClipRadio.OnEventRaised -= HandleAudioClipUpdate;
-    }
+        private void OnEnable()
+        {
+            audioClipRadio.OnEventRaised += HandleAudioClipUpdate;
+        }
 
-    private void HandleAudioClipUpdate(AudioConfig config)
-    {
-        var clip = config.audioClips[Random.Range(0, config.audioClips.Length)];
-        audioSource.pitch = Random.Range(config.minPitch, config.maxPitch);
-        audioSource.volume = config.volume;
-        audioSource.PlayOneShot(clip, config.volume);
+        private void OnDisable()
+        {
+            audioClipRadio.OnEventRaised -= HandleAudioClipUpdate;
+        }
+
+        private void HandleAudioClipUpdate(AudioConfig config)
+        {
+            var clip = config.audioClips[Random.Range(0, config.audioClips.Length)];
+            audioSource.pitch = Random.Range(config.minPitch, config.maxPitch);
+            audioSource.volume = config.volume;
+            audioSource.PlayOneShot(clip, config.volume);
+        }
     }
 }

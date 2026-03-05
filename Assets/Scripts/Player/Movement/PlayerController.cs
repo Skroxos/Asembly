@@ -1,6 +1,7 @@
+using DroneAssembly.Player.Input;
 using UnityEngine;
 
-namespace Player.Movement
+namespace DroneAssembly.Player.Movement
 {
     public class PlayerController : MonoBehaviour
     {
