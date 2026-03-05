@@ -7,11 +7,12 @@ public class StepManager : MonoBehaviour
     [SerializeField] private SocketStepValidationSO stepValidation;
     [SerializeField] private EventRadio eventRadio;
     [SerializeField] private StepInfoRadio uiChannel;
-    [SerializeField] private DeskSpawner deskSpawner;
-    [SerializeField] private DroneFinisher droneFinisher;
+    [SerializeField] private SpawnPartRadioSO spawnPartRadio;
+    [SerializeField] private SimpleEventRadio procedureCompleteRadio;
+
     private Step _currentStep;
     private int _currentStepIndex;
-
+    
     private void Start()
     {
         InitializeSteps();
@@ -64,12 +65,12 @@ public class StepManager : MonoBehaviour
             _currentStep = procedure.steps[_currentStepIndex];
 
             foreach (var req in _currentStep.requiredParts) req.currentAmount = 0;
-            deskSpawner.SpawnParts(_currentStep.requiredParts);
+            if(spawnPartRadio != null) spawnPartRadio.RaiseEvent(_currentStep.requiredParts);
         }
         else
         {
             _currentStep = null;
-            droneFinisher.Finish();
+            if (procedureCompleteRadio != null) procedureCompleteRadio.RaiseEvent();
         }
 
         BroadCastStepInfo();
@@ -80,7 +81,7 @@ public class StepManager : MonoBehaviour
     {
         _currentStep = procedure.steps[index];
         foreach (var req in _currentStep.requiredParts) req.currentAmount = 0;
-        deskSpawner.SpawnParts(_currentStep.requiredParts);
+        if(spawnPartRadio != null) spawnPartRadio.RaiseEvent(_currentStep.requiredParts);
 
         BroadCastStepInfo();
         UpdateAllowedSockets();

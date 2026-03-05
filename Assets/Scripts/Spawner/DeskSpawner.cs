@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -10,6 +11,17 @@ public class DeskSpawner : MonoBehaviour
     [SerializeField] private float groupSpacing = 0.5f;
     [SerializeField] private AudioClipRadio audioClipRadio;
     [SerializeField] private AudioConfig spawnSound;
+    [SerializeField] private SpawnPartRadioSO spawnPartRadio;
+
+    private void OnEnable()
+    {
+        spawnPartRadio.OnEventRaised += SpawnParts;
+    }
+
+    private void OnDisable()
+    {
+        spawnPartRadio.OnEventRaised -= SpawnParts;
+    }
 
     public void SpawnParts(List<StepRequirement> requirements)
     {

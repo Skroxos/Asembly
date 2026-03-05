@@ -9,9 +9,20 @@ public class DroneFinisher : MonoBehaviour
    [SerializeField] private float warmUpDuration = 2f;
    [SerializeField] private float flightHeight = 10f;
    [SerializeField] private float flightDuration = 5f;
+   [SerializeField] private SimpleEventRadio droneFinisherRadio;
+   
+   private void OnEnable()
+   {
+      droneFinisherRadio.OnRaised += Finish;
+   }
+   
+   private void OnDisable()
+   {
+      droneFinisherRadio.OnRaised -= Finish;
+   }
    public static event Action OnFinish;
    
-   public void Finish()
+   private void Finish()
    {
       StartCoroutine(FinishSequence());
    }

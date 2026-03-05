@@ -4,7 +4,7 @@
 public class SocketGhostVisuals : MonoBehaviour
 {
     [SerializeField] private PickUpRadio pickUpRadioSO;
-    [SerializeField] private DropRadio dropRadioSO;
+    [SerializeField] private SimpleEventRadio dropRadioSO;
     private AsemblyPart currentPart;
     private GhostPreviewManager ghostPreviewManager;
 

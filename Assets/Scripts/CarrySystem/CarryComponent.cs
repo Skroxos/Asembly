@@ -6,7 +6,7 @@ public class CarryComponent : MonoBehaviour
     public Vector3 HoldPosition = new(0, 0, 1.5f);
     public Quaternion HoldRotation = Quaternion.identity;
     [SerializeField] private PickUpRadio pickupRadioSO;
-    [SerializeField] private DropRadio dropRadioSO;
+    [SerializeField] private SimpleEventRadio dropRadioSO;
 
 
     public bool IsPickedUp;

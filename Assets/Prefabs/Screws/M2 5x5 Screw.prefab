@@ -168,7 +168,7 @@ MonoBehaviour:
   HoldPosition: {x: 0, y: 0, z: 1.5}
   HoldRotation: {x: 0, y: 0, z: 0, w: 1}
   pickupRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
-  dropRadioSO: {fileID: 11400000, guid: f73856bc2a89ea34fa84c934f7cb1c46, type: 2}
+  dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   IsPickedUp: 0
 --- !u!114 &589204615823757447
 MonoBehaviour:
