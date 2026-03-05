@@ -4,15 +4,18 @@ public class CarrySystem : MonoBehaviour
 {
     [SerializeField] private Transform holdPoint;
     [SerializeField] private Camera playerCamera;
-    [SerializeField] private float distanceStep = 0.25f;
-    [SerializeField] private float minHoldDistance;
-    [SerializeField] private float maxHoldDistance;
     [SerializeField] private InputReader inputReader;
     [SerializeField] private AudioClipRadio audioClipRadio;
     [SerializeField] private AudioConfig pickUpSound;
     private bool _allowRotation;
     private CarryComponent _carriedObject;
 
+    // could be in a config scriptable object if we want to be able to change it in runtime
+    [SerializeField] private float distanceStep = 0.25f;
+    [SerializeField] private float minHoldDistance;
+    [SerializeField] private float maxHoldDistance;
+    [SerializeField] private float rotationSpeed = 0.5f;
+    [SerializeField] private float pickUpDistance = 3f;
     private void OnEnable()
     {
         inputReader.InteractEvent += HandleInteract;
@@ -46,8 +49,7 @@ public class CarrySystem : MonoBehaviour
     {
         if (_carriedObject == null || !_allowRotation) return;
         var rotationInput = obj;
-
-        var rotationSpeed = 0.5f;
+        
         var mouseX = rotationInput.x * rotationSpeed;
         var mouseY = rotationInput.y * rotationSpeed;
 
@@ -83,7 +85,7 @@ public class CarrySystem : MonoBehaviour
 
     private void TryToPickUp()
     {
-        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out var hit, 3f))
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out var hit, pickUpDistance))
             if (hit.collider.TryGetComponent(out CarryComponent carryComponent))
                 PickUp(carryComponent);
     }

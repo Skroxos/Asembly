@@ -11,7 +11,6 @@ public class CarryComponent : MonoBehaviour
 
     public bool IsPickedUp;
     private Collider _collider;
-
     private Rigidbody _rigidbody;
 
 

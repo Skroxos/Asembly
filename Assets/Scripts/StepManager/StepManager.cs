@@ -9,8 +9,8 @@ public class StepManager : MonoBehaviour
     [SerializeField] private StepInfoRadio uiChannel;
     [SerializeField] private DeskSpawner deskSpawner;
     [SerializeField] private DroneFinisher droneFinisher;
-    private Step currentStep;
-    private int currentStepIndex;
+    private Step _currentStep;
+    private int _currentStepIndex;
 
     private void Start()
     {
@@ -31,8 +31,8 @@ public class StepManager : MonoBehaviour
     {
         if (procedure != null && procedure.steps.Count > 0)
         {
-            LoadStep(currentStepIndex);
-            currentStep = procedure.steps[0];
+            LoadStep(_currentStepIndex);
+            _currentStep = procedure.steps[0];
         }
 
         BroadCastStepInfo();
@@ -40,9 +40,9 @@ public class StepManager : MonoBehaviour
 
     private void HandlePartSnapped(SocketIDSO obj)
     {
-        if (currentStep == null) return;
+        if (_currentStep == null) return;
 
-        var matchingRequirement = currentStep.requiredParts.FirstOrDefault(req => req.requiredPartID == obj);
+        var matchingRequirement = _currentStep.requiredParts.FirstOrDefault(req => req.requiredPartID == obj);
 
         if (matchingRequirement != null)
         {
@@ -52,23 +52,23 @@ public class StepManager : MonoBehaviour
                 BroadCastStepInfo();
             }
 
-            if (currentStep.IsCompleted()) AdvanceStep();
+            if (_currentStep.IsCompleted()) AdvanceStep();
         }
     }
 
     private void AdvanceStep()
     {
-        currentStepIndex++;
-        if (currentStepIndex < procedure.steps.Count)
+        _currentStepIndex++;
+        if (_currentStepIndex < procedure.steps.Count)
         {
-            currentStep = procedure.steps[currentStepIndex];
+            _currentStep = procedure.steps[_currentStepIndex];
 
-            foreach (var req in currentStep.requiredParts) req.currentAmount = 0;
-            deskSpawner.SpawnParts(currentStep.requiredParts);
+            foreach (var req in _currentStep.requiredParts) req.currentAmount = 0;
+            deskSpawner.SpawnParts(_currentStep.requiredParts);
         }
         else
         {
-            currentStep = null;
+            _currentStep = null;
             droneFinisher.Finish();
         }
 
@@ -78,9 +78,9 @@ public class StepManager : MonoBehaviour
 
     private void LoadStep(int index)
     {
-        currentStep = procedure.steps[index];
-        foreach (var req in currentStep.requiredParts) req.currentAmount = 0;
-        deskSpawner.SpawnParts(currentStep.requiredParts);
+        _currentStep = procedure.steps[index];
+        foreach (var req in _currentStep.requiredParts) req.currentAmount = 0;
+        deskSpawner.SpawnParts(_currentStep.requiredParts);
 
         BroadCastStepInfo();
         UpdateAllowedSockets();
@@ -88,9 +88,9 @@ public class StepManager : MonoBehaviour
 
     private void UpdateAllowedSockets()
     {
-        if (stepValidation != null && currentStep != null)
+        if (stepValidation != null && _currentStep != null)
         {
-            var allowedSockets = currentStep.requiredParts.Select(req => req.requiredPartID).ToList();
+            var allowedSockets = _currentStep.requiredParts.Select(req => req.requiredPartID).ToList();
             stepValidation.UpdateAllowedSockets(allowedSockets);
         }
     }
@@ -101,14 +101,14 @@ public class StepManager : MonoBehaviour
         {
             var description = "Done";
             var progress = "";
-            if (currentStep != null)
+            if (_currentStep != null)
             {
-                description = currentStep.description;
-                foreach (var req in currentStep.requiredParts)
+                description = _currentStep.description;
+                foreach (var req in _currentStep.requiredParts)
                     progress += $"{req.requiredPartID.name}: {req.currentAmount}/{req.amountRequired}\n";
             }
 
-            uiChannel.RaiseEvent(new StepInfoData(description, progress, currentStepIndex + 1, procedure.steps.Count));
+            uiChannel.RaiseEvent(new StepInfoData(description, progress, _currentStepIndex + 1, procedure.steps.Count));
         }
     }
 
@@ -121,16 +121,16 @@ public class StepManager : MonoBehaviour
 
     public void ResetStepsDebug()
     {
-        currentStepIndex = 0;
-        LoadStep(currentStepIndex);
+        _currentStepIndex = 0;
+        LoadStep(_currentStepIndex);
     }
 
     public void JumpToStepDebug(int stepIndex)
     {
         if (stepIndex >= 0 && stepIndex <= procedure.steps.Count)
         {
-            currentStepIndex = stepIndex - 1;
-            LoadStep(currentStepIndex);
+            _currentStepIndex = stepIndex - 1;
+            LoadStep(_currentStepIndex);
         }
     }
 

@@ -18,7 +18,7 @@ public class PropellerFinisher : MonoBehaviour
         DroneFinisher.OnFinish -= Spin;
     }
     
-    public void Spin()
+    private void Spin()
     {
         propellerRoot.DOLocalRotate(new Vector3(0, spinSpeed, 0), spinDuration, RotateMode.FastBeyond360)
             .SetEase(Ease.Linear)
