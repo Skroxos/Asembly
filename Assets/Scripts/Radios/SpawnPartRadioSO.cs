@@ -1,7 +1,12 @@
 ﻿using System.Collections.Generic;
+using DroneAssembly.Radios.GeneralRadios;
+using DroneAssembly.StepManager;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Event/SpawnPartRadioSO")]
-public class SpawnPartRadioSO : GeneralRadio<List<StepRequirement>>
+namespace DroneAssembly.Radios
 {
+    [CreateAssetMenu(menuName = "Event/SpawnPartRadioSO")]
+    public class SpawnPartRadioSO : GeneralRadio<List<StepRequirement>>
+    {
+    }
 }

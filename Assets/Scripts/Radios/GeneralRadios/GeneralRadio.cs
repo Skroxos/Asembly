@@ -1,17 +1,20 @@
 ﻿using System;
 using UnityEngine;
 
-public class GeneralRadio<T> : ScriptableObject
+namespace DroneAssembly.Radios.GeneralRadios
 {
-    private void OnDisable()
+    public class GeneralRadio<T> : ScriptableObject
     {
-        OnEventRaised = null;
-    }
+        private void OnDisable()
+        {
+            OnEventRaised = null;
+        }
 
-    public event Action<T> OnEventRaised;
+        public event Action<T> OnEventRaised;
 
-    public void RaiseEvent(T value)
-    {
-        OnEventRaised?.Invoke(value);
+        public void RaiseEvent(T value)
+        {
+            OnEventRaised?.Invoke(value);
+        }
     }
 }

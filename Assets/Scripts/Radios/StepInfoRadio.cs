@@ -1,24 +1,28 @@
 ﻿using System;
+using DroneAssembly.Radios.GeneralRadios;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Event/StepInfoUpdate")]
-public class StepInfoRadio : GeneralRadio<StepInfoData>
+namespace DroneAssembly.Radios
 {
-}
-
-[Serializable]
-public struct StepInfoData
-{
-    public string info;
-    public string progress;
-    public int stepIndex;
-    public int totalSteps;
-
-    public StepInfoData(string info, string progress, int stepIndex, int totalSteps)
+    [CreateAssetMenu(menuName = "Event/StepInfoUpdate")]
+    public class StepInfoRadio : GeneralRadio<StepInfoData>
     {
-        this.info = info;
-        this.progress = progress;
-        this.stepIndex = stepIndex;
-        this.totalSteps = totalSteps;
+    }
+
+    [Serializable]
+    public struct StepInfoData
+    {
+        public string info;
+        public string progress;
+        public int stepIndex;
+        public int totalSteps;
+
+        public StepInfoData(string info, string progress, int stepIndex, int totalSteps)
+        {
+            this.info = info;
+            this.progress = progress;
+            this.stepIndex = stepIndex;
+            this.totalSteps = totalSteps;
+        }
     }
 }

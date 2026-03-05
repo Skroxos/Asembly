@@ -1,24 +1,28 @@
-﻿using UnityEngine;
+﻿using DroneAssembly.Radios;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadingScreenUI : MonoBehaviour
+namespace DroneAssembly.Scene
 {
-    [SerializeField] private LoadingProgressRadio loadingProgressRadio;
-    [SerializeField] private Slider progressSlider;
-
-    private void OnEnable()
+    public class LoadingScreenUI : MonoBehaviour
     {
-        loadingProgressRadio.OnEventRaised += UpdateProgress;
-    }
+        [SerializeField] private LoadingProgressRadio loadingProgressRadio;
+        [SerializeField] private Slider progressSlider;
 
-    private void OnDisable()
-    {
-        loadingProgressRadio.OnEventRaised -= UpdateProgress;
-    }
+        private void OnEnable()
+        {
+            loadingProgressRadio.OnEventRaised += UpdateProgress;
+        }
 
-    private void UpdateProgress(float obj)
-    {
-        progressSlider.gameObject.SetActive(true);
-        progressSlider.value = obj;
+        private void OnDisable()
+        {
+            loadingProgressRadio.OnEventRaised -= UpdateProgress;
+        }
+
+        private void UpdateProgress(float obj)
+        {
+            progressSlider.gameObject.SetActive(true);
+            progressSlider.value = obj;
+        }
     }
 }

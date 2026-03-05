@@ -1,39 +1,45 @@
-﻿using UnityEngine;
+﻿using DroneAssembly.Radios;
+using DroneAssembly.Radios.GeneralRadios;
+using DroneAssembly.Socket;
+using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-public class CarryComponent : MonoBehaviour
+namespace DroneAssembly.CarrySystem
 {
-    public Vector3 HoldPosition = new(0, 0, 1.5f);
-    public Quaternion HoldRotation = Quaternion.identity;
-    [SerializeField] private PickUpRadio pickupRadioSO;
-    [SerializeField] private SimpleEventRadio dropRadioSO;
-
-
-    public bool IsPickedUp;
-    private Collider _collider;
-    private Rigidbody _rigidbody;
-
-
-    private void Awake()
+    [RequireComponent(typeof(Rigidbody))]
+    public class CarryComponent : MonoBehaviour
     {
-        _rigidbody = GetComponent<Rigidbody>();
-        _collider = GetComponent<Collider>();
-    }
+        public Vector3 HoldPosition = new(0, 0, 1.5f);
+        public Quaternion HoldRotation = Quaternion.identity;
+        [SerializeField] private PickUpRadio pickupRadioSO;
+        [SerializeField] private SimpleEventRadio dropRadioSO;
 
-    public void OnPickedUp()
-    {
-        IsPickedUp = true;
-        if (_rigidbody != null) _rigidbody.isKinematic = true;
 
-        if (_collider != null) _collider.isTrigger = true;
-        pickupRadioSO.RaiseEvent(GetComponent<AsemblyPart>());
-    }
+        public bool IsPickedUp;
+        private Collider _collider;
+        private Rigidbody _rigidbody;
 
-    public void OnDropped()
-    {
-        IsPickedUp = false;
-        _rigidbody.isKinematic = false;
-        _collider.isTrigger = false;
-        dropRadioSO.RaiseEvent();
+
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody>();
+            _collider = GetComponent<Collider>();
+        }
+
+        public void OnPickedUp()
+        {
+            IsPickedUp = true;
+            if (_rigidbody != null) _rigidbody.isKinematic = true;
+
+            if (_collider != null) _collider.isTrigger = true;
+            pickupRadioSO.RaiseEvent(GetComponent<AsemblyPart>());
+        }
+
+        public void OnDropped()
+        {
+            IsPickedUp = false;
+            _rigidbody.isKinematic = false;
+            _collider.isTrigger = false;
+            dropRadioSO.RaiseEvent();
+        }
     }
 }

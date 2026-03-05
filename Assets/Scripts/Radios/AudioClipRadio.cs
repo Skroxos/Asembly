@@ -1,6 +1,11 @@
-﻿using UnityEngine;
+﻿using DroneAssembly.Audio;
+using DroneAssembly.Radios.GeneralRadios;
+using UnityEngine;
 
-[CreateAssetMenu(menuName = "Event/AudioClipRadio")]
-public class AudioClipRadio : GeneralRadio<AudioConfig>
+namespace DroneAssembly.Radios
 {
+    [CreateAssetMenu(menuName = "Event/AudioClipRadio")]
+    public class AudioClipRadio : GeneralRadio<AudioConfig>
+    {
+    }
 }

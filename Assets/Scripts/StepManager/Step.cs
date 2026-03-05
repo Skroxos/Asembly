@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[Serializable]
-public class Step
+namespace DroneAssembly.StepManager
 {
-    [TextArea] public string description;
-
-    public List<StepRequirement> requiredParts;
-
-    public bool IsCompleted()
+    [Serializable]
+    public class Step
     {
-        return requiredParts.All(req => req.IsComplete);
+        [TextArea] public string description;
+
+        public List<StepRequirement> requiredParts;
+
+        public bool IsCompleted()
+        {
+            return requiredParts.All(req => req.IsComplete);
+        }
     }
 }

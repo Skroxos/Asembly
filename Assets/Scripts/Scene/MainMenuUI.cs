@@ -1,17 +1,21 @@
-﻿using UnityEngine;
+﻿using DroneAssembly.Radios;
+using UnityEngine;
 
-public class MainMenuUI : MonoBehaviour
+namespace DroneAssembly.Scene
 {
-    [SerializeField] private SceneDataSO gameplaySceneData;
-    [SerializeField] private SceneTransitionRadio sceneTransitionRadio;
-
-    public void OnPlayButtonClicked()
+    public class MainMenuUI : MonoBehaviour
     {
-        sceneTransitionRadio.RaiseEvent(gameplaySceneData);
-    }
+        [SerializeField] private SceneDataSO gameplaySceneData;
+        [SerializeField] private SceneTransitionRadio sceneTransitionRadio;
 
-    public void OnQuitButtonClicked()
-    {
-        Application.Quit();
+        public void OnPlayButtonClicked()
+        {
+            sceneTransitionRadio.RaiseEvent(gameplaySceneData);
+        }
+
+        public void OnQuitButtonClicked()
+        {
+            Application.Quit();
+        }
     }
 }

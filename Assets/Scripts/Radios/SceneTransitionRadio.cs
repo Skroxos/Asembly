@@ -1,6 +1,11 @@
-﻿using UnityEngine;
+﻿using DroneAssembly.Radios.GeneralRadios;
+using DroneAssembly.Scene;
+using UnityEngine;
 
-[CreateAssetMenu(menuName = "Event/SceneTransitionRadio")]
-public class SceneTransitionRadio : GeneralRadio<SceneDataSO>
+namespace DroneAssembly.Radios
 {
+    [CreateAssetMenu(menuName = "Event/SceneTransitionRadio")]
+    public class SceneTransitionRadio : GeneralRadio<SceneDataSO>
+    {
+    }
 }
