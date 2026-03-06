@@ -7768,6 +7768,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6786607025248575955, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
   m_PrefabInstance: {fileID: 1669263863}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1676251313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1676251315}
+  - component: {fileID: 1676251314}
+  m_Layer: 0
+  m_Name: DataBaseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1676251314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676251313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0111240457d1e414f8d08b48f0b8a3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.DataBase.DataBaseManager
+--- !u!4 &1676251315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676251313}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.86203, y: 1.79136, z: 16.73773}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1677961656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d9d36b07cb247824b9754cea3e7d6819, type: 3}
@@ -10783,3 +10827,4 @@ SceneRoots:
   - {fileID: 313485604}
   - {fileID: 1419165353}
   - {fileID: 434249738}
+  - {fileID: 1676251315}
