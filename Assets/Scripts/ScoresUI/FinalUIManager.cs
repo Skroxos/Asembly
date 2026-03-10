@@ -17,16 +17,17 @@ namespace DroneAssembly.ScoresUI
         [SerializeField] private TMP_InputField inputField;
 
         private float _time;
+
         private void OnEnable()
         {
             finishRadio.OnRaised += ShowFinalUI;
         }
 
-
         private void OnDisable()
         {
             finishRadio.OnRaised -= ShowFinalUI;
         }
+
         private void ShowFinalUI()
         {
             leaderboardUI.SetActive(false);
@@ -38,24 +39,23 @@ namespace DroneAssembly.ScoresUI
     
         public void OnClickedSubmit()
         {  
-            
             string playerName = inputField.text.Trim();
             if (string.IsNullOrWhiteSpace(playerName))
             {
-                Debug.LogWarning("Jméno hráče nesmí být prázdné.");
+                Debug.LogWarning("Player name cannot be empty.");
                 return;
             }
+
             leaderboardAPI.SavePlayerScore(playerName, _time, (success, message) =>
             {
                 if (success)
                 {
-                    Debug.Log("Skóre úspěšně odesláno!");
                     inputFieldUI.SetActive(false);
                     ShowLeaderboard();
                 }
                 else
                 {
-                    Debug.LogError("Chyba při odesílání skóre: " + message);
+                    Debug.LogError("Error submitting score: " + message);
                 }
             });
         }
@@ -70,7 +70,8 @@ namespace DroneAssembly.ScoresUI
         {
             leaderboardPanel.SetActive(true);
             leaderboardUI.SetActive(true);
-            leaderboardAPI.GetTop10((success, data, message ) =>
+
+            leaderboardAPI.GetTop10((success, data, message) =>
             {
                 if (success)
                 {
@@ -84,11 +85,9 @@ namespace DroneAssembly.ScoresUI
                 }
                 else
                 {
-                    Debug.LogError("Chyba při načítání žebříčku: " + message);
+                    Debug.LogError("Error loading leaderboard: " + message);
                 }
             });
         }
     }
-    
-   
 }

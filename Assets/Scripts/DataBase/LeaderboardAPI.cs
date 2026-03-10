@@ -9,9 +9,9 @@ namespace DroneAssembly.DataBase
 {
     public class LeaderboardAPI : MonoBehaviour
     {
-      
         private string _saveScoreURL => Secrets.Secret.SaveScoreURL;
         private string _secretKey => Secrets.Secret.SecretKey;
+        private string _getTop10URL => Secrets.Secret.GetTopScoresURL;
 
         public void SavePlayerScore(string playerName, float time, Action<bool, string> onComplete = null)
         {
@@ -20,9 +20,7 @@ namespace DroneAssembly.DataBase
 
         private IEnumerator SendScoreToServer(string playerName, float time, Action<bool, string> onComplete)
         {
-           
             string timeString = time.ToString("F2");
-            
             string hash = GenerateSHA256(playerName + timeString + _secretKey);
 
             WWWForm form = new WWWForm();
@@ -36,23 +34,55 @@ namespace DroneAssembly.DataBase
                 
                 if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
                 {
-                    onComplete?.Invoke(false, "Chyba připojení k serveru: " + www.error);
+                    onComplete?.Invoke(false, "Server connection error: " + www.error);
                 }
                 else
                 {
                     string responseText = www.downloadHandler.text.Trim();
                     if (responseText == "Success")
                     {
-                        onComplete?.Invoke(true, "Skóre bylo úspěšně uloženo!");
+                        onComplete?.Invoke(true, "Score saved successfully!");
                     }
                     else
                     {
-                        onComplete?.Invoke(false, "Odpověď serveru: " + responseText);
+                        onComplete?.Invoke(false, "Server response: " + responseText);
                     }
                 }
             }
         }
         
+        public void GetTop10(Action<bool, LeaderboardData, string> onComplete = null)
+        {
+            StartCoroutine(DownloadTop10FromServer(onComplete));
+        }
+
+        private IEnumerator DownloadTop10FromServer(Action<bool, LeaderboardData, string> onComplete)
+        {
+            using (UnityWebRequest www = UnityWebRequest.Get(_getTop10URL))
+            {
+                yield return www.SendWebRequest();
+                
+                if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+                {
+                    onComplete?.Invoke(false, default, "Server connection error: " + www.error);
+                }
+                else
+                {
+                    string jsonResponse = www.downloadHandler.text.Trim();
+                    
+                    if (jsonResponse.Contains("error") || !jsonResponse.Contains("top10"))
+                    {
+                        onComplete?.Invoke(false, default, "Server error: " + jsonResponse);
+                    }
+                    else
+                    {
+                        LeaderboardData data = JsonUtility.FromJson<LeaderboardData>(jsonResponse);
+                        onComplete?.Invoke(true, data, "Leaderboard downloaded successfully!");
+                    }
+                }
+            }
+        }
+
         private string GenerateSHA256(string input)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -69,74 +99,42 @@ namespace DroneAssembly.DataBase
             }
         }
         
-        private string getTop10URL => Secrets.Secret.GetTopScoresURL;
-
-        public void GetTop10(Action<bool, LeaderboardData, string> onComplete = null)
-        {
-            StartCoroutine(DownloadTop10FromServer(onComplete));
-        }
-
-        private IEnumerator DownloadTop10FromServer(Action<bool, LeaderboardData, string> onComplete)
-        {
-            using (UnityWebRequest www = UnityWebRequest.Get(getTop10URL))
-            {
-                yield return www.SendWebRequest();
-                
-                if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
-                {
-                    onComplete?.Invoke(false, default, "Chyba připojení k serveru: " + www.error);
-                }
-                else
-                {
-                    string jsonResponse = www.downloadHandler.text.Trim();
-                    
-                    if (jsonResponse.Contains("error") || !jsonResponse.Contains("top10"))
-                    {
-                        onComplete?.Invoke(false, default, "Chyba serveru: " + jsonResponse);
-                    }
-                    else
-                    {
-                        LeaderboardData data = JsonUtility.FromJson<LeaderboardData>(jsonResponse);
-                        onComplete?.Invoke(true, data, "Žebříček úspěšně stažen!");
-                    }
-                }
-            }
-        }
-        
-        [ContextMenu("Test Odeslání Skóre")]
+#if UNITY_EDITOR
+        [ContextMenu("Test Score Submission")]
         private void TestSave()
         {
-            SavePlayerScore("Karel_Tester", 42.5f, (uspech, zprava) => 
+            SavePlayerScore("Test_Player", 42.5f, (success, message) => 
             {
-                if (uspech) {
-                    Debug.Log("<color=green>" + zprava + "</color>");
+                if (success) {
+                    Debug.Log("<color=green>" + message + "</color>");
                 } else {
-                    Debug.LogError("<color=red>" + zprava + "</color>");
+                    Debug.LogError("<color=red>" + message + "</color>");
                 }
             });
         }
-        [ContextMenu("Test Stažení Top 10")]
+
+        [ContextMenu("Test Download Top 10")]
         private void TestDownload()
         {   
-            GetTop10((uspech, naseData, zprava) => 
+            GetTop10((success, data, message) => 
             {
-                if (uspech) 
+                if (success) 
                 {
-                    Debug.Log("<color=green>" + zprava + "</color>");
+                    Debug.Log("<color=green>" + message + "</color>");
                     
-                    int pozice = 1;
-                    foreach (PlayerScore hrac in naseData.top10)
+                    int rank = 1;
+                    foreach (PlayerScore player in data.top10)
                     {
-                        Debug.Log($"<b>{pozice}. místo:</b> {hrac.player_name} | Čas: {hrac.completion_time} s");
-                        pozice++;
+                        Debug.Log($"<b>Rank {rank}:</b> {player.player_name} | Time: {player.completion_time} s");
+                        rank++;
                     }
                 } 
                 else 
                 {
-                    Debug.LogError("<color=red>" + zprava + "</color>");
+                    Debug.LogError("<color=red>" + message + "</color>");
                 }
             });
         }
-        
+#endif
     }
 }
