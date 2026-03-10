@@ -2,6 +2,7 @@ using DroneAssembly.DataBase;
 using DroneAssembly.Radios.GeneralRadios;
 using TMPro;
 using UnityEngine;
+using System.Globalization;
 
 namespace DroneAssembly.ScoresUI
 {
@@ -79,7 +80,7 @@ namespace DroneAssembly.ScoresUI
                     {
                         GameObject entry = Instantiate(prefabLeaderboardDisplayElement, leaderboardUI.transform);
                         TextMeshProUGUI entryText = entry.GetComponentInChildren<TextMeshProUGUI>();
-                        entryText.text = $"{score.player_name}: {score.completion_time:F2} s";
+                        entryText.text = $"{score.player_name}: {score.completion_time.ToString("F2", CultureInfo.InvariantCulture)} s";
                     }
                     playerTimeText.text = _time.ToString("F2") + " s";
                 }

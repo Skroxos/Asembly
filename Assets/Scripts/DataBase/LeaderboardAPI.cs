@@ -5,6 +5,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 using DroneAssembly.DataBase.Models;
+using System.Globalization;
 
 namespace DroneAssembly.DataBase
 {
@@ -21,7 +22,7 @@ namespace DroneAssembly.DataBase
 
         private IEnumerator SendScoreToServer(string playerName, float time, Action<bool, string> onComplete)
         {
-            string timeString = time.ToString("F2");
+            string timeString = time.ToString("F2", CultureInfo.InvariantCulture);
             string hash = GenerateSHA256(playerName + timeString + _secretKey);
 
             WWWForm form = new WWWForm();
