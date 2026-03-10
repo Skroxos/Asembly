@@ -8,7 +8,7 @@ namespace DroneAssembly.GameManager
     {
         [SerializeField] private InputReader _inputReader;
         [SerializeField] private GameObject _menuUI;
-        [SerializeField] private SimpleEventRadio onFinishRadio;
+        [SerializeField] private SimpleEventRadio _onFinishRadio;
 
         private void Start()
         {
@@ -18,14 +18,14 @@ namespace DroneAssembly.GameManager
         private void OnEnable()
         {
             _inputReader.MenuToggleEvent += ToggleMenuUI;
-                onFinishRadio.OnRaised += ToggleControls;
+                _onFinishRadio.OnRaised += ToggleControls;
         }
 
 
         private void OnDisable()
         {
             _inputReader.MenuToggleEvent -= ToggleMenuUI;
-            onFinishRadio.OnRaised -= ToggleControls;
+            _onFinishRadio.OnRaised -= ToggleControls;
         }
 
         private void ToggleControls()

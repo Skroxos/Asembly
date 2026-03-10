@@ -6686,6 +6686,7 @@ MonoBehaviour:
   flightDuration: 10
   droneFinisherRadio: {fileID: 11400000, guid: 36db305920e6e2242a216c4edb74c390, type: 2}
   finishRadio: {fileID: 11400000, guid: 3b7194dd986f3c943b2264866e52d85f, type: 2}
+  onFinishRadio: {fileID: 11400000, guid: 579c1e284f2ee9441a583ad89cf0cc18, type: 2}
 --- !u!4 &1419165353
 Transform:
   m_ObjectHideFlags: 0
@@ -8579,7 +8580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _inputReader: {fileID: 11400000, guid: fcd89501bea654c4baf5088034b7acfe, type: 2}
   _menuUI: {fileID: 1013513528}
-  onFinishRadio: {fileID: 11400000, guid: 3b7194dd986f3c943b2264866e52d85f, type: 2}
+  _onFinishRadio: {fileID: 11400000, guid: 3b7194dd986f3c943b2264866e52d85f, type: 2}
 --- !u!4 &1863013658
 Transform:
   m_ObjectHideFlags: 0

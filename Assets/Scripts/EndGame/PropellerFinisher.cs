@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using DroneAssembly.Radios.GeneralRadios;
 using UnityEngine;
 
 namespace DroneAssembly.EndGame
@@ -8,15 +9,16 @@ namespace DroneAssembly.EndGame
         [SerializeField] private Transform propellerRoot;
         [SerializeField] private float spinDuration = 5f;
         [SerializeField] private float spinSpeed = 360f;
+        [SerializeField] private SimpleEventRadio onFinishRadio;
 
         private void OnEnable()
         {
-            DroneFinisher.OnFinish += Spin;
+            onFinishRadio.OnRaised += Spin;
         }
    
         private void OnDisable()
         {
-            DroneFinisher.OnFinish -= Spin;
+            onFinishRadio.OnRaised -= Spin;
         }
     
         private void Spin()

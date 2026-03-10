@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
+using DroneAssembly.DataBase.Models;
 
 namespace DroneAssembly.DataBase
 {
