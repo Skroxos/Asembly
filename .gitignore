@@ -5,7 +5,7 @@
 .utmp/
 /[Ll]ibrary/
 /[Aa]ssets/**/Secret.cs
-/[Aa]ssets/**/Secret.meta
+/[Aa]ssets/**/Secret.cs.meta
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
