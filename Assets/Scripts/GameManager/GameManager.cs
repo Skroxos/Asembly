@@ -1,4 +1,5 @@
 using DroneAssembly.Player.Input;
+using DroneAssembly.Radios.GeneralRadios;
 using UnityEngine;
 
 namespace DroneAssembly.GameManager
@@ -7,6 +8,7 @@ namespace DroneAssembly.GameManager
     {
         [SerializeField] private InputReader _inputReader;
         [SerializeField] private GameObject _menuUI;
+        [SerializeField] private SimpleEventRadio onFinishRadio;
 
         private void Start()
         {
@@ -16,12 +18,20 @@ namespace DroneAssembly.GameManager
         private void OnEnable()
         {
             _inputReader.MenuToggleEvent += ToggleMenuUI;
+                onFinishRadio.OnRaised += ToggleControls;
         }
 
 
         private void OnDisable()
         {
             _inputReader.MenuToggleEvent -= ToggleMenuUI;
+            onFinishRadio.OnRaised -= ToggleControls;
+        }
+
+        private void ToggleControls()
+        {
+            _inputReader.DisableAllInput();
+            
         }
 
         private void ToggleMenuUI()

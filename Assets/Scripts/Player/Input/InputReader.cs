@@ -8,6 +8,17 @@ namespace DroneAssembly.Player.Input
     public class InputReader : ScriptableObject, MyActions.ICoreActions, MyActions.IInteractionsActions,
         MyActions.IOtherActions, MyActions.IUIActions
     {
+        public event Action<Vector3> MoveEvent;
+        public event Action<Vector2> LookEvent;
+        public event Action RotateButtonStartedEvent;
+        public event Action RotateButtonCanceledEvent;
+        public event Action<Vector2> MouseDeltaEvent;
+        public event Action<Vector2> MoveItemEvent;
+
+        public event Action MenuToggleEvent;
+
+        public event Action InteractEvent;
+        
         private MyActions _inputActions;
 
         private void OnEnable()
@@ -81,16 +92,6 @@ namespace DroneAssembly.Player.Input
             MenuToggleEvent?.Invoke();
         }
 
-        public event Action<Vector3> MoveEvent;
-        public event Action<Vector2> LookEvent;
-        public event Action RotateButtonStartedEvent;
-        public event Action RotateButtonCanceledEvent;
-        public event Action<Vector2> MouseDeltaEvent;
-        public event Action<Vector2> MoveItemEvent;
-
-        public event Action MenuToggleEvent;
-
-        public event Action InteractEvent;
 
         private void EnableRotationMode()
         {
@@ -116,6 +117,14 @@ namespace DroneAssembly.Player.Input
             _inputActions.Core.Disable();
             _inputActions.Interactions.Disable();
             _inputActions.Other.Disable();
+        }
+        
+        public void DisableAllInput()
+        {
+            _inputActions.Core.Disable();
+            _inputActions.Interactions.Disable();
+            _inputActions.Other.Disable();
+            _inputActions.UI.Disable();
         }
     }
 }

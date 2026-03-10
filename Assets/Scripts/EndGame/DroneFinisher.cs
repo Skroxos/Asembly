@@ -13,7 +13,9 @@ namespace DroneAssembly.EndGame
       [SerializeField] private float flightHeight = 10f;
       [SerializeField] private float flightDuration = 5f;
       [SerializeField] private SimpleEventRadio droneFinisherRadio;
+      [SerializeField] private SimpleEventRadio finishRadio;
    
+      public static event Action OnFinish;
       private void OnEnable()
       {
          droneFinisherRadio.OnRaised += Finish;
@@ -23,7 +25,6 @@ namespace DroneAssembly.EndGame
       {
          droneFinisherRadio.OnRaised -= Finish;
       }
-      public static event Action OnFinish;
    
       private void Finish()
       {
@@ -40,6 +41,8 @@ namespace DroneAssembly.EndGame
             .SetEase(Ease.InQuad); 
     
          droneRoot.DORotate(new Vector3(15, 0, 0), flightDuration * 0.5f);
+         yield return new WaitForSeconds(flightDuration);
+         finishRadio.RaiseEvent();
       }
    }
 }
