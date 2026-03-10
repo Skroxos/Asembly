@@ -130,6 +130,7 @@ MonoBehaviour:
   propellerRoot: {fileID: 8824804018578192518}
   spinDuration: 1
   spinSpeed: 1440
+  onFinishRadio: {fileID: 11400000, guid: 579c1e284f2ee9441a583ad89cf0cc18, type: 2}
 --- !u!1 &8596322675242180734
 GameObject:
   m_ObjectHideFlags: 0

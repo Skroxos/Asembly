@@ -1,3 +1,7 @@
+
+namespace DroneAssembly.DataBase.Models
+{
+    
 [System.Serializable]
 public struct PlayerScore
 {
@@ -9,4 +13,5 @@ public struct PlayerScore
 public struct LeaderboardData
 {
     public PlayerScore[] top10;
+}
 }

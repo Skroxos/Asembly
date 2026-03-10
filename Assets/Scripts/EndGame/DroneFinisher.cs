@@ -14,8 +14,8 @@ namespace DroneAssembly.EndGame
       [SerializeField] private float flightDuration = 5f;
       [SerializeField] private SimpleEventRadio droneFinisherRadio;
       [SerializeField] private SimpleEventRadio finishRadio;
-   
-      public static event Action OnFinish;
+      [SerializeField] private SimpleEventRadio onFinishRadio;
+      
       private void OnEnable()
       {
          droneFinisherRadio.OnRaised += Finish;
@@ -34,7 +34,7 @@ namespace DroneAssembly.EndGame
    
       private IEnumerator FinishSequence()
       {
-         OnFinish?.Invoke();
+         onFinishRadio.RaiseEvent();
          yield return new WaitForSeconds(warmUpDuration);
       
          droneRoot.DOMoveY(droneRoot.position.y + flightHeight, flightDuration)
