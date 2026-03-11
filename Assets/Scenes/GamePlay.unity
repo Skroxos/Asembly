@@ -788,6 +788,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4218295305623094347, guid: 99a7c3d64cbf6194abc4d25b923e2a3d, type: 3}
+--- !u!81 &185055051 stripped
+AudioListener:
+  m_CorrespondingSourceObject: {fileID: 1801550223027954773, guid: 165da1fd5a0b58542897f87e4e6c1f67, type: 3}
+  m_PrefabInstance: {fileID: 613469569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &192553073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3268,14 +3273,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4140317761879191399, guid: 165da1fd5a0b58542897f87e4e6c1f67, type: 3}
-      propertyPath: pickUpSound
-      value: 
-      objectReference: {fileID: 11400000, guid: 22e9022159c07f040acd052a139846e7, type: 2}
-    - target: {fileID: 4140317761879191399, guid: 165da1fd5a0b58542897f87e4e6c1f67, type: 3}
-      propertyPath: audioClipRadio
-      value: 
-      objectReference: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
     - target: {fileID: 4204279720203127310, guid: 165da1fd5a0b58542897f87e4e6c1f67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.845
@@ -3793,6 +3790,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -134.95999
       objectReference: {fileID: 0}
+    - target: {fileID: 461519893141570040, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595362176049513970, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3875594309066865983, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -3801,6 +3806,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4914799099233462818, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
+      propertyPath: audioListener
+      value: 
+      objectReference: {fileID: 185055051}
     - target: {fileID: 5351465503600472083, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
       propertyPath: leaderboardAPI
       value: 
@@ -3907,6 +3916,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5511609868706834186, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913917503597351114, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111358146611555740, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503380223848222551, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
