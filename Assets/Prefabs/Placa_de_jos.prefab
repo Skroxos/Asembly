@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
+  ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
 --- !u!1 &1355413417733736509
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
+  ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
 --- !u!1 &3953787345430788698
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
+  ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
 --- !u!1 &4983075897201774327
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
+  ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
 --- !u!1 &6411092961771952599
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
+  ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
 --- !u!1 &8293202438322615963
 GameObject:
   m_ObjectHideFlags: 0

@@ -201,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
+  ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
 --- !u!114 &7753959880419403467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
+  ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
 --- !u!114 &8064494271830486179
 MonoBehaviour:
   m_ObjectHideFlags: 0

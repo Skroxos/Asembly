@@ -9,6 +9,8 @@ namespace DroneAssembly.Socket
     {
         [SerializeField] private PickUpRadio pickUpRadioSO;
         [SerializeField] private SimpleEventRadio dropRadioSO;
+        [SerializeField] private GhostPreviewConfig ghostPreviewConfig;
+        
         private AsemblyPart currentPart;
         private GhostPreviewManager ghostPreviewManager;
 
@@ -18,7 +20,7 @@ namespace DroneAssembly.Socket
         private void Awake()
         {
             socketController = GetComponent<SocketController>();
-            ghostPreviewManager = new GhostPreviewManager();
+            ghostPreviewManager = new GhostPreviewManager(ghostPreviewConfig.defaultMat, ghostPreviewConfig.validMat);
             snapPoint = transform;
         }
 
