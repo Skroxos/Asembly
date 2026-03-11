@@ -18,6 +18,7 @@ namespace DroneAssembly.ScoresUI
         [SerializeField] private TMP_InputField inputField;
 
         private float _time;
+        private bool _isSubmitting;
 
         private void OnEnable()
         {
@@ -40,13 +41,14 @@ namespace DroneAssembly.ScoresUI
     
         public void OnClickedSubmit()
         {  
+            if (_isSubmitting) return;
             string playerName = inputField.text.Trim();
             if (string.IsNullOrWhiteSpace(playerName))
             {
                 Debug.LogWarning("Player name cannot be empty.");
                 return;
             }
-
+            _isSubmitting = true;
             leaderboardAPI.SavePlayerScore(playerName, _time, (success, message) =>
             {
                 if (success)
@@ -56,6 +58,7 @@ namespace DroneAssembly.ScoresUI
                 }
                 else
                 {
+                    _isSubmitting = false;
                     Debug.LogError("Error submitting score: " + message);
                 }
             });

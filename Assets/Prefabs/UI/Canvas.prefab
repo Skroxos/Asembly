@@ -4938,6 +4938,10 @@ PrefabInstance:
       value: 67.28967
       objectReference: {fileID: 0}
     - target: {fileID: 4593393852350802802, guid: c269f36c3bc4ee847a9b96bbd6454965, type: 3}
+      propertyPath: m_margin.z
+      value: -22.194092
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593393852350802802, guid: c269f36c3bc4ee847a9b96bbd6454965, type: 3}
       propertyPath: m_VerticalAlignment
       value: 256
       objectReference: {fileID: 0}
@@ -4963,7 +4967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6669327009011259821, guid: c269f36c3bc4ee847a9b96bbd6454965, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 75
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 7571747943907204395, guid: c269f36c3bc4ee847a9b96bbd6454965, type: 3}
       propertyPath: m_VerticalAlignment
