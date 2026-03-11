@@ -15,6 +15,7 @@ namespace DroneAssembly.EndGame
       [SerializeField] private SimpleEventRadio droneFinisherRadio;
       [SerializeField] private SimpleEventRadio finishRadio;
       [SerializeField] private SimpleEventRadio onFinishRadio;
+      [SerializeField] private AudioSource audioSource;
       
       private void OnEnable()
       {
@@ -34,6 +35,7 @@ namespace DroneAssembly.EndGame
    
       private IEnumerator FinishSequence()
       {
+         audioSource.Play();
          onFinishRadio.RaiseEvent();
          yield return new WaitForSeconds(warmUpDuration);
       

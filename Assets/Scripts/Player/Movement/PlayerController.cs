@@ -8,12 +8,11 @@ namespace DroneAssembly.Player.Movement
         [SerializeField] private CharacterController controller;
         [SerializeField] private Camera playerCamera;
         [SerializeField] private InputReader inputReader;
-        [SerializeField] private float verticalLookLimit = 80f;
-        [SerializeField] private float speed = 5f;
-        [SerializeField] private float mouseSensitivity = 360f;
+        [SerializeField] private PlayerConfig playerConfig;
         private Vector3 _moveDirection;
 
         private float _xRotation;
+        
 
         private void Start()
         {
@@ -49,12 +48,12 @@ namespace DroneAssembly.Player.Movement
 
         private void HandleLook(Vector2 lookInput)
         {
-            var mouseX = lookInput.x * mouseSensitivity * Time.deltaTime;
-            var mouseY = lookInput.y * mouseSensitivity * Time.deltaTime;
+            var mouseX = lookInput.x * playerConfig.MouseSensitivity * Time.deltaTime;
+            var mouseY = lookInput.y * playerConfig.MouseSensitivity * Time.deltaTime;
 
 
             _xRotation -= mouseY;
-            _xRotation = Mathf.Clamp(_xRotation, -verticalLookLimit, verticalLookLimit);
+            _xRotation = Mathf.Clamp(_xRotation, -playerConfig.VerticalLookLimit, playerConfig.VerticalLookLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
 
 
@@ -75,7 +74,7 @@ namespace DroneAssembly.Player.Movement
 
             moveDirection.y = _moveDirection.y;
 
-            controller.Move(moveDirection * speed * Time.deltaTime);
+            controller.Move(moveDirection * (playerConfig.Speed * Time.deltaTime));
         }
         
     }

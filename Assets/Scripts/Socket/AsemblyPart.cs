@@ -26,6 +26,8 @@ namespace DroneAssembly.Socket
             if (_carryComponent != null && _carryComponent.IsPickedUp) return;
             _rigidBody.isKinematic = true;
             _collider.enabled = false;
+            // could make a serialized field for the layer to set to, but for now just hardcoding it
+            gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             transform.SetParent(snapPoint);
             transform.DOLocalMove(Vector3.zero, 0.3f).SetEase(Ease.OutBack);
             transform.DOLocalRotateQuaternion(Quaternion.identity, 0.3f);

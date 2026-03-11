@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SocketGhostVisuals
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
-  dropRadioSO: {fileID: 0}
+  dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
 --- !u!114 &4508276904370885627
 MonoBehaviour:
   m_ObjectHideFlags: 0

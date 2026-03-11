@@ -76,9 +76,7 @@ MonoBehaviour:
   controller: {fileID: 8410257325452350227}
   playerCamera: {fileID: 4913423393427744287}
   inputReader: {fileID: 11400000, guid: fcd89501bea654c4baf5088034b7acfe, type: 2}
-  verticalLookLimit: 80
-  speed: 2.5
-  mouseSensitivity: 5
+  playerConfig: {fileID: 11400000, guid: fb3306985fd2b7248a68d414047692d7, type: 2}
 --- !u!114 &4140317761879191399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,10 +91,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CarrySystem
   holdPoint: {fileID: 8242195148063853768}
   playerCamera: {fileID: 4913423393427744287}
+  inputReader: {fileID: 11400000, guid: fcd89501bea654c4baf5088034b7acfe, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  pickUpSound: {fileID: 11400000, guid: 22e9022159c07f040acd052a139846e7, type: 2}
   distanceStep: 0.01
   minHoldDistance: -0.8
   maxHoldDistance: 0.8
-  inputReader: {fileID: 11400000, guid: fcd89501bea654c4baf5088034b7acfe, type: 2}
+  rotationSpeed: 0.5
+  pickUpDistance: 3
 --- !u!1 &4577458091858423566
 GameObject:
   m_ObjectHideFlags: 0

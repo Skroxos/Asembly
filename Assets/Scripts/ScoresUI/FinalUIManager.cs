@@ -1,8 +1,8 @@
+using System;
 using DroneAssembly.DataBase;
 using DroneAssembly.Radios.GeneralRadios;
 using TMPro;
 using UnityEngine;
-using System.Globalization;
 
 namespace DroneAssembly.ScoresUI
 {
@@ -18,6 +18,7 @@ namespace DroneAssembly.ScoresUI
         [SerializeField] private TMP_InputField inputField;
 
         private float _time;
+        private bool _isSubmitting;
 
         private void OnEnable()
         {
@@ -40,13 +41,14 @@ namespace DroneAssembly.ScoresUI
     
         public void OnClickedSubmit()
         {  
+            if (_isSubmitting) return;
             string playerName = inputField.text.Trim();
             if (string.IsNullOrWhiteSpace(playerName))
             {
                 Debug.LogWarning("Player name cannot be empty.");
                 return;
             }
-
+            _isSubmitting = true;
             leaderboardAPI.SavePlayerScore(playerName, _time, (success, message) =>
             {
                 if (success)
@@ -56,6 +58,7 @@ namespace DroneAssembly.ScoresUI
                 }
                 else
                 {
+                    _isSubmitting = false;
                     Debug.LogError("Error submitting score: " + message);
                 }
             });
@@ -66,6 +69,11 @@ namespace DroneAssembly.ScoresUI
             inputFieldUI.SetActive(false);
             ShowLeaderboard();
         }
+     private string FormatTime(float totalSeconds)
+     {
+        TimeSpan timeSpan = TimeSpan.FromSeconds(totalSeconds);
+        return timeSpan.ToString(@"mm\:ss\.ff");
+     } 
         
         private void ShowLeaderboard()
         {
@@ -80,9 +88,9 @@ namespace DroneAssembly.ScoresUI
                     {
                         GameObject entry = Instantiate(prefabLeaderboardDisplayElement, leaderboardUI.transform);
                         TextMeshProUGUI entryText = entry.GetComponentInChildren<TextMeshProUGUI>();
-                        entryText.text = $"{score.player_name}: {score.completion_time.ToString("F2", CultureInfo.InvariantCulture)} s";
+                        entryText.text = $"{score.player_name}: {FormatTime(score.completion_time)}";
                     }
-                    playerTimeText.text = _time.ToString("F2") + " s";
+                    playerTimeText.text = FormatTime(_time);
                 }
                 else
                 {
