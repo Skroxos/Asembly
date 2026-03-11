@@ -1,8 +1,8 @@
+using System;
 using DroneAssembly.DataBase;
 using DroneAssembly.Radios.GeneralRadios;
 using TMPro;
 using UnityEngine;
-using System.Globalization;
 
 namespace DroneAssembly.ScoresUI
 {
@@ -66,6 +66,11 @@ namespace DroneAssembly.ScoresUI
             inputFieldUI.SetActive(false);
             ShowLeaderboard();
         }
+     private string FormatTime(float totalSeconds)
+     {
+        TimeSpan timeSpan = TimeSpan.FromSeconds(totalSeconds);
+        return timeSpan.ToString(@"mm\:ss\.ff");
+     } 
         
         private void ShowLeaderboard()
         {
@@ -80,9 +85,9 @@ namespace DroneAssembly.ScoresUI
                     {
                         GameObject entry = Instantiate(prefabLeaderboardDisplayElement, leaderboardUI.transform);
                         TextMeshProUGUI entryText = entry.GetComponentInChildren<TextMeshProUGUI>();
-                        entryText.text = $"{score.player_name}: {score.completion_time.ToString("F2", CultureInfo.InvariantCulture)} s";
+                        entryText.text = $"{score.player_name}: {FormatTime(score.completion_time)}";
                     }
-                    playerTimeText.text = _time.ToString("F2") + " s";
+                    playerTimeText.text = FormatTime(_time);
                 }
                 else
                 {
