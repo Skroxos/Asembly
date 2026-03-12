@@ -1,4 +1,5 @@
 using System;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,7 @@ namespace DroneAssembly.Player.Input
     {
         public event Action<Vector3> MoveEvent;
         public event Action<Vector2> LookEvent;
+        public event Action<bool> CrouchEvent;
         public event Action RotateButtonStartedEvent;
         public event Action RotateButtonCanceledEvent;
         public event Action<Vector2> MouseDeltaEvent;
@@ -54,6 +56,14 @@ namespace DroneAssembly.Player.Input
         public void OnLook(InputAction.CallbackContext context)
         {
             LookEvent?.Invoke(context.ReadValue<Vector2>());
+        }
+
+        public void OnCrouch(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                CrouchEvent?.Invoke(true); 
+            else if (context.canceled)
+                CrouchEvent?.Invoke(false);
         }
 
 

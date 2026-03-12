@@ -8,5 +8,8 @@ namespace DroneAssembly.Player.Movement
         public float Speed;
         public float MouseSensitivity;
         public float VerticalLookLimit;
+        public float CrouchHeight;
+        public float StandingHeight;
+        public float CrouchSpeed;
     }
 }

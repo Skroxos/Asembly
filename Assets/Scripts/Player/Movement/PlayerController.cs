@@ -12,11 +12,12 @@ namespace DroneAssembly.Player.Movement
         private Vector3 _moveDirection;
 
         private float _xRotation;
-        
+        private float _originalCameraHeight;
 
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
+            _originalCameraHeight = playerCamera.transform.localPosition.y;
         }
 
         private void Update()
@@ -28,13 +29,29 @@ namespace DroneAssembly.Player.Movement
         {
             inputReader.MoveEvent += OnMove;
             inputReader.LookEvent += OnLook;
+            inputReader.CrouchEvent += OnCrouch;
         }
+
 
         private void OnDisable()
         {
             inputReader.MoveEvent -= OnMove;
             inputReader.LookEvent -= OnLook;
+            inputReader.CrouchEvent -= OnCrouch;
         }
+        private void OnCrouch(bool isCrouching)
+        {
+            if (isCrouching)
+            {
+                PlayerHeightChange(playerConfig.CrouchHeight);
+                
+            }
+            else
+            {
+                PlayerHeightChange(playerConfig.StandingHeight);
+            }
+        }
+        
 
         private void OnLook(Vector2 obj)
         {
@@ -44,6 +61,18 @@ namespace DroneAssembly.Player.Movement
         private void OnMove(Vector3 obj)
         {
             _moveDirection = obj;
+        }
+        private void PlayerHeightChange(float targetHeight)
+        {
+            controller.height = targetHeight;
+
+            Vector3 center = controller.center;
+            center.y = controller.height / 2f;
+            controller.center = center;
+
+            Vector3 cameraPosition = playerCamera.transform.localPosition;
+            cameraPosition.y = _originalCameraHeight - (playerConfig.StandingHeight - targetHeight);
+            playerCamera.transform.localPosition = cameraPosition;
         }
 
         private void HandleLook(Vector2 lookInput)

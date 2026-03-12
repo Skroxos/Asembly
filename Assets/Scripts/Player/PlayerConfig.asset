@@ -15,3 +15,6 @@ MonoBehaviour:
   Speed: 2
   MouseSensitivity: 5
   VerticalLookLimit: 80
+  CrouchHeight: 1
+  StandingHeight: 2
+  CrouchSpeed: 2
