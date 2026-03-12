@@ -5,6 +5,9 @@
 [![Powered by Azure](https://img.shields.io/badge/Powered_by-Azure_SQL-0089D6?style=for-the-badge&logo=microsoft-azure)](https://azure.microsoft.com/)
 
 **Drone Assembly Simulator** je 3D simulátor vytvořený v Unity, kde si hráči mohou sestavit vlastního drona. Projekt obsahuje plně funkční cloudový backend s globálním online žebříčkem.
+<p align="center">
+  <img src="Media/SnapPartGif.gif" alt="Drone Assembly Gameplay" width="800"/>
+</p>
 
 ##  Hlavní funkce
 
