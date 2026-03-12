@@ -3837,7 +3837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2912356240576124200, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 49.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2915445388104807801, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
       propertyPath: m_IsActive
@@ -3858,6 +3858,14 @@ PrefabInstance:
     - target: {fileID: 3875594309066865983, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116672954796399076, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
+      propertyPath: m_margin.w
+      value: 7.9700317
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116672954796399076, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
+      propertyPath: m_margin.y
+      value: -12.977844
       objectReference: {fileID: 0}
     - target: {fileID: 4914799099233462818, guid: b0faff9c4d099bf4ba1baf07b6f3c41e, type: 3}
       propertyPath: audioListener
