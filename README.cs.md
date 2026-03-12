@@ -1,3 +1,5 @@
+*Tento text je k dispozici také v dalších jazycích: [English](README.md), [Čeština](README.cs.md).*
+
 #  Drone Assembly Simulator
 
 [![Download](https://img.shields.io/badge/Download-itch.io-FA5C5C?style=for-the-badge&logo=itch.io)](https://chroustek.itch.io/drone-assembly-simulator)
