@@ -9,9 +9,6 @@
   <img src="Media/SnapPartGif.gif" alt="Drone Assembly Gameplay" width="800"/>
 </p>
 
-
-![Detail skládání](Media/Drone_Ghost_preview.jpg)
-
 ##  Hlavní funkce
 
 * **Sestavování dronů:** Interaktivní skládání komponentů s přesným pozicováním.
