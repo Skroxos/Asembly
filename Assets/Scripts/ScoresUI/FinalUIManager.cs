@@ -3,6 +3,7 @@ using DroneAssembly.DataBase;
 using DroneAssembly.Radios.GeneralRadios;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DroneAssembly.ScoresUI
 {
@@ -16,10 +17,10 @@ namespace DroneAssembly.ScoresUI
         [SerializeField] private GameObject leaderboardPanel;
         [SerializeField] private TextMeshProUGUI playerTimeText;
         [SerializeField] private TMP_InputField inputField;
+        [SerializeField] private Button submitButton;
 
         private float _time;
-        private bool _isSubmitting;
-
+        
         private void OnEnable()
         {
             finishRadio.OnRaised += ShowFinalUI;
@@ -41,14 +42,13 @@ namespace DroneAssembly.ScoresUI
     
         public void OnClickedSubmit()
         {  
-            if (_isSubmitting) return;
             string playerName = inputField.text.Trim();
             if (string.IsNullOrWhiteSpace(playerName))
             {
                 Debug.LogWarning("Player name cannot be empty.");
                 return;
             }
-            _isSubmitting = true;
+            submitButton.interactable = false;
             leaderboardAPI.SavePlayerScore(playerName, _time, (success, message) =>
             {
                 if (success)
@@ -58,7 +58,6 @@ namespace DroneAssembly.ScoresUI
                 }
                 else
                 {
-                    _isSubmitting = false;
                     Debug.LogError("Error submitting score: " + message);
                 }
             });
