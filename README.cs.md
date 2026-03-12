@@ -12,11 +12,9 @@
 ##  Hlavní funkce
 
 * **Sestavování dronů:** Interaktivní skládání komponentů s přesným pozicováním.
-* **Globální Online Leaderboard:** Hráči po dokončení trati odesílají své časy (s přesností na setiny sekundy) na server a soupeří s ostatními hráči po celém světě.
+* **Globální Online Leaderboard:** Hráči po dokončení sestavení posílají své časy a soupeří s ostatními hráči.
 
 ##  Architektura a Technologie
-
-Tento projekt není jen klientská hra, ale obsahuje kompletní vlastní backendovou infrastrukturu:
 
 * **Herní Engine:** Unity (C#)
 * **Databáze:** Microsoft Azure SQL Database (hostováno v cloudu).
