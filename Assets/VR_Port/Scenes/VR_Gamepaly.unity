@@ -1456,7 +1456,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &313485601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,6 +1472,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 0}
 --- !u!114 &313485602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,6 +1487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: MainGameAssembly::SocketAudioComponent
   snapSound: {fileID: 11400000, guid: f90f124d74fbe184f86df45c84275595, type: 2}
   audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 0}
 --- !u!114 &313485603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1501,6 +1503,7 @@ MonoBehaviour:
   typeID: {fileID: 11400000, guid: bc52c2b35d7b90b4fa029f5f25ebc14f, type: 2}
   stepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 0}
 --- !u!4 &313485604
 Transform:
   m_ObjectHideFlags: 0
@@ -5250,6 +5253,18 @@ PrefabInstance:
       propertyPath: m_HoverSocketSnapping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1211738140221235517, guid: 2c039468fe7401d45b77090ee82dae2c, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422797159327183614, guid: 2c039468fe7401d45b77090ee82dae2c, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404625371730051104, guid: 2c039468fe7401d45b77090ee82dae2c, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3649078751937248420, guid: 2c039468fe7401d45b77090ee82dae2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.60354275
@@ -5293,6 +5308,14 @@ PrefabInstance:
     - target: {fileID: 5038421632953697776, guid: 2c039468fe7401d45b77090ee82dae2c, type: 3}
       propertyPath: m_Name
       value: Drone Body_VR
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708483229349745504, guid: 2c039468fe7401d45b77090ee82dae2c, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763415005415559386, guid: 2c039468fe7401d45b77090ee82dae2c, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

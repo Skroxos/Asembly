@@ -3,6 +3,7 @@ using DroneAssembly.Radios.GeneralRadios;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 namespace DroneAssembly.VR_Port.Part
 {
@@ -38,11 +39,13 @@ namespace DroneAssembly.VR_Port.Part
     
         private void OnDrop(SelectExitEventArgs arg0)
         {
+            if (arg0.interactorObject is XRSocketInteractor) return;
             _dropRadio.RaiseEvent();
         }
 
         private void OnPickUp(SelectEnterEventArgs arg0)
         {
+            if (arg0.interactorObject is XRSocketInteractor) return;
             _pickUpRadio.RaiseEvent(_assemblyPart);
         }
     }

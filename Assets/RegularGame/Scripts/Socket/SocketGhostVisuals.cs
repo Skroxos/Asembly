@@ -9,6 +9,7 @@ namespace DroneAssembly.Socket
         [SerializeField] private PickUpRadio pickUpRadioSO;
         [SerializeField] private SimpleEventRadio dropRadioSO;
         [SerializeField] private GhostPreviewConfig ghostPreviewConfig;
+        [SerializeField] private SimpleEventRadio snapRadioSO;
         
         private BaseAssemblyPart currentPart;
         private GhostPreviewManager ghostPreviewManager;
@@ -29,10 +30,10 @@ namespace DroneAssembly.Socket
         {
             if (socketController != null)
             {
-                socketController.OnPartSnapped += HandlePartSnapped;
                 socketController.OnPartExited += HandlePartExited;
                 socketController.OnValidPartEntered += HandleValidPartEntered;
             }
+            snapRadioSO.OnRaised += HandlePartSnapped;
             pickUpRadioSO.OnEventRaised += HandlePartPickedUp;
             dropRadioSO.OnRaised += HandlePartDropped;
         }
@@ -42,9 +43,9 @@ namespace DroneAssembly.Socket
         {
             pickUpRadioSO.OnEventRaised -= HandlePartPickedUp;
             dropRadioSO.OnRaised -= HandlePartDropped;
+            snapRadioSO.OnRaised -= HandlePartSnapped;
             if (socketController != null)
             {
-                socketController.OnPartSnapped -= HandlePartSnapped;
                 socketController.OnPartExited -= HandlePartExited;
                 socketController.OnValidPartEntered -= HandleValidPartEntered;
             }

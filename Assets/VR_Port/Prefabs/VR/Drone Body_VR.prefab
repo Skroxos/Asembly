@@ -353,7 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -402,6 +402,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &2513890242516038867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +418,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &516075816425672077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5433088966108408737, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -436,7 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -485,6 +487,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &4557408433698925592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +503,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &636945306549132844 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4943175546523760640, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -519,7 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -568,6 +572,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &1090497101059941698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +588,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &804365703762632059 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5145050042528430935, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -602,7 +608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -651,6 +657,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: de1f3bf5b73b66040b761830e4f6d95b, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &6139355462793969045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +673,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &1963753658285586611 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6273490185065389727, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -685,7 +693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -734,6 +742,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &4760595337540562087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +758,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &2594697202962155187 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7515798328278704287, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -768,7 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -817,6 +827,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: d7028c0a20da7a940bb54bb3a803af9d, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &5888202899901573547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -832,6 +843,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &3398626701933716850 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7162154297586484062, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -851,7 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -900,6 +912,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &5608178611648597222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,6 +928,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &4000171104568671316 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8920570883259259512, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -934,7 +948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -983,6 +997,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &3751511364528339168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,6 +1013,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &4088298313083182824 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8427290701030652100, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1017,7 +1033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1066,6 +1082,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &3893223689177245193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,6 +1098,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &4161396252164400660 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8471115105069826104, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1100,7 +1118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1149,6 +1167,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &4880859966450941926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1164,6 +1183,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &4594157464834431220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8326861342932664024, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1183,7 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1232,6 +1252,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &8460034080980268695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,6 +1268,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &4778719326521086380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1017292833147713408, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1266,7 +1288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1315,6 +1337,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &6850890096501627174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,6 +1353,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &5038421632953697776 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 694500327652451292, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1496,7 +1520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1545,6 +1569,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &6110422134222463060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1560,6 +1585,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &5586519736370420333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 128356452767497281, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1579,7 +1605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1628,6 +1654,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &83328486382106107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,6 +1670,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &5648278223099182438 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 157057022886550346, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1662,7 +1690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1711,6 +1739,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: d7028c0a20da7a940bb54bb3a803af9d, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &7723668665776718926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1726,6 +1755,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &5946477928437976964 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2218427102019692968, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1745,7 +1775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1794,6 +1824,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: d7028c0a20da7a940bb54bb3a803af9d, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &3668240151786146652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1809,6 +1840,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &6036933839975523793 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2272121873066230781, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1828,7 +1860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1877,6 +1909,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: d7028c0a20da7a940bb54bb3a803af9d, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &5276349905331147886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1892,6 +1925,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &6321028529354212421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2015220561923285609, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1911,7 +1945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -1960,6 +1994,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &7520817750857495953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1975,6 +2010,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &7146945631966094235 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3413799668589184439, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1994,7 +2030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -2043,6 +2079,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: 45143466566bfdc42a2c5db304d9e984, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &8583021325232105618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2058,6 +2095,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &8451976472942914763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4108477255493880551, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -2077,7 +2115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -2126,6 +2164,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &520362178565221273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2141,6 +2180,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &8788406169870766527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3871403809145829267, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -2160,7 +2200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -2209,6 +2249,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &2018344151137468838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2224,6 +2265,7 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &8952534736042433900 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3491001582443772736, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -2243,7 +2285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -2292,6 +2334,7 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: ef88ed58b37e6b946a517f58b31ad853, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!114 &3901370141934049033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2307,3 +2350,4 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}

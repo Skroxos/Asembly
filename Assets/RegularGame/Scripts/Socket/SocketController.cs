@@ -1,5 +1,6 @@
 ﻿using System;
 using DroneAssembly.Radios;
+using DroneAssembly.Radios.GeneralRadios;
 using DroneAssembly.Validator;
 using UnityEngine;
 
@@ -10,13 +11,14 @@ namespace DroneAssembly.Socket
         [SerializeField] private SocketIDSO typeID;
         [SerializeField] private SocketStepValidationSO stepValidationSO;
         [SerializeField] private EventRadio eventRadio;
+        [SerializeField] private SimpleEventRadio OnPartSnapped;
 
         private AsemblyPart _attachedPart;
         private GameObject _ghostInstance;
         private Transform _snapPoint;
         private bool _isOccupied;
-
-        public event Action OnPartSnapped;
+        
+        
         public event Action OnPartExited;
         public event Action<AsemblyPart> OnValidPartEntered;
 
@@ -67,7 +69,7 @@ namespace DroneAssembly.Socket
         {
             _attachedPart.AttachToSocket(_snapPoint);
             eventRadio.RaiseEvent(_attachedPart.socketIDSO);
-            OnPartSnapped?.Invoke();
+            OnPartSnapped?.RaiseEvent();
         }
 
         public bool IsOccupied()
