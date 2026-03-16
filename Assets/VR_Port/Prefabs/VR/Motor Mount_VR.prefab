@@ -73,16 +73,22 @@ PrefabInstance:
       addedObject: {fileID: 7842649125360851019}
     - targetCorrespondingSourceObject: {fileID: 2967436159720658197, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1010942965876602546}
+      addedObject: {fileID: -7190193412409889058}
     - targetCorrespondingSourceObject: {fileID: 2967436159720658197, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 477867409263686315}
+      addedObject: {fileID: 5361675416232997439}
     - targetCorrespondingSourceObject: {fileID: 6426440027722575906, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1159932642748769781}
+    - targetCorrespondingSourceObject: {fileID: 6426440027722575906, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1437145299549796919}
     - targetCorrespondingSourceObject: {fileID: 8400108181062156756, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2980936811534921560}
+    - targetCorrespondingSourceObject: {fileID: 8400108181062156756, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2191147369589463425}
   m_SourcePrefab: {fileID: 100100000, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
 --- !u!1 &1218320681052130776 stripped
 GameObject:
@@ -103,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 4
+    m_Bits: 1
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -137,6 +143,21 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &1437145299549796919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218320681052130776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebec8fa3c9a970749a0931f1ae9821fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Socket.VRSocketController
+  _typeIDSO: {fileID: 11400000, guid: 0805e607e55ef1949be9ae0d5aea823c, type: 2}
+  _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
+  _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
 --- !u!1 &4419219801575963694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8400108181062156756, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
@@ -156,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 4
+    m_Bits: 1
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -190,6 +211,21 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &2191147369589463425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419219801575963694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebec8fa3c9a970749a0931f1ae9821fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Socket.VRSocketController
+  _typeIDSO: {fileID: 11400000, guid: 0b1575f200e0dae4f9efa22364a89b37, type: 2}
+  _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
+  _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
 --- !u!1 &6983225308162959599 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2967436159720658197, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
@@ -210,7 +246,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 6
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -324,7 +360,7 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &1010942965876602546
+--- !u!114 &-7190193412409889058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -333,15 +369,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6983225308162959599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e4f18affdc49d2bfc2d05b3b43f798, type: 3}
+  m_Script: {fileID: 11500000, guid: f002e54b6625a0e47bcc940f2af4e9cb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.CarrySystem.CarryComponent
-  HoldPosition: {x: 0, y: 0, z: 1.5}
-  HoldRotation: {x: 0, y: 0, z: 0, w: 1}
-  pickupRadioSO: {fileID: 0}
-  dropRadioSO: {fileID: 0}
-  IsPickedUp: 0
---- !u!114 &477867409263686315
+  m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
+  socketIDSO: {fileID: 11400000, guid: d7028c0a20da7a940bb54bb3a803af9d, type: 2}
+--- !u!114 &5361675416232997439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -350,10 +382,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6983225308162959599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af65e4517244e67a4a4ae7dc8529a98, type: 3}
+  m_Script: {fileID: 11500000, guid: c20a4c905d6999f46b5784579525a4fa, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.AsemblyPart
-  socketIDSO: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRPickUpRadioListener
+  _pickUpRadio: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  _dropRadio: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
 --- !u!4 &9183275347381607127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3942507134244546349, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}

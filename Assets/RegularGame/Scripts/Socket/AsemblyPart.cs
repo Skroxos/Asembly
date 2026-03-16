@@ -6,9 +6,8 @@ namespace DroneAssembly.Socket
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CarryComponent))]
-    public class AsemblyPart : MonoBehaviour
+    public class AsemblyPart : BaseAssemblyPart
     {
-        public SocketIDSO socketIDSO;
         private CarryComponent _carryComponent;
         private Collider _collider;
         private Rigidbody _rigidBody;

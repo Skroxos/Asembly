@@ -5,7 +5,7 @@ using UnityEngine;
 namespace DroneAssembly.Radios
 {
     [CreateAssetMenu(menuName = "Event/PickUpRadio")]
-    public class PickUpRadio : GeneralRadio<AsemblyPart>
+    public class PickUpRadio : GeneralRadio<BaseAssemblyPart>
     {
     }
 }

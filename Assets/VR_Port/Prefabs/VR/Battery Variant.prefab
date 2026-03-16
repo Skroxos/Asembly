@@ -67,10 +67,7 @@ PrefabInstance:
       addedObject: {fileID: 6685852395140458539}
     - targetCorrespondingSourceObject: {fileID: 4806890525644426836, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -6297777571219496204}
-    - targetCorrespondingSourceObject: {fileID: 4806890525644426836, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -1514419897029857327}
+      addedObject: {fileID: 2405004545054228587}
   m_SourcePrefab: {fileID: 100100000, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
 --- !u!4 &2707852306478936174 stripped
 Transform:
@@ -97,7 +94,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 6
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -211,7 +208,7 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &-6297777571219496204
+--- !u!114 &2405004545054228587
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,24 +217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3205948505323184441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e4f18affdc49d2bfc2d05b3b43f798, type: 3}
+  m_Script: {fileID: 11500000, guid: f002e54b6625a0e47bcc940f2af4e9cb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.CarrySystem.CarryComponent
-  HoldPosition: {x: 0, y: 0, z: 1.5}
-  HoldRotation: {x: 0, y: 0, z: 0, w: 1}
-  pickupRadioSO: {fileID: 0}
-  dropRadioSO: {fileID: 0}
-  IsPickedUp: 0
---- !u!114 &-1514419897029857327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3205948505323184441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af65e4517244e67a4a4ae7dc8529a98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.AsemblyPart
-  socketIDSO: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
+  socketIDSO: {fileID: 11400000, guid: 44216d897936c4c4795c66a0cabca129, type: 2}

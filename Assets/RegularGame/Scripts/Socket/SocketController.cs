@@ -5,19 +5,20 @@ using UnityEngine;
 
 namespace DroneAssembly.Socket
 {
-    public class SocketController : MonoBehaviour
+    public class SocketController : MonoBehaviour, ISocketValidation
     {
         [SerializeField] private SocketIDSO typeID;
-
-
         [SerializeField] private SocketStepValidationSO stepValidationSO;
         [SerializeField] private EventRadio eventRadio;
 
         private AsemblyPart _attachedPart;
         private GameObject _ghostInstance;
         private Transform _snapPoint;
-        public bool IsOccupied { get; private set; }
+        private bool _isOccupied;
 
+        public event Action OnPartSnapped;
+        public event Action OnPartExited;
+        public event Action<AsemblyPart> OnValidPartEntered;
 
         private void Awake()
         {
@@ -26,7 +27,7 @@ namespace DroneAssembly.Socket
 
         private void OnTriggerEnter(Collider other)
         {
-            if (IsOccupied) return;
+            if (_isOccupied) return;
 
             if (other.TryGetComponent(out AsemblyPart part))
             {
@@ -39,28 +40,25 @@ namespace DroneAssembly.Socket
 
         private void OnTriggerExit(Collider other)
         {
-            if (IsOccupied) return;
+            if (_isOccupied) return;
             if (_attachedPart != null && other.gameObject == _attachedPart.gameObject)
             {
                 _attachedPart = null;
-                IsOccupied = false;
+                _isOccupied = false;
             }
 
             OnPartExited?.Invoke();
         }
 
-        public event Action OnPartSnapped;
-        public event Action OnPartExited;
-        public event Action<AsemblyPart> OnValidPartEntered;
 
 
         private bool TrySnapPart(AsemblyPart part)
         {
-            if (IsOccupied || part.socketIDSO != typeID || part.IsPickedUp) return false;
+            if (_isOccupied || part.socketIDSO != typeID || part.IsPickedUp) return false;
 
             if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID)) return false;
 
-            IsOccupied = true;
+            _isOccupied = true;
             _attachedPart = part;
             return true;
         }
@@ -72,7 +70,12 @@ namespace DroneAssembly.Socket
             OnPartSnapped?.Invoke();
         }
 
-        public bool IsPartValid(AsemblyPart part)
+        public bool IsOccupied()
+        {
+            return _isOccupied;
+        }
+
+        public bool IsPartValid(BaseAssemblyPart part)
         {
             if (part.socketIDSO != typeID) return false;
             if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID)) return false;
