@@ -1,0 +1,15 @@
+﻿using System;
+using DroneAssembly.Socket;
+
+namespace DroneAssembly.StepManager
+{
+    [Serializable]
+    public class StepRequirement
+    {
+        public SocketIDSO requiredPartID;
+        public int amountRequired;
+        [NonSerialized] public int currentAmount;
+
+        public bool IsComplete => currentAmount >= amountRequired;
+    }
+}
