@@ -1,6 +1,5 @@
 using System;
 using DroneAssembly.Radios;
-using DroneAssembly.Radios.GeneralRadios;
 using DroneAssembly.Socket;
 using DroneAssembly.Validator;
 using DroneAssembly.VR_Port.Part;
@@ -13,18 +12,17 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 namespace DroneAssembly.VR_Port.Socket
 {
     [RequireComponent(typeof(XRSocketInteractor))]
-    public class VRSocketController : MonoBehaviour, IXRSelectFilter, ISocketValidation, IXRHoverFilter
+    public class VRSocketController : MonoBehaviour, IXRSelectFilter, ISocketValidation, IXRHoverFilter, ISocketEvents
     {
         [SerializeField] private SocketIDSO _typeIDSO;
         [SerializeField] private SocketStepValidationSO _socketStepValidationSO;
         [SerializeField] private EventRadio _eventRadio;
-        
+        public event Action OnPartSnapped;
         private XRSocketInteractor _socket;
         private VRAssemblyPart _attachedPart;
         
-        public SimpleEventRadio OnPartSnapped;
         
-        private bool isOccupied;
+        private bool _isOccupied;
         
         private void Awake()
         {
@@ -45,7 +43,7 @@ namespace DroneAssembly.VR_Port.Socket
         // This is a bit of a hack to make sure that the socket can only be hovered if it can be selected, otherwise the hover visuals will show up even if the part can't be snapped in.
         public bool Process(IXRHoverInteractor interactor, IXRHoverInteractable interactable)
         {
-            if (isOccupied) return false;
+            if (_isOccupied) return false;
             var part = interactable.transform.gameObject;
             if (!part.TryGetComponent(out VRAssemblyPart assemblyPart)) return false;
             if (assemblyPart.socketIDSO != _typeIDSO) return false;
@@ -58,7 +56,7 @@ namespace DroneAssembly.VR_Port.Socket
         {
             var part = interactable.transform.gameObject;
             if (_attachedPart != null && part == _attachedPart.gameObject) return true;
-            if (isOccupied) return false;
+            if (_isOccupied) return false;
             if (!part.TryGetComponent(out VRAssemblyPart assemblyPart)) return false;
             if (assemblyPart.socketIDSO != _typeIDSO) return false;
             if (_socketStepValidationSO != null && !_socketStepValidationSO.IsSocketAllowed(_typeIDSO)) return false;
@@ -71,14 +69,25 @@ namespace DroneAssembly.VR_Port.Socket
           var part = args.interactableObject.transform.gameObject.GetComponent<VRAssemblyPart>();
           if (part != null)
           {
-                isOccupied = true;
+                _isOccupied = true;
               _attachedPart = part;
               var interactable = args.interactableObject as XRBaseInteractable;
               if (interactable != null)
               {
                   interactable.interactionLayers = InteractionLayerMask.GetMask("Snapped");
               }
-              OnPartSnapped?.RaiseEvent();
+              
+              if (part.TryGetComponent<Rigidbody>(out var rb))
+              {
+                  rb.isKinematic = true;
+              }
+              
+              if (part.TryGetComponent<Collider>(out var coll))
+              {
+                  coll.enabled = false;
+              }
+              
+              OnPartSnapped?.Invoke();
               _eventRadio.RaiseEvent(part.socketIDSO);
           }
         }
@@ -87,15 +96,17 @@ namespace DroneAssembly.VR_Port.Socket
 
         public bool IsOccupied()
         {
-            return isOccupied;
+            return _isOccupied;
         }
 
         public bool IsPartValid(BaseAssemblyPart part)
         {
-            if (isOccupied) return false;
+            if (_isOccupied) return false;
             if (part.socketIDSO != _typeIDSO) return false;
             if (_socketStepValidationSO != null && !_socketStepValidationSO.IsSocketAllowed(_typeIDSO)) return false;
             return true;
         }
+
+    
     }
 }

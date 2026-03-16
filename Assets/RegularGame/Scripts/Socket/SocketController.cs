@@ -1,24 +1,22 @@
 ﻿using System;
 using DroneAssembly.Radios;
-using DroneAssembly.Radios.GeneralRadios;
 using DroneAssembly.Validator;
 using UnityEngine;
 
 namespace DroneAssembly.Socket
 {
-    public class SocketController : MonoBehaviour, ISocketValidation
+    public class SocketController : MonoBehaviour, ISocketValidation, ISocketEvents
     {
         [SerializeField] private SocketIDSO typeID;
         [SerializeField] private SocketStepValidationSO stepValidationSO;
         [SerializeField] private EventRadio eventRadio;
-        [SerializeField] private SimpleEventRadio OnPartSnapped;
 
         private AsemblyPart _attachedPart;
         private GameObject _ghostInstance;
         private Transform _snapPoint;
         private bool _isOccupied;
         
-        
+        public event Action OnPartSnapped;
         public event Action OnPartExited;
         public event Action<AsemblyPart> OnValidPartEntered;
 
@@ -69,7 +67,7 @@ namespace DroneAssembly.Socket
         {
             _attachedPart.AttachToSocket(_snapPoint);
             eventRadio.RaiseEvent(_attachedPart.socketIDSO);
-            OnPartSnapped?.RaiseEvent();
+            OnPartSnapped?.Invoke();
         }
 
         public bool IsOccupied()
@@ -83,5 +81,7 @@ namespace DroneAssembly.Socket
             if (stepValidationSO != null && !stepValidationSO.IsSocketAllowed(typeID)) return false;
             return true;
         }
+
+       
     }
 }

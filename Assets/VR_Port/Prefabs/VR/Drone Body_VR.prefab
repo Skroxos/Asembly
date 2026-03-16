@@ -144,6 +144,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2272121873066230781, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5276349905331147886}
+    - targetCorrespondingSourceObject: {fileID: 2272121873066230781, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4470948305965914488}
     - targetCorrespondingSourceObject: {fileID: 157057022886550346, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7708483229349745504}
@@ -153,6 +156,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 157057022886550346, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7723668665776718926}
+    - targetCorrespondingSourceObject: {fileID: 157057022886550346, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8000194655203882310}
     - targetCorrespondingSourceObject: {fileID: 7515798328278704287, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7763415005415559386}
@@ -162,6 +168,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7515798328278704287, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5888202899901573547}
+    - targetCorrespondingSourceObject: {fileID: 7515798328278704287, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 897265835508044329}
     - targetCorrespondingSourceObject: {fileID: 2218427102019692968, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1422797159327183614}
@@ -171,6 +180,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2218427102019692968, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3668240151786146652}
+    - targetCorrespondingSourceObject: {fileID: 2218427102019692968, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6801129813491672263}
     - targetCorrespondingSourceObject: {fileID: 3413799668589184439, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3404625371730051104}
@@ -180,6 +192,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3413799668589184439, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8583021325232105618}
+    - targetCorrespondingSourceObject: {fileID: 3413799668589184439, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2110860311396162974}
     - targetCorrespondingSourceObject: {fileID: 128356452767497281, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 772641399800280753}
@@ -189,6 +204,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 128356452767497281, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 83328486382106107}
+    - targetCorrespondingSourceObject: {fileID: 128356452767497281, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9173069361058978928}
     - targetCorrespondingSourceObject: {fileID: 506897991376659181, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5633775402057790408}
@@ -198,6 +216,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 506897991376659181, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6110422134222463060}
+    - targetCorrespondingSourceObject: {fileID: 506897991376659181, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 55336791283299899}
     - targetCorrespondingSourceObject: {fileID: 8471115105069826104, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4810804949826515403}
@@ -207,6 +228,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8471115105069826104, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4880859966450941926}
+    - targetCorrespondingSourceObject: {fileID: 8471115105069826104, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3379091973769984143}
     - targetCorrespondingSourceObject: {fileID: 5344059471873601899, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4721531426913973914}
@@ -216,6 +240,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5344059471873601899, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2513890242516038867}
+    - targetCorrespondingSourceObject: {fileID: 5344059471873601899, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1426029533695846562}
     - targetCorrespondingSourceObject: {fileID: 3871403809145829267, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8132082206110025111}
@@ -225,6 +252,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3871403809145829267, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2018344151137468838}
+    - targetCorrespondingSourceObject: {fileID: 3871403809145829267, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4203074454118399159}
     - targetCorrespondingSourceObject: {fileID: 2015220561923285609, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4322967046612109916}
@@ -234,6 +264,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2015220561923285609, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7520817750857495953}
+    - targetCorrespondingSourceObject: {fileID: 2015220561923285609, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4289464825653260130}
     - targetCorrespondingSourceObject: {fileID: 8920570883259259512, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5969564009555118887}
@@ -243,6 +276,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8920570883259259512, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3751511364528339168}
+    - targetCorrespondingSourceObject: {fileID: 8920570883259259512, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5898444898873244074}
     - targetCorrespondingSourceObject: {fileID: 5433088966108408737, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7266003485588417344}
@@ -252,6 +288,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5433088966108408737, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4557408433698925592}
+    - targetCorrespondingSourceObject: {fileID: 5433088966108408737, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6837841711235691279}
     - targetCorrespondingSourceObject: {fileID: 8427290701030652100, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4918522225170142779}
@@ -261,6 +300,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8427290701030652100, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3893223689177245193}
+    - targetCorrespondingSourceObject: {fileID: 8427290701030652100, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6827243252791168836}
     - targetCorrespondingSourceObject: {fileID: 3491001582443772736, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6313706466693340748}
@@ -270,6 +312,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3491001582443772736, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3901370141934049033}
+    - targetCorrespondingSourceObject: {fileID: 3491001582443772736, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1474793256517470253}
     - targetCorrespondingSourceObject: {fileID: 7162154297586484062, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3390785971121780404}
@@ -279,6 +324,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7162154297586484062, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5608178611648597222}
+    - targetCorrespondingSourceObject: {fileID: 7162154297586484062, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 912369781726001989}
     - targetCorrespondingSourceObject: {fileID: 8326861342932664024, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 575566337219021189}
@@ -288,6 +336,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8326861342932664024, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8460034080980268695}
+    - targetCorrespondingSourceObject: {fileID: 8326861342932664024, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3453915308521532572}
     - targetCorrespondingSourceObject: {fileID: 4108477255493880551, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2207130279114324733}
@@ -297,6 +348,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4108477255493880551, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 520362178565221273}
+    - targetCorrespondingSourceObject: {fileID: 4108477255493880551, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3404906354226819316}
     - targetCorrespondingSourceObject: {fileID: 6273490185065389727, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7068347475444362674}
@@ -306,6 +360,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6273490185065389727, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4760595337540562087}
+    - targetCorrespondingSourceObject: {fileID: 6273490185065389727, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5778848226193313806}
     - targetCorrespondingSourceObject: {fileID: 1017292833147713408, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5925676287594572376}
@@ -315,6 +372,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1017292833147713408, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6850890096501627174}
+    - targetCorrespondingSourceObject: {fileID: 1017292833147713408, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4543824265751760989}
     - targetCorrespondingSourceObject: {fileID: 4943175546523760640, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8955493331654124026}
@@ -324,6 +384,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4943175546523760640, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1090497101059941698}
+    - targetCorrespondingSourceObject: {fileID: 4943175546523760640, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3830247638668936485}
     - targetCorrespondingSourceObject: {fileID: 5145050042528430935, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1642102757802497577}
@@ -333,6 +396,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5145050042528430935, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6139355462793969045}
+    - targetCorrespondingSourceObject: {fileID: 5145050042528430935, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4192546442970327576}
   m_SourcePrefab: {fileID: 100100000, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
 --- !u!1 &461236740004435783 stripped
 GameObject:
@@ -419,6 +485,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &1426029533695846562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461236740004435783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &516075816425672077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5433088966108408737, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -504,6 +585,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &6837841711235691279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516075816425672077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &636945306549132844 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4943175546523760640, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -589,6 +685,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &3830247638668936485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636945306549132844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &804365703762632059 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5145050042528430935, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -674,6 +785,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &4192546442970327576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804365703762632059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: f90f124d74fbe184f86df45c84275595, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &1963753658285586611 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6273490185065389727, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -759,6 +885,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &5778848226193313806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963753658285586611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &2594697202962155187 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7515798328278704287, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -844,6 +985,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &897265835508044329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2594697202962155187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: f90f124d74fbe184f86df45c84275595, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &3398626701933716850 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7162154297586484062, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -929,6 +1085,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &912369781726001989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3398626701933716850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &4000171104568671316 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8920570883259259512, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1014,6 +1185,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &5898444898873244074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000171104568671316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &4088298313083182824 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8427290701030652100, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1099,6 +1285,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &6827243252791168836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088298313083182824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &4161396252164400660 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8471115105069826104, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1184,6 +1385,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &3379091973769984143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4161396252164400660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &4594157464834431220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8326861342932664024, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1269,6 +1485,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &3453915308521532572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594157464834431220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &4778719326521086380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1017292833147713408, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1354,6 +1585,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &4543824265751760989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4778719326521086380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &5038421632953697776 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 694500327652451292, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1586,6 +1832,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &55336791283299899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424463224803804353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &5586519736370420333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 128356452767497281, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1671,6 +1932,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &9173069361058978928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5586519736370420333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &5648278223099182438 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 157057022886550346, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1756,6 +2032,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &8000194655203882310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5648278223099182438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: f90f124d74fbe184f86df45c84275595, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &5946477928437976964 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2218427102019692968, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1841,6 +2132,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &6801129813491672263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946477928437976964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: f90f124d74fbe184f86df45c84275595, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &6036933839975523793 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2272121873066230781, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -1926,6 +2232,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &4470948305965914488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036933839975523793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: f90f124d74fbe184f86df45c84275595, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &6321028529354212421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2015220561923285609, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -2011,6 +2332,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &4289464825653260130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6321028529354212421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &7146945631966094235 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3413799668589184439, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -2096,6 +2432,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &2110860311396162974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146945631966094235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: f90f124d74fbe184f86df45c84275595, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &8451976472942914763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4108477255493880551, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -2181,6 +2532,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &3404906354226819316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451976472942914763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &8788406169870766527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3871403809145829267, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -2266,6 +2632,21 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &4203074454118399159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8788406169870766527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &8952534736042433900 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3491001582443772736, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
@@ -2351,3 +2732,18 @@ MonoBehaviour:
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
   snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+--- !u!114 &1474793256517470253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8952534736042433900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.SocketAudioComponent
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
+  snapEventRadio: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}

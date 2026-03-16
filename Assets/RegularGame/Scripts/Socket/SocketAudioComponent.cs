@@ -1,6 +1,5 @@
 ﻿using DroneAssembly.Audio;
 using DroneAssembly.Radios;
-using DroneAssembly.Radios.GeneralRadios;
 using UnityEngine;
 
 namespace DroneAssembly.Socket
@@ -9,21 +8,32 @@ namespace DroneAssembly.Socket
     {
         [SerializeField] private AudioConfig snapSound;
         [SerializeField] private AudioClipRadio audioClipRadio;
-        [SerializeField] private SimpleEventRadio snapEventRadio;
-        
+        private ISocketEvents _socketEvents;
 
-
-      
+        private void Awake()
+        {
+            _socketEvents = GetComponent<ISocketEvents>();
+            if (_socketEvents == null)
+            {
+                Debug.LogError("SocketAudioComponent requires a component that implements ISocketEvents.");
+            }
+        }
 
         private void OnEnable()
         {
-            snapEventRadio.OnRaised += HandlePartSnapped;
+            if (_socketEvents != null)
+            {
+                _socketEvents.OnPartSnapped += HandlePartSnapped;
+            }
         }
 
 
         private void OnDisable()
         {
-            snapEventRadio.OnRaised -= HandlePartSnapped;
+            if (_socketEvents != null)
+            {
+                _socketEvents.OnPartSnapped -= HandlePartSnapped;
+            }
         }
 
         private void HandlePartSnapped()
