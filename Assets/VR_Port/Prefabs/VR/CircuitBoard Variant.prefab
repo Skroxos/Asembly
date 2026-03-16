@@ -79,10 +79,7 @@ PrefabInstance:
       addedObject: {fileID: -1232053296117898715}
     - targetCorrespondingSourceObject: {fileID: 8912607415138656246, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3628187767828705268}
-    - targetCorrespondingSourceObject: {fileID: 8912607415138656246, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6144862724875780690}
+      addedObject: {fileID: 984763724988142312}
     - targetCorrespondingSourceObject: {fileID: 3502572235702554341, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8215411337276557661}
@@ -115,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 4
+    m_Bits: 1
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -168,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 4
+    m_Bits: 1
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -221,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 4
+    m_Bits: 1
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -275,7 +272,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 6
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -389,7 +386,7 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &3628187767828705268
+--- !u!114 &984763724988142312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -398,27 +395,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4835773878921247305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e4f18affdc49d2bfc2d05b3b43f798, type: 3}
+  m_Script: {fileID: 11500000, guid: f002e54b6625a0e47bcc940f2af4e9cb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.CarrySystem.CarryComponent
-  HoldPosition: {x: 0, y: 0, z: 1.5}
-  HoldRotation: {x: 0, y: 0, z: 0, w: 1}
-  pickupRadioSO: {fileID: 0}
-  dropRadioSO: {fileID: 0}
-  IsPickedUp: 0
---- !u!114 &6144862724875780690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4835773878921247305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af65e4517244e67a4a4ae7dc8529a98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.AsemblyPart
-  socketIDSO: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
+  socketIDSO: {fileID: 11400000, guid: f43484eae230f514f8c1a74d59705ab5, type: 2}
 --- !u!1 &7139198004238143491 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6602392793113851324, guid: 790847c4e78b9fe419f84bb673d925dc, type: 3}
@@ -438,7 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 4
+    m_Bits: 1
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1

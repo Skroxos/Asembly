@@ -4,43 +4,52 @@ using UnityEngine;
 
 namespace DroneAssembly.Socket
 {
-    [RequireComponent(typeof(SocketController))]
     public class SocketGhostVisuals : MonoBehaviour
     {
         [SerializeField] private PickUpRadio pickUpRadioSO;
         [SerializeField] private SimpleEventRadio dropRadioSO;
         [SerializeField] private GhostPreviewConfig ghostPreviewConfig;
         
-        private AsemblyPart currentPart;
+        
+        private BaseAssemblyPart currentPart;
         private GhostPreviewManager ghostPreviewManager;
-
+        private ISocketEvents socketEvents;
         private Transform snapPoint;
         private SocketController socketController;
+        private ISocketValidation socketValidation;
 
         private void Awake()
         {
             socketController = GetComponent<SocketController>();
+            socketValidation = GetComponent<ISocketValidation>();
+            socketEvents = GetComponent<ISocketEvents>();
             ghostPreviewManager = new GhostPreviewManager(ghostPreviewConfig.defaultMat, ghostPreviewConfig.validMat);
             snapPoint = transform;
         }
 
         private void OnEnable()
         {
-            socketController.OnPartSnapped += HandlePartSnapped;
-            socketController.OnPartExited += HandlePartExited;
-            socketController.OnValidPartEntered += HandleValidPartEntered;
+            if (socketController != null)
+            {
+                socketController.OnPartExited += HandlePartExited;
+                socketController.OnValidPartEntered += HandleValidPartEntered;
+            }
+            socketEvents.OnPartSnapped += HandlePartSnapped;
             pickUpRadioSO.OnEventRaised += HandlePartPickedUp;
             dropRadioSO.OnRaised += HandlePartDropped;
         }
+        
 
         private void OnDisable()
         {
             pickUpRadioSO.OnEventRaised -= HandlePartPickedUp;
             dropRadioSO.OnRaised -= HandlePartDropped;
-
-            socketController.OnPartSnapped -= HandlePartSnapped;
-            socketController.OnPartExited -= HandlePartExited;
-            socketController.OnValidPartEntered -= HandleValidPartEntered;
+            socketEvents.OnPartSnapped -= HandlePartSnapped;
+            if (socketController != null)
+            {
+                socketController.OnPartExited -= HandlePartExited;
+                socketController.OnValidPartEntered -= HandleValidPartEntered;
+            }
         }
 
         private void HandleValidPartEntered(AsemblyPart obj)
@@ -66,11 +75,11 @@ namespace DroneAssembly.Socket
             ghostPreviewManager.DisableValidGhostMaterial();
         }
 
-        private void HandlePartPickedUp(AsemblyPart obj)
+        private void HandlePartPickedUp(BaseAssemblyPart obj)
         {
-            if (socketController.IsOccupied) return;
+            if (socketValidation.IsOccupied()) return;
 
-            if (socketController.IsPartValid(obj))
+            if (socketValidation.IsPartValid(obj))
             {
                 currentPart = obj;
                 ghostPreviewManager.ShowGhost(currentPart.gameObject, snapPoint);

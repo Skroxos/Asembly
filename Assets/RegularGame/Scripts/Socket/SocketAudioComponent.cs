@@ -4,28 +4,36 @@ using UnityEngine;
 
 namespace DroneAssembly.Socket
 {
-    [RequireComponent(typeof(SocketController))]
     public class SocketAudioComponent : MonoBehaviour
     {
         [SerializeField] private AudioConfig snapSound;
         [SerializeField] private AudioClipRadio audioClipRadio;
-        private SocketController _socketController;
-
+        private ISocketEvents _socketEvents;
 
         private void Awake()
         {
-            _socketController = GetComponent<SocketController>();
+            _socketEvents = GetComponent<ISocketEvents>();
+            if (_socketEvents == null)
+            {
+                Debug.LogError("SocketAudioComponent requires a component that implements ISocketEvents.");
+            }
         }
 
         private void OnEnable()
         {
-            _socketController.OnPartSnapped += HandlePartSnapped;
+            if (_socketEvents != null)
+            {
+                _socketEvents.OnPartSnapped += HandlePartSnapped;
+            }
         }
 
 
         private void OnDisable()
         {
-            _socketController.OnPartSnapped -= HandlePartSnapped;
+            if (_socketEvents != null)
+            {
+                _socketEvents.OnPartSnapped -= HandlePartSnapped;
+            }
         }
 
         private void HandlePartSnapped()

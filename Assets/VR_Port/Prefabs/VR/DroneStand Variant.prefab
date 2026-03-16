@@ -59,6 +59,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1504467313158833877, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
     - {fileID: 7697165045349173593, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+    - {fileID: 4355640375566573710, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+    - {fileID: 1226261810694742994, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+    - {fileID: 6290604263742431110, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+    - {fileID: 8327001789974517770, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+    - {fileID: 6111394861622073152, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+    - {fileID: 8781711290918879431, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -67,11 +73,120 @@ PrefabInstance:
       addedObject: {fileID: -2039464044854628853}
     - targetCorrespondingSourceObject: {fileID: 2186800379373449770, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -676696453958591072}
-    - targetCorrespondingSourceObject: {fileID: 2186800379373449770, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+      addedObject: {fileID: 121057254947292420}
+    - targetCorrespondingSourceObject: {fileID: 6216095311664359403, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5999468067972986460}
+      addedObject: {fileID: 8614394636874960347}
+    - targetCorrespondingSourceObject: {fileID: 7916118517512491076, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3160673206799634929}
   m_SourcePrefab: {fileID: 100100000, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+--- !u!1 &1362808180786066132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6216095311664359403, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+  m_PrefabInstance: {fileID: 4948799657284621631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8614394636874960347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362808180786066132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
+  m_InteractionManager: {fileID: 0}
+  m_InteractionLayers:
+    m_Bits: 1
+  m_Handedness: 0
+  m_AttachTransform: {fileID: 0}
+  m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
+  m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: -2039464044854628853}
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_ShowInteractableHoverMeshes: 1
+  m_InteractableHoverMeshMaterial: {fileID: 0}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_SocketActive: 1
+  m_InteractableHoverScale: 1
+  m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!1 &2987602650771424635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7916118517512491076, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+  m_PrefabInstance: {fileID: 4948799657284621631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3160673206799634929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2987602650771424635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
+  m_InteractionManager: {fileID: 0}
+  m_InteractionLayers:
+    m_Bits: 1
+  m_Handedness: 0
+  m_AttachTransform: {fileID: 0}
+  m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
+  m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: -2039464044854628853}
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_ShowInteractableHoverMeshes: 1
+  m_InteractableHoverMeshMaterial: {fileID: 0}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_SocketActive: 1
+  m_InteractableHoverScale: 1
+  m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
 --- !u!4 &5014120263887161298 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 87838617658151661, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
@@ -97,7 +212,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 6
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -211,7 +326,7 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &-676696453958591072
+--- !u!114 &121057254947292420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,24 +335,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6554065987211634453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e4f18affdc49d2bfc2d05b3b43f798, type: 3}
+  m_Script: {fileID: 11500000, guid: f002e54b6625a0e47bcc940f2af4e9cb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.CarrySystem.CarryComponent
-  HoldPosition: {x: 0, y: 0, z: 1.5}
-  HoldRotation: {x: 0, y: 0, z: 0, w: 1}
-  pickupRadioSO: {fileID: 0}
-  dropRadioSO: {fileID: 0}
-  IsPickedUp: 0
---- !u!114 &5999468067972986460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6554065987211634453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af65e4517244e67a4a4ae7dc8529a98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Socket.AsemblyPart
-  socketIDSO: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
+  socketIDSO: {fileID: 11400000, guid: 0805e607e55ef1949be9ae0d5aea823c, type: 2}

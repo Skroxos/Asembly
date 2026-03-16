@@ -65,6 +65,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3377537433616809757, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3775972830470824596}
+    - targetCorrespondingSourceObject: {fileID: 3377537433616809757, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1247248079981067434}
   m_SourcePrefab: {fileID: 100100000, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
 --- !u!1 &318559472264879213 stripped
 GameObject:
@@ -86,7 +89,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 6
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -200,6 +203,19 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &-1247248079981067434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318559472264879213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f002e54b6625a0e47bcc940f2af4e9cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
+  socketIDSO: {fileID: 11400000, guid: 082b71a620b1d454db14f0efda346e11, type: 2}
 --- !u!4 &5484329639757059476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7397422423842420452, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
