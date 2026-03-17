@@ -64,4 +64,59 @@ public class StepLogicTest
         var step = new Step { requiredParts = new List<StepRequirement>() };
         Assert.IsTrue(step.IsCompleted());
     }
+    
+    
+    [Test]
+    public void StepRequirement_WhenAmountNotMet_IsCompletedReturnsFalse()
+    {
+        var requirement = new StepRequirement
+        {
+            requiredPartID = null,
+            amountRequired = 3,
+            currentAmount = 1
+        };
+
+        Assert.IsFalse(requirement.IsComplete);
+    }
+
+    [Test]
+    public void StepRequirement_WhenAmountIsZero_IsCompletedReturnsTrue()
+    {
+        var requirement = new StepRequirement
+        {
+            requiredPartID = null,
+            amountRequired = 0,
+            currentAmount = 0
+        };
+
+        Assert.IsTrue(requirement.IsComplete);
+    }
+
+    [Test]
+    public void Step_WhenRequiredPartsListIsEmpty_IsCompletedReturnsTrue()
+    {
+        var step = new Step
+        {
+            requiredParts = new List<StepRequirement>()
+        };
+
+        Assert.IsTrue(step.IsCompleted());
+    }
+
+    [Test]
+    public void Step_WhenOneRequirementNotMet_IsCompletedReturnsFalse()
+    {
+        var step = new Step
+        {
+            requiredParts = new List<StepRequirement>
+            {
+                new() { requiredPartID = null, amountRequired = 1, currentAmount = 1 },
+                new() { requiredPartID = null, amountRequired = 3, currentAmount = 2 },
+                new() { requiredPartID = null, amountRequired = 1, currentAmount = 1 }
+            }
+        };
+
+        Assert.IsFalse(step.IsCompleted());
+    }
+    
 }

@@ -164,7 +164,8 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: 0805e607e55ef1949be9ae0d5aea823c, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
-  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+  _snappedLayerMask:
+    m_Bits: 2
 --- !u!114 &8062929195526406956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +181,6 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
-  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &4419219801575963694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8400108181062156756, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
@@ -249,7 +249,8 @@ MonoBehaviour:
   _typeIDSO: {fileID: 11400000, guid: 0b1575f200e0dae4f9efa22364a89b37, type: 2}
   _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
   _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
-  OnPartSnapped: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
+  _snappedLayerMask:
+    m_Bits: 2
 --- !u!114 &4034705583714492318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +266,6 @@ MonoBehaviour:
   pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
   dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
   ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
-  snapRadioSO: {fileID: 11400000, guid: ca3f10d98be8f8741977e5e94162224f, type: 2}
 --- !u!1 &6983225308162959599 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2967436159720658197, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}

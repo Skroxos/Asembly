@@ -33,8 +33,8 @@ namespace DroneAssembly.VR_Port.Part
 
         private void OnDisable()
         {
-            _grabInteractable.selectEntered.RemoveAllListeners();
-            _grabInteractable.selectExited.RemoveAllListeners();
+            _grabInteractable.selectEntered.RemoveListener(OnPickUp);
+            _grabInteractable.selectExited.RemoveListener(OnDrop);
         }
     
         private void OnDrop(SelectExitEventArgs arg0)
