@@ -33,12 +33,12 @@ namespace DroneAssembly.VR_Port.Socket
 
         private void OnEnable()
         {
-            _socket.selectEntered.AddListener(OnSellectEntered);
+            _socket.selectEntered.AddListener(OnSelectEntered);
         }
 
         private void OnDisable()
         {
-            _socket.selectEntered.RemoveAllListeners();
+            _socket.selectEntered.RemoveListener(OnSelectEntered);
         }
         // This is a bit of a hack to make sure that the socket can only be hovered if it can be selected, otherwise the hover visuals will show up even if the part can't be snapped in.
         public bool Process(IXRHoverInteractor interactor, IXRHoverInteractable interactable)
@@ -64,7 +64,7 @@ namespace DroneAssembly.VR_Port.Socket
         }
         public bool canProcess => true;
 
-        private void OnSellectEntered(SelectEnterEventArgs args)
+        private void OnSelectEntered(SelectEnterEventArgs args)
         {
           var part = args.interactableObject.transform.gameObject.GetComponent<VRAssemblyPart>();
           if (part != null)
