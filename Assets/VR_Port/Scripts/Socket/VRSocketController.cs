@@ -17,12 +17,14 @@ namespace DroneAssembly.VR_Port.Socket
         [SerializeField] private SocketIDSO _typeIDSO;
         [SerializeField] private SocketStepValidationSO _socketStepValidationSO;
         [SerializeField] private EventRadio _eventRadio;
+        [SerializeField] private InteractionLayerMask _snappedLayerMask;
         public event Action OnPartSnapped;
         private XRSocketInteractor _socket;
         private VRAssemblyPart _attachedPart;
         
         
         private bool _isOccupied;
+        public bool canProcess => true;
         
         private void Awake()
         {
@@ -43,12 +45,7 @@ namespace DroneAssembly.VR_Port.Socket
         // This is a bit of a hack to make sure that the socket can only be hovered if it can be selected, otherwise the hover visuals will show up even if the part can't be snapped in.
         public bool Process(IXRHoverInteractor interactor, IXRHoverInteractable interactable)
         {
-            if (_isOccupied) return false;
-            var part = interactable.transform.gameObject;
-            if (!part.TryGetComponent(out VRAssemblyPart assemblyPart)) return false;
-            if (assemblyPart.socketIDSO != _typeIDSO) return false;
-            if (_socketStepValidationSO != null && !_socketStepValidationSO.IsSocketAllowed(_typeIDSO)) return false;
-            return true;
+            return ValidatePart(interactable.transform.gameObject);
         }
         
         // This is the main logic for determining if a part can be snapped into the socket. It checks if the socket is already occupied, if the part has the correct SocketIDSO, and if the step validation allows for this socket to be used.
@@ -56,44 +53,53 @@ namespace DroneAssembly.VR_Port.Socket
         {
             var part = interactable.transform.gameObject;
             if (_attachedPart != null && part == _attachedPart.gameObject) return true;
+            return ValidatePart(part);
+        }
+        
+        private bool ValidatePart(GameObject partObject)
+        {
             if (_isOccupied) return false;
-            if (!part.TryGetComponent(out VRAssemblyPart assemblyPart)) return false;
+            if (!partObject.TryGetComponent(out VRAssemblyPart assemblyPart)) return false;
             if (assemblyPart.socketIDSO != _typeIDSO) return false;
             if (_socketStepValidationSO != null && !_socketStepValidationSO.IsSocketAllowed(_typeIDSO)) return false;
             return true;
         }
-        public bool canProcess => true;
 
         private void OnSelectEntered(SelectEnterEventArgs args)
         {
-          var part = args.interactableObject.transform.gameObject.GetComponent<VRAssemblyPart>();
-          if (part != null)
-          {
-                _isOccupied = true;
-              _attachedPart = part;
-              var interactable = args.interactableObject as XRBaseInteractable;
-              if (interactable != null)
-              {
-                  interactable.interactionLayers = InteractionLayerMask.GetMask("Snapped");
-              }
-              
-              if (part.TryGetComponent<Rigidbody>(out var rb))
-              {
-                  rb.isKinematic = true;
-              }
-              
-              if (part.TryGetComponent<Collider>(out var coll))
-              {
-                  coll.enabled = false;
-              }
-              
-              OnPartSnapped?.Invoke();
-              _eventRadio.RaiseEvent(part.socketIDSO);
-          }
+            if (!args.interactableObject.transform.TryGetComponent(out VRAssemblyPart part))
+            {
+                Debug.LogWarning($"[{name}] SelectEntered fired but no VRAssemblyPart found.", this);
+                return;
+            }
+
+            _isOccupied = true;
+            _attachedPart = part;
+
+            LockPartInteraction(part, args);
+
+            OnPartSnapped?.Invoke();
+
+            if (_eventRadio != null)
+                _eventRadio.RaiseEvent(part.socketIDSO);
+            else
+                Debug.LogError($"[{name}] EventRadio is not assigned!", this);
         }
         
+        
+        private void LockPartInteraction(VRAssemblyPart part, SelectEnterEventArgs args)
+        {
+            if (args.interactableObject is XRBaseInteractable interactable)
+                interactable.interactionLayers = _snappedLayerMask;
 
+            if (part.TryGetComponent<Rigidbody>(out var rb))
+                rb.isKinematic = true;
 
+            if (part.TryGetComponent<Collider>(out var coll))
+                coll.enabled = false;
+        }
+        
+        
         public bool IsOccupied()
         {
             return _isOccupied;
