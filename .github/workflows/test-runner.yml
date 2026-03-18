@@ -27,4 +27,4 @@ jobs:
         with:
           projectPath: ./ 
           testMode: all
-          unityVersion: 6000.0.71f1
+          unityVersion: 6000.0.60f1
