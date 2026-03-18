@@ -20,6 +20,7 @@ jobs:
 
       - name: Generate secret script
         run: |
+          mkdir -p Assets/RegularGame/Scripts/DataBase/Secrets
           cat <<EOF > Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
           namespace DroneAssembly.DataBase.Secrets
           {
