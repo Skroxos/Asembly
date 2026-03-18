@@ -19,11 +19,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate secret script
+        env:
+          SECRET_FILE_CONTENT: ${{ secrets.SECRET_CS_CONTENT }}
         run: |
-            cp Assets/RegularGame/Scripts/DataBase/Secrets/SecretTemplate.cs Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
-            sed -i 's|#YOURSECRETKEY#|${{ secrets.DB_KEY }}|g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
-            sed -i 's|#YOURSAVESCOREURL#|${{ secrets.DB_SAVESCORE_URL }}|g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
-            sed -i 's|#YOURGETTOPSCORESURL#|${{ secrets.DB_GETTOPSCORE_URL }}|g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
+          mkdir -p Assets/RegularGame/Scripts/DataBase/Secrets
+          echo "$SECRET_CS_CONTENT" > Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
       - name: Run Tests
         uses: game-ci/unity-test-runner@v4
         env:
