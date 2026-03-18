@@ -26,4 +26,5 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           projectPath: ./ 
+          unityVersion: 6000.3.11f1
           testMode: all
