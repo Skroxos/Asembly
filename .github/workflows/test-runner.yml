@@ -23,7 +23,7 @@ jobs:
           SECRET_FILE_CONTENT: ${{ secrets.SECRET_CS_CONTENT }}
         run: |
           mkdir -p Assets/RegularGame/Scripts/DataBase/Secrets
-          echo "$SECRET_CS_CONTENT" > Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
+          echo "$SECRET_FILE_CONTENT" > Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
       - name: Run Tests
         uses: game-ci/unity-test-runner@v4
         env:
