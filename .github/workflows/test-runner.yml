@@ -18,6 +18,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Generate secret script
+        run: |
+          cat <<EOF > Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
+          namespace DroneAssembly.DataBase.Secrets
+          {
+            public static class Secrets
+            {
+            public const string DbKey = "${{secrets.DB_KEY}}";
+            public const string DbTopScore = "${{secrets.DB_GETTOPSCORE_URL}}";
+            public const string DbSaveScore = "${{secrets.DB_SAVESCORE_URL}}";
+            }
+          }
+          EOF
       - name: Run Tests
         uses: game-ci/unity-test-runner@v4
         env:
