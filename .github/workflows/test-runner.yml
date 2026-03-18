@@ -20,18 +20,10 @@ jobs:
 
       - name: Generate secret script
         run: |
-          mkdir -p Assets/RegularGame/Scripts/DataBase/Secrets
-          cat <<EOF > Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
-          namespace DroneAssembly.DataBase.Secrets
-          {
-            public static class Secrets
-            {
-            public const string DbKey = "${{secrets.DB_KEY}}";
-            public const string DbTopScore = "${{secrets.DB_GETTOPSCORE_URL}}";
-            public const string DbSaveScore = "${{secrets.DB_SAVESCORE_URL}}";
-            }
-          }
-          EOF
+            cp Assets/RegularGame/Scripts/DataBase/Secrets/SecretTemplate.cs Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
+            sed -i 's/YourSecretKeyHere/${{ secrets.DB_KEY }}/g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
+            sed -i 's/https://your-api-endpoint.com/save_score.php/${{ secrets.DB_SAVESCORE_URL }}/g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
+            sed -i 's/https://your-api-endpoint.com/get_top10.php/${{ secrets.DB_GETTOPSCORE_URL }}/g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
       - name: Run Tests
         uses: game-ci/unity-test-runner@v4
         env:
