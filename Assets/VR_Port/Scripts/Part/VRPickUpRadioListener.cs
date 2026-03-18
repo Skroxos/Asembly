@@ -16,8 +16,8 @@ namespace DroneAssembly.VR_Port.Part
     
         private XRGrabInteractable _grabInteractable;
         private VRAssemblyPart _assemblyPart;
-
-    
+        
+        
         private void Awake()
         {
             _grabInteractable = GetComponent<XRGrabInteractable>();
