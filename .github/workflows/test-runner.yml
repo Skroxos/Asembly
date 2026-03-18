@@ -21,9 +21,9 @@ jobs:
       - name: Generate secret script
         run: |
             cp Assets/RegularGame/Scripts/DataBase/Secrets/SecretTemplate.cs Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
-            sed -i 's/YourSecretKeyHere/${{ secrets.DB_KEY }}/g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
-            sed -i 's/https://your-api-endpoint.com/save_score.php/${{ secrets.DB_SAVESCORE_URL }}/g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
-            sed -i 's/https://your-api-endpoint.com/get_top10.php/${{ secrets.DB_GETTOPSCORE_URL }}/g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
+            sed -i 's/#YOURSECRETKEY#/${{ secrets.DB_KEY }}/g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
+            sed -i 's/#YOURSAVESCOREURL#/${{ secrets.DB_SAVESCORE_URL }}/g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
+            sed -i 's/#YOURGETTOPSCORESURL#/${{ secrets.DB_GETTOPSCORE_URL }}/g' Assets/RegularGame/Scripts/DataBase/Secrets/Secret.cs
       - name: Run Tests
         uses: game-ci/unity-test-runner@v4
         env:
