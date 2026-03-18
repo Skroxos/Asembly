@@ -50,8 +50,7 @@ namespace DroneAssembly.Socket
             OnPartExited?.Invoke();
         }
 
-
-
+        
         private bool TrySnapPart(AsemblyPart part)
         {
             if (_isOccupied || part.socketIDSO != typeID || part.IsPickedUp) return false;
