@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ae8c36c09fee741837dee3a71e3642, type: 3}
   m_Name: UpperPlate
   m_EditorClassIdentifier: Assembly-CSharp::SocketIDSO
-  partPrefab: {fileID: 5560622467023953792, guid: d18cafb608158784bb7ea0149c7a3619, type: 3}
+  partPrefab: {fileID: 8986182131276230826, guid: da6ba523c1870e44aa18624d68568819, type: 3}
