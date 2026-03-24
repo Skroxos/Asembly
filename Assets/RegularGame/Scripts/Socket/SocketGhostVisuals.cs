@@ -1,4 +1,5 @@
-﻿using DroneAssembly.Radios;
+﻿using System;
+using DroneAssembly.Radios;
 using DroneAssembly.Radios.GeneralRadios;
 using UnityEngine;
 
@@ -25,6 +26,11 @@ namespace DroneAssembly.Socket
             socketEvents = GetComponent<ISocketEvents>();
             ghostPreviewManager = new GhostPreviewManager(ghostPreviewConfig.defaultMat, ghostPreviewConfig.validMat);
             snapPoint = transform;
+        }
+
+        private void Update()
+        {
+            ghostPreviewManager.UpdateGhostPosition(snapPoint);
         }
 
         private void OnEnable()
