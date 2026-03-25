@@ -39,6 +39,15 @@ namespace DroneAssembly.Socket
         {
             SetGhostMaterial(_defaultMat);
         }
+        
+        public void UpdateGhostPosition(Transform snapPoint)
+        {
+            if (ghost != null)
+            {
+                ghost.transform.position = snapPoint.position;
+                ghost.transform.rotation = snapPoint.rotation;
+            }
+        }
 
 
         public void HideGhost()

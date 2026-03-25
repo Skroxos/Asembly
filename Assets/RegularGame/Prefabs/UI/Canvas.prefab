@@ -2202,6 +2202,7 @@ MonoBehaviour:
   leaderboardPanel: {fileID: 3323119708943503236}
   playerTimeText: {fileID: 7658098617664023869}
   inputField: {fileID: 2964071304808807752}
+  submitButton: {fileID: 0}
 --- !u!1 &5333680943507709473
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371502357140314896, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 1734668584772477739, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -52,9 +56,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: DroneStand Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2186800379373449770, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5256167470857858145, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216095311664359403, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916118517512491076, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073204446265031769, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1504467313158833877, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
@@ -74,6 +94,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2186800379373449770, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 121057254947292420}
+    - targetCorrespondingSourceObject: {fileID: 2186800379373449770, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7651349647444211421}
     - targetCorrespondingSourceObject: {fileID: 6216095311664359403, guid: f94171f8bc757754b9b6507c291d0dc4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8614394636874960347}
@@ -212,7 +235,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 64
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -339,3 +362,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
   socketIDSO: {fileID: 11400000, guid: 0805e607e55ef1949be9ae0d5aea823c, type: 2}
+--- !u!114 &-7651349647444211421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6554065987211634453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a4c905d6999f46b5784579525a4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpRadio: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  _dropRadio: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}

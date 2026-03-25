@@ -16,6 +16,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Propeller Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4561156188361447419, guid: 6e5ef96ac9d96c3469592ba2db37c5bd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774259999332294376, guid: 6e5ef96ac9d96c3469592ba2db37c5bd, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596322675242180734, guid: 6e5ef96ac9d96c3469592ba2db37c5bd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8824804018578192518, guid: 6e5ef96ac9d96c3469592ba2db37c5bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -68,6 +80,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4561156188361447419, guid: 6e5ef96ac9d96c3469592ba2db37c5bd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3349729577046803064}
+    - targetCorrespondingSourceObject: {fileID: 4561156188361447419, guid: 6e5ef96ac9d96c3469592ba2db37c5bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2949843288626338407}
   m_SourcePrefab: {fileID: 100100000, guid: 6e5ef96ac9d96c3469592ba2db37c5bd, type: 3}
 --- !u!4 &8399897897341798663 stripped
 Transform:
@@ -94,7 +109,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 64
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -221,3 +236,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
   socketIDSO: {fileID: 11400000, guid: fc4bc5ee9c98f74488ed456d4e823f63, type: 2}
+--- !u!114 &2949843288626338407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8551447485026492277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a4c905d6999f46b5784579525a4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpRadio: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  _dropRadio: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}

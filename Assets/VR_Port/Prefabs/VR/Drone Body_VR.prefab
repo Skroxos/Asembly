@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 128356452767497281, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 157057022886550346, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 506897991376659181, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 539251703664405667, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
@@ -15,6 +27,94 @@ PrefabInstance:
     - target: {fileID: 694500327652451292, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       propertyPath: m_Name
       value: Drone Body_VR
+      objectReference: {fileID: 0}
+    - target: {fileID: 694500327652451292, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017292833147713408, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015220561923285609, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218427102019692968, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272121873066230781, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413799668589184439, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491001582443772736, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871403809145829267, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108477255493880551, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943175546523760640, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145050042528430935, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344059471873601899, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5433088966108408737, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455984856898971659, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273490185065389727, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162154297586484062, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515798328278704287, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326861342932664024, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427290701030652100, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471115105069826104, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8786627927851545123, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920570883259259512, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9145522572251732616, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       propertyPath: m_LocalPosition.x
@@ -135,6 +235,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 694500327652451292, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: -8679351838198732210}
+    - targetCorrespondingSourceObject: {fileID: 694500327652451292, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5145888477402941827}
     - targetCorrespondingSourceObject: {fileID: 2272121873066230781, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1211738140221235517}
@@ -1608,7 +1711,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 64
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -1735,6 +1838,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
   socketIDSO: {fileID: 11400000, guid: bc52c2b35d7b90b4fa029f5f25ebc14f, type: 2}
+--- !u!114 &-5145888477402941827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038421632953697776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a4c905d6999f46b5784579525a4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpRadio: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  _dropRadio: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
 --- !u!1 &5424463224803804353 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 506897991376659181, guid: b01152e6ed70cd44299a57178cde3c24, type: 3}

@@ -8,13 +8,65 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 546294990509031684, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 587745314479252038, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1834047178430805321, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114692295936557198, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522153616634396691, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558482555614611593, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595739447347138720, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3208426734871523387, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3927028935374697012, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175098166934076604, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382230010933682259, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614340313687063228, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6242381285643647928, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6423241318789534111, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
       propertyPath: m_Name
       value: PixPlate Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423241318789534111, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6786607025248575955, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
       propertyPath: m_LocalPosition.x
@@ -95,6 +147,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6423241318789534111, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6038196268888106937}
+    - targetCorrespondingSourceObject: {fileID: 6423241318789534111, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4077395984851510428}
     - targetCorrespondingSourceObject: {fileID: 5614340313687063228, guid: de3b20b3bd7a1bb45bf67782edac0542, type: 3}
       insertIndex: -1
       addedObject: {fileID: 809412844367939406}
@@ -625,7 +680,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 64
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -752,3 +807,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
   socketIDSO: {fileID: 11400000, guid: be72f47e79d391440b961303f5aa1047, type: 2}
+--- !u!114 &-4077395984851510428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8775617787481643547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a4c905d6999f46b5784579525a4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpRadio: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  _dropRadio: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}

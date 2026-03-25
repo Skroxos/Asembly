@@ -8,13 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3078643265775455326, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 4806890525644426836, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
       propertyPath: m_Name
       value: Battery Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4806890525644426836, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6153830445414948985, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7833325176003422575, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8807176252880739335, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68,6 +80,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4806890525644426836, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2405004545054228587}
+    - targetCorrespondingSourceObject: {fileID: 4806890525644426836, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4565277378562791527}
   m_SourcePrefab: {fileID: 100100000, guid: 34fb0c427b93de040adac4f1eb89dcc7, type: 3}
 --- !u!4 &2707852306478936174 stripped
 Transform:
@@ -94,7 +109,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 64
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -221,3 +236,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
   socketIDSO: {fileID: 11400000, guid: 44216d897936c4c4795c66a0cabca129, type: 2}
+--- !u!114 &-4565277378562791527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3205948505323184441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a4c905d6999f46b5784579525a4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpRadio: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  _dropRadio: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
