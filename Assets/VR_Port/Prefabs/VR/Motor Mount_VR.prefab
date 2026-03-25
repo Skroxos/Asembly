@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Motor Mount_VR
       objectReference: {fileID: 0}
+    - target: {fileID: 2967436159720658197, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3093559249776198511, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.818
@@ -55,6 +59,22 @@ PrefabInstance:
     - target: {fileID: 3093559249776198511, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258149598327233393, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426440027722575906, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8400108181062156756, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622618920017764759, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2201702944843485825, guid: 9365134b35c283a48b6a18dd08740f73, type: 3}
@@ -286,7 +306,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 64
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 989357648869845223, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 1110046896688545944, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
@@ -15,6 +19,10 @@ PrefabInstance:
     - target: {fileID: 2302433747942758497, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}
       propertyPath: m_Name
       value: M3x6 Screw Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302433747942758497, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5655521573089509060, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56,6 +64,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7145512350242123244, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1646261635874165247, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}
     - {fileID: 6693359936164018912, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}
@@ -68,6 +80,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2302433747942758497, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}
       insertIndex: -1
       addedObject: {fileID: -8590338740894221842}
+    - targetCorrespondingSourceObject: {fileID: 2302433747942758497, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8564470812765061447}
   m_SourcePrefab: {fileID: 100100000, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}
 --- !u!1 &2189790030854978743 stripped
 GameObject:
@@ -89,7 +104,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 64
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -216,6 +231,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
   socketIDSO: {fileID: 11400000, guid: c00fa2d1fd21151459fae762f3ccc844, type: 2}
+--- !u!114 &-8564470812765061447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2189790030854978743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a4c905d6999f46b5784579525a4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpRadio: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  _dropRadio: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
 --- !u!4 &7319855996299151227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7207178988385346477, guid: ce47c86ed6161d640afa0f510eb697c9, type: 3}

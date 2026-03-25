@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M3x10 screw Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3377537433616809757, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3925266385757541388, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -56,6 +60,14 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7216148960874786825, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156310246986777630, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 691150086497536301, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
     - {fileID: 1404826825099180186, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
@@ -68,6 +80,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3377537433616809757, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
       insertIndex: -1
       addedObject: {fileID: -1247248079981067434}
+    - targetCorrespondingSourceObject: {fileID: 3377537433616809757, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3671554652550996071}
   m_SourcePrefab: {fileID: 100100000, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
 --- !u!1 &318559472264879213 stripped
 GameObject:
@@ -89,7 +104,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 64
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -216,6 +231,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
   socketIDSO: {fileID: 11400000, guid: 082b71a620b1d454db14f0efda346e11, type: 2}
+--- !u!114 &-3671554652550996071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318559472264879213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a4c905d6999f46b5784579525a4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpRadio: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  _dropRadio: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
 --- !u!4 &5484329639757059476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7397422423842420452, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}

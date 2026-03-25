@@ -40,12 +40,14 @@ namespace DroneAssembly.VR_Port.Part
         private void OnDrop(SelectExitEventArgs arg0)
         {
             if (arg0.interactorObject is XRSocketInteractor) return;
+            gameObject.layer = LayerMask.NameToLayer("Loose Part");
             _dropRadio.RaiseEvent();
         }
 
         private void OnPickUp(SelectEnterEventArgs arg0)
         {
             if (arg0.interactorObject is XRSocketInteractor) return;
+            gameObject.layer = LayerMask.NameToLayer("Held Part");
             _pickUpRadio.RaiseEvent(_assemblyPart);
         }
     }

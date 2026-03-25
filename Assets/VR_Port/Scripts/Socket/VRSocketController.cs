@@ -89,14 +89,28 @@ namespace DroneAssembly.VR_Port.Socket
         
         private void LockPartInteraction(VRAssemblyPart part, SelectEnterEventArgs args)
         {
-            if (args.interactableObject is XRBaseInteractable interactable)
-                interactable.interactionLayers = _snappedLayerMask;
-
+            Transform attachPoint = _socket.attachTransform != null ? _socket.attachTransform : transform;
+            part.transform.position = attachPoint.position;
+            part.transform.rotation = attachPoint.rotation;
+            part.transform.SetParent(this.transform, true);
+            part.gameObject.layer = LayerMask.NameToLayer("Snapped Part");
+            
+            
+            if (part.TryGetComponent<VRPickUpRadioListener>(out var radioListener))
+            {
+                Destroy(radioListener);
+            }
+    
+            if (part.TryGetComponent<XRGrabInteractable>(out var grabInteractable))
+            {
+                Destroy(grabInteractable);
+            }
+    
             if (part.TryGetComponent<Rigidbody>(out var rb))
-                rb.isKinematic = true;
-
-            if (part.TryGetComponent<Collider>(out var coll))
-                coll.enabled = false;
+            {
+                Destroy(rb);
+            }
+            
         }
         
         

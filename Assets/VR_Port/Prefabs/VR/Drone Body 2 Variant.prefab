@@ -8,13 +8,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 89423104111528675, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491901182447613633, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656158495404649215, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048892698726711103, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2602356412201323862, guid: beb1745e25eb315418de8eeda658f322, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3258317130758694780, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137453153936107127, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4248878252180110662, guid: beb1745e25eb315418de8eeda658f322, type: 3}
       propertyPath: m_Name
       value: Drone Body 2 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248878252180110662, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437355267644239462, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616513618889667229, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218770735354092204, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766066396852348092, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970967115869784440, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7172137567214297281, guid: beb1745e25eb315418de8eeda658f322, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56,6 +104,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8231909894459262439, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824150895820219462, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7006158423818660987, guid: beb1745e25eb315418de8eeda658f322, type: 3}
     - {fileID: 6881464164406141172, guid: beb1745e25eb315418de8eeda658f322, type: 3}
@@ -74,6 +130,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4248878252180110662, guid: beb1745e25eb315418de8eeda658f322, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2316487717267724882}
+    - targetCorrespondingSourceObject: {fileID: 4248878252180110662, guid: beb1745e25eb315418de8eeda658f322, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 16679554178698321}
     - targetCorrespondingSourceObject: {fileID: 5766066396852348092, guid: beb1745e25eb315418de8eeda658f322, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6501195794017167437}
@@ -101,7 +160,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 64
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -228,6 +287,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
   socketIDSO: {fileID: 11400000, guid: 45143466566bfdc42a2c5db304d9e984, type: 2}
+--- !u!114 &16679554178698321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3053341352835809610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a4c905d6999f46b5784579525a4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpRadio: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  _dropRadio: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
 --- !u!1 &4660530021782952112 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5766066396852348092, guid: beb1745e25eb315418de8eeda658f322, type: 3}

@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 919749904730489517, guid: 94e3a84dcc00ce54d91e61e7b44ae521, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699030274978418858, guid: 94e3a84dcc00ce54d91e61e7b44ae521, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4854022143130987225, guid: 94e3a84dcc00ce54d91e61e7b44ae521, type: 3}
       propertyPath: m_CollisionDetection
       value: 0
@@ -56,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M2 5x5 Screw Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8977405375448469505, guid: 94e3a84dcc00ce54d91e61e7b44ae521, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 589204615823757447, guid: 94e3a84dcc00ce54d91e61e7b44ae521, type: 3}
     - {fileID: 4510375853851291440, guid: 94e3a84dcc00ce54d91e61e7b44ae521, type: 3}
@@ -68,6 +80,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8977405375448469505, guid: 94e3a84dcc00ce54d91e61e7b44ae521, type: 3}
       insertIndex: -1
       addedObject: {fileID: -2982577214731493953}
+    - targetCorrespondingSourceObject: {fileID: 8977405375448469505, guid: 94e3a84dcc00ce54d91e61e7b44ae521, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6212507517079643574}
   m_SourcePrefab: {fileID: 100100000, guid: 94e3a84dcc00ce54d91e61e7b44ae521, type: 3}
 --- !u!4 &40174162475847836 stripped
 Transform:
@@ -94,7 +109,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 64
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -221,3 +236,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
   socketIDSO: {fileID: 11400000, guid: d7fe777cb08543a4782a86764b413568, type: 2}
+--- !u!114 &-6212507517079643574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4438089986589741456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a4c905d6999f46b5784579525a4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpRadio: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  _dropRadio: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}

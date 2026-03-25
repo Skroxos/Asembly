@@ -12,9 +12,57 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1311705865080710167, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319003332144236338, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1355413417733736509, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
       propertyPath: m_Name
       value: Placa_de_jos Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355413417733736509, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902581207052929051, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605939247423718764, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953787345430788698, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983075897201774327, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468882621991126427, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510567123906508023, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411092961771952599, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252598343356617165, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293202438322615963, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8630507461390963661, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56,6 +104,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8842701068163176600, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7666610850320228772, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
     - {fileID: 1758875835759496667, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
@@ -83,6 +135,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1355413417733736509, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
       insertIndex: -1
       addedObject: {fileID: -9048197859076568328}
+    - targetCorrespondingSourceObject: {fileID: 1355413417733736509, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4631216883706869649}
     - targetCorrespondingSourceObject: {fileID: 8252598343356617165, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7714903838435162936}
@@ -225,7 +280,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 64
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -352,6 +407,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DroneAssembly.VR_Port.Part.VRAssemblyPart
   socketIDSO: {fileID: 11400000, guid: 6cebfcafc5cc8204b812e83af74db9f6, type: 2}
+--- !u!114 &-4631216883706869649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546060026748123719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a4c905d6999f46b5784579525a4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickUpRadio: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  _dropRadio: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
 --- !u!1 &4582331646291637576 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1319003332144236338, guid: 4f156305f79f0134ea4d482964ba1c18, type: 3}
