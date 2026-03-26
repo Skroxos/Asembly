@@ -16,12 +16,10 @@ namespace DroneAssembly.Socket
         private GhostPreviewManager ghostPreviewManager;
         private ISocketEvents socketEvents;
         private Transform snapPoint;
-        private SocketController socketController;
         private ISocketValidation socketValidation;
 
         private void Awake()
         {
-            socketController = GetComponent<SocketController>();
             socketValidation = GetComponent<ISocketValidation>();
             socketEvents = GetComponent<ISocketEvents>();
             ghostPreviewManager = new GhostPreviewManager(ghostPreviewConfig.defaultMat, ghostPreviewConfig.validMat);
@@ -35,11 +33,9 @@ namespace DroneAssembly.Socket
 
         private void OnEnable()
         {
-            if (socketController != null)
-            {
-                socketController.OnPartExited += HandlePartExited;
-                socketController.OnValidPartEntered += HandleValidPartEntered;
-            }
+         
+            socketEvents.OnPartExited += HandlePartExited;
+            socketEvents.OnValidPartEntered += HandleValidPartEntered;
             socketEvents.OnPartSnapped += HandlePartSnapped;
             pickUpRadioSO.OnEventRaised += HandlePartPickedUp;
             dropRadioSO.OnRaised += HandlePartDropped;
@@ -51,14 +47,11 @@ namespace DroneAssembly.Socket
             pickUpRadioSO.OnEventRaised -= HandlePartPickedUp;
             dropRadioSO.OnRaised -= HandlePartDropped;
             socketEvents.OnPartSnapped -= HandlePartSnapped;
-            if (socketController != null)
-            {
-                socketController.OnPartExited -= HandlePartExited;
-                socketController.OnValidPartEntered -= HandleValidPartEntered;
-            }
+            socketEvents.OnValidPartEntered -= HandleValidPartEntered;
+            socketEvents.OnPartExited -= HandlePartExited;
         }
 
-        private void HandleValidPartEntered(AsemblyPart obj)
+        private void HandleValidPartEntered(BaseAssemblyPart obj)
         {
             ghostPreviewManager.SetValidGhostMaterial();
         }

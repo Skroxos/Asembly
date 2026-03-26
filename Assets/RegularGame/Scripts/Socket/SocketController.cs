@@ -18,7 +18,7 @@ namespace DroneAssembly.Socket
         
         public event Action OnPartSnapped;
         public event Action OnPartExited;
-        public event Action<AsemblyPart> OnValidPartEntered;
+        public event Action<BaseAssemblyPart> OnValidPartEntered;
 
         private void Awake()
         {

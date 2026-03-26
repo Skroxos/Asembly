@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7812766921119606402, guid: 4ac32b24796f9d74aacb930715dfe337, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 128
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 187222105538550696, guid: 4ac32b24796f9d74aacb930715dfe337, type: 3}
