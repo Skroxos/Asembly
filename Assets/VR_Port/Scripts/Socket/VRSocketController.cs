@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using DroneAssembly.Radios;
 using DroneAssembly.Socket;
 using DroneAssembly.Validator;
@@ -19,6 +20,9 @@ namespace DroneAssembly.VR_Port.Socket
         [SerializeField] private EventRadio _eventRadio;
         [SerializeField] private InteractionLayerMask _snappedLayerMask;
         public event Action OnPartSnapped;
+        public event Action OnPartExited;
+        public event Action<BaseAssemblyPart> OnValidPartEntered;
+        
         private XRSocketInteractor _socket;
         private VRAssemblyPart _attachedPart;
         
@@ -90,27 +94,37 @@ namespace DroneAssembly.VR_Port.Socket
         private void LockPartInteraction(VRAssemblyPart part, SelectEnterEventArgs args)
         {
             Transform attachPoint = _socket.attachTransform != null ? _socket.attachTransform : transform;
+            // var rootGrab = gameObject.GetComponentInParent<XRGrabInteractable>();
+            // var collider = part.GetComponent<Collider>();
             part.transform.position = attachPoint.position;
             part.transform.rotation = attachPoint.rotation;
             part.transform.SetParent(this.transform, true);
-            part.gameObject.layer = LayerMask.NameToLayer("Snapped Part");
-            
-            
+            part.gameObject.layer = LayerMask.NameToLayer("Snapped Part"); 
+            RemoveComponentsAfterSnap(part);
+            // if (!rootGrab.colliders.Contains(collider))
+            // {
+            //     rootGrab.colliders.Add(collider);
+            // }
+        }
+        
+        
+        private void RemoveComponentsAfterSnap(VRAssemblyPart part)
+        {
             if (part.TryGetComponent<VRPickUpRadioListener>(out var radioListener))
             {
                 Destroy(radioListener);
             }
-    
-            if (part.TryGetComponent<XRGrabInteractable>(out var grabInteractable))
+            
+            if (part.TryGetComponent<XRGrabInteractable>(out var oldGrab))
             {
-                Destroy(grabInteractable);
+                Destroy(oldGrab);
             }
-    
+
+
             if (part.TryGetComponent<Rigidbody>(out var rb))
             {
                 Destroy(rb);
             }
-            
         }
         
         

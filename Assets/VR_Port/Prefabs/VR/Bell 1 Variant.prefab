@@ -62,15 +62,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3008370118685263443, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4914193863258009574, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4938993599937808021, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 128
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5724936879958624915, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
       propertyPath: m_Name
@@ -112,9 +112,27 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3008370118685263443, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9056023508883554859}
+    - targetCorrespondingSourceObject: {fileID: 3008370118685263443, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3231723423037537239}
+    - targetCorrespondingSourceObject: {fileID: 3008370118685263443, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8572313341209022934}
+    - targetCorrespondingSourceObject: {fileID: 3008370118685263443, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3456052186222922353}
     - targetCorrespondingSourceObject: {fileID: 4914193863258009574, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8032154690353092108}
+    - targetCorrespondingSourceObject: {fileID: 4914193863258009574, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3105043845265659103}
+    - targetCorrespondingSourceObject: {fileID: 4914193863258009574, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9169336861098432744}
+    - targetCorrespondingSourceObject: {fileID: 4914193863258009574, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1871907786565259794}
   m_SourcePrefab: {fileID: 100100000, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
 --- !u!1 &1242653978524142272 stripped
 GameObject:
@@ -135,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -169,6 +187,52 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &3231723423037537239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242653978524142272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebec8fa3c9a970749a0931f1ae9821fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _typeIDSO: {fileID: 11400000, guid: fc4bc5ee9c98f74488ed456d4e823f63, type: 2}
+  _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
+  _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  _snappedLayerMask:
+    m_Bits: 2
+--- !u!114 &8572313341209022934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242653978524142272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3499f2c82749919123103ef55e21d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
+  ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+--- !u!114 &3456052186222922353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242653978524142272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapSound: {fileID: 11400000, guid: f90f124d74fbe184f86df45c84275595, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}
 --- !u!1 &8643010595773040128 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5724936879958624915, guid: 03c26b19433f1ff45bb31e6c68dd278b, type: 3}
@@ -349,7 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_Handedness: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -383,3 +447,49 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &3105043845265659103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8985687114413712245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebec8fa3c9a970749a0931f1ae9821fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _typeIDSO: {fileID: 11400000, guid: 705ef80dc2946cc478aa2c5be6e4cb68, type: 2}
+  _socketStepValidationSO: {fileID: 11400000, guid: 71180ffd5881016409184f276bbe15e4, type: 2}
+  _eventRadio: {fileID: 11400000, guid: a359ae542f0d9614bb2fa652be9c92f5, type: 2}
+  _snappedLayerMask:
+    m_Bits: 2
+--- !u!114 &9169336861098432744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8985687114413712245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3499f2c82749919123103ef55e21d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpRadioSO: {fileID: 11400000, guid: 18f447491bb4b7845810928d71ea2a90, type: 2}
+  dropRadioSO: {fileID: 11400000, guid: cfd06a5039b9ccc44ba22bfaeab9f724, type: 2}
+  ghostPreviewConfig: {fileID: 11400000, guid: 1d54a073af5b6994ca06629a78f223f7, type: 2}
+--- !u!114 &1871907786565259794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8985687114413712245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3d86e2cd9748f9a869b91c9060ceb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapSound: {fileID: 11400000, guid: 161a353bf5f422b459461ea5c0c6c12b, type: 2}
+  audioClipRadio: {fileID: 11400000, guid: 414934df0f3db5940b8268e387df3718, type: 2}

@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6024330061504215986, guid: fa33f9375f469714bb8a051f811f06a2, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 128
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7479162474087130318, guid: fa33f9375f469714bb8a051f811f06a2, type: 3}
       propertyPath: m_Layer
