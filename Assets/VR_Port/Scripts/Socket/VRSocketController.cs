@@ -40,11 +40,15 @@ namespace DroneAssembly.VR_Port.Socket
         private void OnEnable()
         {
             _socket.selectEntered.AddListener(OnSelectEntered);
+            _socket.hoverEntered.AddListener(OnHoverEntered);
+            _socket.hoverExited.AddListener(OnHoverExited);
         }
 
         private void OnDisable()
         {
             _socket.selectEntered.RemoveListener(OnSelectEntered);
+            _socket.hoverEntered.RemoveListener(OnHoverEntered);
+            _socket.hoverExited.RemoveListener(OnHoverExited);
         }
         // This is a bit of a hack to make sure that the socket can only be hovered if it can be selected, otherwise the hover visuals will show up even if the part can't be snapped in.
         public bool Process(IXRHoverInteractor interactor, IXRHoverInteractable interactable)
@@ -89,8 +93,15 @@ namespace DroneAssembly.VR_Port.Socket
             else
                 Debug.LogError($"[{name}] EventRadio is not assigned!", this);
         }
-        
-        
+
+        private void OnHoverEntered(HoverEnterEventArgs args)
+        {
+            OnValidPartEntered?.Invoke(_attachedPart);
+        }
+        private void OnHoverExited(HoverExitEventArgs args)
+        {
+            OnPartExited?.Invoke();
+        }
         private void LockPartInteraction(VRAssemblyPart part, SelectEnterEventArgs args)
         {
             Transform attachPoint = _socket.attachTransform != null ? _socket.attachTransform : transform;
