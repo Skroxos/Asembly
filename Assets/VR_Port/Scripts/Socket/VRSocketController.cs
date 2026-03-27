@@ -93,7 +93,6 @@ namespace DroneAssembly.VR_Port.Socket
             else
                 Debug.LogError($"[{name}] EventRadio is not assigned!", this);
         }
-
         private void OnHoverEntered(HoverEnterEventArgs args)
         {
             OnValidPartEntered?.Invoke(_attachedPart);
@@ -105,17 +104,38 @@ namespace DroneAssembly.VR_Port.Socket
         private void LockPartInteraction(VRAssemblyPart part, SelectEnterEventArgs args)
         {
             Transform attachPoint = _socket.attachTransform != null ? _socket.attachTransform : transform;
-            // var rootGrab = gameObject.GetComponentInParent<XRGrabInteractable>();
-            // var collider = part.GetComponent<Collider>();
+            var rootGrab = this.gameObject.GetComponentInParent<XRGrabInteractable>();
+            
+            if (rootGrab == null)
+            {
+                Debug.LogWarning($"[{name}] No XRGrabInteractable found in parent hierarchy. Part will be snapped but may not behave correctly.", this);
+                return;
+            }
+            var partCollider = part.GetComponent<Collider>();
+            if (partCollider != null)
+            {
+                if (!rootGrab.colliders.Contains(partCollider))
+                {
+                    rootGrab.colliders.Add(partCollider);
+                }
+                else            
+                {
+                    Debug.LogWarning($"[{name}] The part's collider is already in the root grab's colliders list.", this);
+                }
+            }
+            
             part.transform.position = attachPoint.position;
             part.transform.rotation = attachPoint.rotation;
             part.transform.SetParent(this.transform, true);
-            part.gameObject.layer = LayerMask.NameToLayer("Snapped Part"); 
+            part.gameObject.layer = LayerMask.NameToLayer("Snapped Part");
+            _socket.socketActive = false;
             RemoveComponentsAfterSnap(part);
-            // if (!rootGrab.colliders.Contains(collider))
-            // {
-            //     rootGrab.colliders.Add(collider);
-            // }
+            if (!rootGrab.isSelected)
+            {
+                rootGrab.enabled = false;
+                rootGrab.enabled = true;
+            }
+             
         }
         
         
