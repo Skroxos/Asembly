@@ -13256,6 +13256,26 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2316254789811605451, guid: 4fdfe4f3ba085d5429f0ef460d3a8e54, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.602
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316254789811605451, guid: 4fdfe4f3ba085d5429f0ef460d3a8e54, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316254789811605451, guid: 4fdfe4f3ba085d5429f0ef460d3a8e54, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.602
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316254790516338626, guid: 4fdfe4f3ba085d5429f0ef460d3a8e54, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.602
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316254790516338626, guid: 4fdfe4f3ba085d5429f0ef460d3a8e54, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3696444023428701120, guid: 4fdfe4f3ba085d5429f0ef460d3a8e54, type: 3}
       propertyPath: audioListener
       value: 
