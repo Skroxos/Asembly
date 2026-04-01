@@ -52,15 +52,15 @@ namespace DroneAssembly.DataBase
                 
                 if (request.result == UnityWebRequest.Result.ConnectionError)
                 {
-                    return (false, "Chyba sítě: " + request.error);
+                    return (false, "Network error: " + request.error);
                 }
                 
                 if (request.responseCode == 200 || request.responseCode == 201)
                 {
-                    return (true, "Skóre úspěšně uloženo!");
+                    return (true, "Score saved successfully!");
                 }
                 
-                return (false, $"Zamítnuto (Kód {request.responseCode}): {request.downloadHandler.text}");
+                return (false, $"Rejected (Code {request.responseCode}): {request.downloadHandler.text}");
             }
         }
         
@@ -76,17 +76,17 @@ namespace DroneAssembly.DataBase
 
                 if (request.result == UnityWebRequest.Result.ConnectionError)
                 {
-                    return (false, default, "Chyba sítě: " + request.error);
+                    return (false, default, "Network error: " + request.error);
                 }
                 
                 if (request.responseCode == 200)
                 {
                     string jsonResponse = request.downloadHandler.text.Trim();
                     LeaderboardData data = JsonUtility.FromJson<LeaderboardData>(jsonResponse);
-                    return (true, data, "Žebříček úspěšně stažen.");
+                    return (true, data, "Leaderboard downloaded successfully.");
                 }
 
-                return (false, default, $"Chyba serveru (Kód {request.responseCode}): {request.downloadHandler.text}");
+                return (false, default, $"Server error (Code {request.responseCode}): {request.downloadHandler.text}");
             }
         }
 
@@ -110,7 +110,7 @@ namespace DroneAssembly.DataBase
         [ContextMenu("Test Score Submission")]
         private async void TestSave()
         {
-            Debug.Log("Odesílám data na server...");
+            Debug.Log("Sending data to server...");
             
             var result = await SavePlayerScoreAsync("Test_Player", 42.5f);
             
@@ -124,7 +124,7 @@ namespace DroneAssembly.DataBase
         [ContextMenu("Test Download Top 10")]
         private async void TestDownload()
         {   
-            Debug.Log("Stahuji žebříček ze serveru...");
+            Debug.Log("Downloading leaderboard from server...");
             
             var result = await GetTop10Async();
             

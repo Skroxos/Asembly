@@ -1,5 +1,5 @@
 using System;
-using System.Threading.Tasks; // Nutné pro asynchronní operace
+using System.Threading.Tasks;
 using DroneAssembly.DataBase;
 using DroneAssembly.Radios.GeneralRadios;
 using TMPro;
@@ -48,7 +48,7 @@ namespace DroneAssembly.ScoresUI
             string playerName = inputField.text.Trim();
             if (string.IsNullOrWhiteSpace(playerName))
             {
-                Debug.LogWarning("Jméno hráče nesmí být prázdné.");
+                Debug.LogWarning("Player name is empty");
                 return;
             }
             
@@ -62,7 +62,7 @@ namespace DroneAssembly.ScoresUI
             }
             else
             {
-                Debug.LogError("Chyba při odesílání skóre: " + result.message);
+                Debug.LogError("Error submitting score: " + result.message);
                 submitButton.interactable = true;
             }
         }
