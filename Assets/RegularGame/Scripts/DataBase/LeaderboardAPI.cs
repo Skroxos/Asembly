@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 using System.Security.Cryptography;
-using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 using DroneAssembly.DataBase.Models;
@@ -14,74 +14,79 @@ namespace DroneAssembly.DataBase
         private string _saveScoreURL => Secrets.Secret.SaveScoreURL;
         private string _secretKey => Secrets.Secret.SecretKey;
         private string _getTop10URL => Secrets.Secret.GetTopScoresURL;
-
-        public void SavePlayerScore(string playerName, float time, Action<bool, string> onComplete = null)
+        
+        [Serializable]
+        private struct ScorePayload
         {
-            StartCoroutine(SendScoreToServer(playerName, time, onComplete));
+            public string player_name;
+            public string completion_time;
+            public string hash;
         }
-
-        private IEnumerator SendScoreToServer(string playerName, float time, Action<bool, string> onComplete)
+        
+        public async Task<(bool success, string message)> SavePlayerScoreAsync(string playerName, float time)
         {
             string timeString = time.ToString("F2", CultureInfo.InvariantCulture);
             string hash = GenerateSHA256(playerName + timeString + _secretKey);
-
-            WWWForm form = new WWWForm();
-            form.AddField("player_name", playerName);
-            form.AddField("completion_time", timeString);
-            form.AddField("hash", hash);
             
-            using (UnityWebRequest www = UnityWebRequest.Post(_saveScoreURL, form))
+            ScorePayload payloadData = new ScorePayload
             {
-                yield return www.SendWebRequest();
+                player_name = playerName,
+                completion_time = timeString,
+                hash = hash
+            };
+            
+            string jsonPayload = JsonUtility.ToJson(payloadData);
+            
+            using (UnityWebRequest request = new UnityWebRequest(_saveScoreURL, "POST"))
+            {
+                byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonPayload);
+                request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+                request.downloadHandler = new DownloadHandlerBuffer();
+                request.SetRequestHeader("Content-Type", "application/json");
                 
-                if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+                var operation = request.SendWebRequest();
+                while (!operation.isDone)
                 {
-                    onComplete?.Invoke(false, "Server connection error: " + www.error);
+                    await Task.Yield(); 
                 }
-                else
+                
+                if (request.result == UnityWebRequest.Result.ConnectionError)
                 {
-                    string responseText = www.downloadHandler.text.Trim();
-                    if (responseText == "Success")
-                    {
-                        onComplete?.Invoke(true, "Score saved successfully!");
-                    }
-                    else
-                    {
-                        onComplete?.Invoke(false, "Server response: " + responseText);
-                    }
+                    return (false, "Chyba sítě: " + request.error);
                 }
+                
+                if (request.responseCode == 200 || request.responseCode == 201)
+                {
+                    return (true, "Skóre úspěšně uloženo!");
+                }
+                
+                return (false, $"Zamítnuto (Kód {request.responseCode}): {request.downloadHandler.text}");
             }
         }
         
-        public void GetTop10(Action<bool, LeaderboardData, string> onComplete = null)
+        public async Task<(bool success, LeaderboardData data, string message)> GetTop10Async()
         {
-            StartCoroutine(DownloadTop10FromServer(onComplete));
-        }
-
-        private IEnumerator DownloadTop10FromServer(Action<bool, LeaderboardData, string> onComplete)
-        {
-            using (UnityWebRequest www = UnityWebRequest.Get(_getTop10URL))
+            using (UnityWebRequest request = UnityWebRequest.Get(_getTop10URL))
             {
-                yield return www.SendWebRequest();
+                var operation = request.SendWebRequest();
+                while (!operation.isDone)
+                {
+                    await Task.Yield();
+                }
+
+                if (request.result == UnityWebRequest.Result.ConnectionError)
+                {
+                    return (false, default, "Chyba sítě: " + request.error);
+                }
                 
-                if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+                if (request.responseCode == 200)
                 {
-                    onComplete?.Invoke(false, default, "Server connection error: " + www.error);
+                    string jsonResponse = request.downloadHandler.text.Trim();
+                    LeaderboardData data = JsonUtility.FromJson<LeaderboardData>(jsonResponse);
+                    return (true, data, "Žebříček úspěšně stažen.");
                 }
-                else
-                {
-                    string jsonResponse = www.downloadHandler.text.Trim();
-                    
-                    if (jsonResponse.Contains("error") || !jsonResponse.Contains("top10"))
-                    {
-                        onComplete?.Invoke(false, default, "Server error: " + jsonResponse);
-                    }
-                    else
-                    {
-                        LeaderboardData data = JsonUtility.FromJson<LeaderboardData>(jsonResponse);
-                        onComplete?.Invoke(true, data, "Leaderboard downloaded successfully!");
-                    }
-                }
+
+                return (false, default, $"Chyba serveru (Kód {request.responseCode}): {request.downloadHandler.text}");
             }
         }
 
@@ -101,43 +106,42 @@ namespace DroneAssembly.DataBase
             }
         }
         
-        
-        
 #if UNITY_EDITOR
         [ContextMenu("Test Score Submission")]
-        private void TestSave()
+        private async void TestSave()
         {
-            SavePlayerScore("Test_Player", 42.5f, (success, message) => 
-            {
-                if (success) {
-                    Debug.Log("<color=green>" + message + "</color>");
-                } else {
-                    Debug.LogError("<color=red>" + message + "</color>");
-                }
-            });
+            Debug.Log("Odesílám data na server...");
+            
+            var result = await SavePlayerScoreAsync("Test_Player", 42.5f);
+            
+            if (result.success) {
+                Debug.Log("<color=green>" + result.message + "</color>");
+            } else {
+                Debug.LogError("<color=red>" + result.message + "</color>");
+            }
         }
 
         [ContextMenu("Test Download Top 10")]
-        private void TestDownload()
+        private async void TestDownload()
         {   
-            GetTop10((success, data, message) => 
+            Debug.Log("Stahuji žebříček ze serveru...");
+            
+            var result = await GetTop10Async();
+            
+            if (result.success) 
             {
-                if (success) 
+                Debug.Log("<color=green>" + result.message + "</color>");
+                int rank = 1;
+                foreach (PlayerScore player in result.data.top10)
                 {
-                    Debug.Log("<color=green>" + message + "</color>");
-                    
-                    int rank = 1;
-                    foreach (PlayerScore player in data.top10)
-                    {
-                        Debug.Log($"<b>Rank {rank}:</b> {player.player_name} | Time: {player.completion_time} s");
-                        rank++;
-                    }
-                } 
-                else 
-                {
-                    Debug.LogError("<color=red>" + message + "</color>");
+                    Debug.Log($"<b>Rank {rank}:</b> {player.player_name} | Time: {player.completion_time} s");
+                    rank++;
                 }
-            });
+            } 
+            else 
+            {
+                Debug.LogError("<color=red>" + result.message + "</color>");
+            }
         }
 #endif
     }
