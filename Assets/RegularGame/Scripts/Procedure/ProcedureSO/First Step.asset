@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: First Step
   m_EditorClassIdentifier: Assembly-CSharp::ProcedureSO
   procedureName: Drone Assembly
-  steps: []
+  steps:
+  - description: Secure the circuit board with screws
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: d7fe777cb08543a4782a86764b413568, type: 2}
+      amountRequired: 4
+  - description: Place the fully assembled drone outside
+    requiredParts:
+    - requiredPartID: {fileID: 11400000, guid: bc52c2b35d7b90b4fa029f5f25ebc14f, type: 2}
+      amountRequired: 1
