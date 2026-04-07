@@ -66,44 +66,40 @@ namespace DroneAssembly.DataBase
         
         public async Task<(bool success, LeaderboardData data, string message)> GetTop10Async()
         {
-            using (UnityWebRequest request = UnityWebRequest.Get(_getTop10URL))
+            using UnityWebRequest request = UnityWebRequest.Get(_getTop10URL);
+            var operation = request.SendWebRequest();
+            while (!operation.isDone)
             {
-                var operation = request.SendWebRequest();
-                while (!operation.isDone)
-                {
-                    await Task.Yield();
-                }
-
-                if (request.result == UnityWebRequest.Result.ConnectionError)
-                {
-                    return (false, default, "Network error: " + request.error);
-                }
-                
-                if (request.responseCode == 200)
-                {
-                    string jsonResponse = request.downloadHandler.text.Trim();
-                    LeaderboardData data = JsonUtility.FromJson<LeaderboardData>(jsonResponse);
-                    return (true, data, "Leaderboard downloaded successfully.");
-                }
-
-                return (false, default, $"Server error (Code {request.responseCode}): {request.downloadHandler.text}");
+                await Task.Yield();
             }
+
+            if (request.result == UnityWebRequest.Result.ConnectionError)
+            {
+                return (false, default, "Network error: " + request.error);
+            }
+                
+            if (request.responseCode == 200)
+            {
+                string jsonResponse = request.downloadHandler.text.Trim();
+                LeaderboardData data = JsonUtility.FromJson<LeaderboardData>(jsonResponse);
+                return (true, data, "Leaderboard downloaded successfully.");
+            }
+
+            return (false, default, $"Server error (Code {request.responseCode}): {request.downloadHandler.text}");
         }
 
         private string GenerateSHA256(string input)
         {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] bytes = Encoding.UTF8.GetBytes(input);
-                byte[] hashBytes = sha256.ComputeHash(bytes);
+            using SHA256 sha256 = SHA256.Create();
+            byte[] bytes = Encoding.UTF8.GetBytes(input);
+            byte[] hashBytes = sha256.ComputeHash(bytes);
                 
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < hashBytes.Length; i++)
-                {
-                    builder.Append(hashBytes[i].ToString("x2"));
-                }
-                return builder.ToString();
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                builder.Append(hashBytes[i].ToString("x2"));
             }
+            return builder.ToString();
         }
         
 #if UNITY_EDITOR
