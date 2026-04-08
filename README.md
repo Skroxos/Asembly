@@ -25,18 +25,43 @@ This project was created as a portfolio piece, showcasing a complete **3-tier cl
 
 
 
-## Features
--  **Interactive Drone Assembly** — snap drone parts together with precise 3D positioning
--  **Global Online Leaderboard** — submit and compare completion times with players worldwide
--  **Tamper-proof Score Submission** — scores are signed with a SHA-256 hash and a secret key before being sent from Unity
--  **Rate Limiting** — API endpoints are protected against abuse with per-IP request throttling
--  **Full Cloud Deployment** — entire infrastructure provisioned via Terraform on Microsoft Azure
-
 ## Architecture & Tech Stack
-**Game Engine:** Unity (C#)
-* **Database:** Microsoft Azure SQL Database (Cloud-hosted).
-* **Web API:** Custom Azure App Service acting as a bridge between Unity and the database.
 
+```
+[ Unity Client (C#) ]
+        │
+        │  HTTPS + SHA-256 signed payload
+        ▼
+[ PHP REST API — Azure App Service ]
+        │
+        │  PDO / MySQL
+        ▼
+[ MySQL Flexible Server — Azure ]
+```
+
+| Layer | Technology |
+|---|---|
+| Game Client | Unity 2022+, C#, ShaderLab, HLSL |
+| REST API | PHP 8.2, PDO |
+| Database | Azure MySQL Flexible Server 8.0 |
+| Infrastructure | Terraform, Azure App Service (Linux) |
+| Security | SHA-256 request signing, `hash_equals()` |
+
+### API Endpoints
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `save_score.php` | `POST` | Submits a new score with a signed hash |
+| `get_top10.php` | `GET` | Returns the top 10 leaderboard entries |
+
+---
+
+## Other Technical Highlights
+* **CI/CD Pipeline:** Configured **GitHub Actions** to automatically trigger Unity Unit Tests on every push/PR to maintain code quality.
+* **Data-Driven Architecture:** Extensive use of Scriptable Objects (Procedure SO) to allow rapid iteration of assembly logic without touching the codebase.
+* **Custom Editor Tools:** To help with level design and logic testing.
+* **API Rate Limiting:** Implemented custom IP-based request throttling (Cooldown for POST, Fixed Window for GET) to protect the endpoints against abuse and DDoS.
+* **Asynchronous Networking:** Utilizing modern C# async/await Tasks for all API calls to ensure smooth UI thread performance without callback hell.
 
 ## Credits
 * **3D Drone Model:** Created by *Angel* on GrabCAD.
