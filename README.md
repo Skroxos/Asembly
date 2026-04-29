@@ -58,7 +58,7 @@ This project was created as a portfolio piece, showcasing a complete **3-tier cl
 ---
 
 ## Other Technical Highlights
-* **CI/CD Pipeline:** Configured **GitHub Actions** to automatically trigger Unity Unit Tests on every push/PR to maintain code quality.
+* **Automated CI Pipeline:** Configured GitHub Actions for headless Unity builds, secure secret management, and automated unit testing on every push/PR to ensure production stability.
 * **Data-Driven Architecture:** Extensive use of Scriptable Objects (Procedure SO) to allow rapid iteration of assembly logic without touching the codebase.
 * **Custom Editor Tools:** To help with level design and logic testing.
 * **API Rate Limiting:** Implemented custom IP-based request throttling (Cooldown for POST, Fixed Window for GET) to protect the endpoints against abuse and DDoS.
