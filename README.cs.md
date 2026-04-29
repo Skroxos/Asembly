@@ -59,7 +59,7 @@ Projekt byl vytvořen jako portfolio piece, demonstrující kompletní **třívr
 
 ## Další technické detaily
 
-* **CI/CD Pipeline:** Nakonfigurované **GitHub Actions** pro automatické spouštění Unity Unit Testů při každém push/PR za účelem udržení kvality kódu.
+* **Automatizovaná CI Pipeline:** Nakonfigurované GitHub Actions pro headless Unity buildy, bezpečnou správu secrets a automatické unit testování při každém push/PR pro zajištění stability produkční verze.
 * **Datově řízená architektura:** Rozsáhlé využití Scriptable Objects (Procedure SO) pro rychlou iteraci logiky sestavování bez zásahu do kódu.
 * **Vlastní nástroje editoru:** Pro pomoc s návrhem levelů a testováním logiky.
 * **Rate Limiting API:** Implementované vlastní IP-based omezování požadavků (Cooldown pro POST, Fixed Window pro GET) k ochraně endpointů před zneužitím a DDoS.
