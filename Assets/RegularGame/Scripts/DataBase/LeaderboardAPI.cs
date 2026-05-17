@@ -24,7 +24,7 @@ namespace DroneAssembly.DataBase
             public string hash;
         }
 
-        public async void SendData(string playerName, float time)
+        public string PreparePostData(string playerName, float time)
         {
             string timeString = time.ToString("F2", CultureInfo.InvariantCulture);
             string hash = GenerateSHA256(playerName + timeString + _secretKey);
@@ -35,15 +35,15 @@ namespace DroneAssembly.DataBase
                 hash = hash
             };
 
-            string jsonPayload = JsonUtility.ToJson(scorePayload);
-
-            await SendPlayerDataAsync(_saveScoreURL, jsonPayload);
+           return JsonUtility.ToJson(scorePayload);
         }
 
-        public async UniTask SendPlayerDataAsync(string url, string jsonPayload)
+        public async UniTask<bool> SendPlayerDataAsync(string playerName, float time)
         {
-            CancellationTokenSource cts = new CancellationTokenSource(TimeSpan.FromSeconds(60));
-            using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
+            string jsonPayload = PreparePostData(playerName, time);
+
+            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(60));
+            using (UnityWebRequest request = new UnityWebRequest(_saveScoreURL, "POST"))
             {
                 byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonPayload);
                 request.uploadHandler = new UploadHandlerRaw(bodyRaw);
@@ -53,66 +53,68 @@ namespace DroneAssembly.DataBase
                 try
                 {
                     await request.SendWebRequest().ToUniTask(cancellationToken: cts.Token);
-
                     if (request.responseCode == 200 || request.responseCode == 201)
                     {
-                        Debug.Log($"<color=green>Data Send (Status {request.responseCode})</color>");
+                        Debug.Log($"<color=green>Data Sent (Status {request.responseCode})</color>");
+                        return true;
                     }
-                    else
-                    {
-                        Debug.LogError($"failed. status code: {request.responseCode}\n{request.downloadHandler.text}");
-                    }
+
+                    Debug.LogError($"Rejected (Code {request.responseCode}): {request.downloadHandler.text}");
+                    return false;
                 }
                 catch (OperationCanceledException)
                 {
-                    Debug.LogError("Time Limit Reached");
+                    Debug.LogError("Time Limit Reached (Timeout)");
+                    return false;
                 }
                 catch (UnityWebRequestException ex)
                 {
-                    Debug.LogError($"Error: {ex.Message}");
+                    Debug.LogError($"Network/Server Error: {ex.Message} \n {ex.Text}");
+                    return false;
                 }
             }
         }
 
 
-        //public async void FetchData()
-        //{
-        //    await SendGetRequestAsync(_getTop10URL);
-        //}
+      
 
-        public async UniTask<LeaderboardData> FetchDataAsync()
+        public async UniTask<(bool isSuccess, LeaderboardData data)> FetchDataAsync()
         {
+            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
             using (UnityWebRequest request = UnityWebRequest.Get(_getTop10URL))
             {
                 try
                 {
-                    await request.SendWebRequest().ToUniTask();
+                    await request.SendWebRequest().ToUniTask(cancellationToken: cts.Token);
 
                     if (request.responseCode == 200)
                     {
+                       
                         string jsonResponse = request.downloadHandler.text.Trim();
-                        return JsonUtility.FromJson<LeaderboardData>(jsonResponse);
+                        LeaderboardData data = JsonUtility.FromJson<LeaderboardData>(jsonResponse);
+                        return (true, data);
                     }
                     else
                     {
                         Debug.LogError($"Server denied request Code: {request.responseCode}");
-                        return new LeaderboardData();
+                        return (false, null);
                     }
+                }
+                catch (OperationCanceledException)
+                {
+                    Debug.LogError("Fetch timeout");
+                    return (false, null);
                 }
                 catch (UnityWebRequestException ex)
                 {
                     Debug.LogError(ex.Message);
-                    return new LeaderboardData();
+                    return (false, null);
                 }
             }
         }
 
-        //public async UniTask SendGetRequestAsync(string url)
-        //{
-            
-        //}
 
-       
+
 
         private string GenerateSHA256(string input)
         {
@@ -128,39 +130,5 @@ namespace DroneAssembly.DataBase
             return builder.ToString();
         }
 
-
-
-//#if UNITY_EDITOR
-//        [ContextMenu("Test Score Submission")]
-//        private  void TestSave()
-//        {
-//            Debug.Log("Sending data to server...");
-//            SendData("Test_Player", 42.5f);
-//            Debug.Log("<color=green>Data sent (check server response above)</color>");
-//        }
-
-//        [ContextMenu("Test Download Top 10")]
-//        private async void TestDownload()
-//        {
-//            Debug.Log("Downloading leaderboard from server...");
-
-//            LeaderboardData data = await FetchDataAsync();
-
-//            if (data.top10 != null && data.top10.Length > 0)
-//            {
-//                Debug.Log($"<color=green>Loaded {data.top10.Length} entries</color>");
-//                int rank = 1;
-//                foreach (PlayerScore player in data.top10)
-//                {
-//                    Debug.Log($"<b>Rank {rank}:</b> {player.player_name} | Time: {player.completion_time} s");
-//                    rank++;
-//                }
-//            }
-//            else
-//            {
-//                Debug.LogError("<color=red>No data received or request failed</color>");
-//            }
-//        }
-//#endif
     }
 }

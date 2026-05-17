@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using DroneAssembly.DataBase;
 using DroneAssembly.DataBase.Models;
 using DroneAssembly.Radios.GeneralRadios;
@@ -50,7 +51,7 @@ namespace DroneAssembly.ScoresUI
             _time = Time.timeSinceLevelLoad;
         }
 
-        public void OnSubmitButtonClicked()
+        public async UniTask OnSubmitButtonClicked()
         {
             string playerName = inputField.text.Trim();
             if (string.IsNullOrWhiteSpace(playerName))
@@ -60,7 +61,7 @@ namespace DroneAssembly.ScoresUI
             }
             submitButton.interactable = false;
             inputFieldUI.SetActive(false);
-            _networkService.SendData(playerName, _time);
+            await _networkService.SendPlayerDataAsync(playerName, _time);
             ShowLeaderboard();
         }
 
@@ -81,13 +82,21 @@ namespace DroneAssembly.ScoresUI
                 Destroy(child.gameObject);
             }
 
-            LeaderboardData data = await _networkService.FetchDataAsync();
+            var data = await _networkService.FetchDataAsync();
 
-            foreach(var score in data.top10)
+            if (data.isSuccess)
             {
-                GameObject entry = Instantiate(prefabLeaderboardDisplayElement, leaderboardUI.transform);
-                TextMeshProUGUI entryText = entry.GetComponentInChildren<TextMeshProUGUI>();
-                entryText.text = $"{score.player_name}: {FormatTime(score.completion_time)}";
+                foreach (var score in data.data.top10)
+                {
+                    GameObject entry = Instantiate(prefabLeaderboardDisplayElement, leaderboardUI.transform);
+                    TextMeshProUGUI entryText = entry.GetComponentInChildren<TextMeshProUGUI>();
+                    entryText.text = $"{score.player_name}: {FormatTime(score.completion_time)}";
+                }
+            }
+            else
+            {
+                leaderboardPanel.SetActive(false);
+                leaderboardUI.SetActive(false);
             }
         }
 

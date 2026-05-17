@@ -3,6 +3,6 @@ using DroneAssembly.DataBase.Models;
 
 public interface INetworkService
 {
-    void SendData(string playerName, float time);
-    UniTask<LeaderboardData> FetchDataAsync();
+    UniTask<bool> SendPlayerDataAsync(string playerName, float time);
+    UniTask<(bool isSuccess, LeaderboardData data)> FetchDataAsync();
 }
