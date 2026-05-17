@@ -1,99 +1,125 @@
+using Cysharp.Threading.Tasks;
+using DroneAssembly.DataBase.Models;
 using System;
-using System.Text;
+using System.Globalization;
 using System.Security.Cryptography;
-using System.Threading.Tasks;
+using System.Text;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Networking;
-using DroneAssembly.DataBase.Models;
-using System.Globalization;
 
 namespace DroneAssembly.DataBase
 {
-    public class LeaderboardAPI : MonoBehaviour
+    public class LeaderboardAPI : INetworkService
     {
         private string _saveScoreURL => Secrets.Secret.SaveScoreURL;
         private string _secretKey => Secrets.Secret.SecretKey;
         private string _getTop10URL => Secrets.Secret.GetTopScoresURL;
-        
+
         [Serializable]
-        private struct ScorePayload
+        public class ScorePayload
         {
             public string player_name;
             public string completion_time;
             public string hash;
         }
-        
-        public async Task<(bool success, string message)> SavePlayerScoreAsync(string playerName, float time)
+
+        public async void SendData(string playerName, float time)
         {
             string timeString = time.ToString("F2", CultureInfo.InvariantCulture);
             string hash = GenerateSHA256(playerName + timeString + _secretKey);
-            
-            ScorePayload payloadData = new ScorePayload
+            ScorePayload scorePayload = new ScorePayload
             {
                 player_name = playerName,
                 completion_time = timeString,
                 hash = hash
             };
-            
-            string jsonPayload = JsonUtility.ToJson(payloadData);
-            
-            using (UnityWebRequest request = new UnityWebRequest(_saveScoreURL, "POST"))
+
+            string jsonPayload = JsonUtility.ToJson(scorePayload);
+
+            await SendPlayerDataAsync(_saveScoreURL, jsonPayload);
+        }
+
+        public async UniTask SendPlayerDataAsync(string url, string jsonPayload)
+        {
+            CancellationTokenSource cts = new CancellationTokenSource(TimeSpan.FromSeconds(60));
+            using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
             {
                 byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonPayload);
                 request.uploadHandler = new UploadHandlerRaw(bodyRaw);
                 request.downloadHandler = new DownloadHandlerBuffer();
                 request.SetRequestHeader("Content-Type", "application/json");
-                
-                var operation = request.SendWebRequest();
-                while (!operation.isDone)
+
+                try
                 {
-                    await Task.Yield(); 
+                    await request.SendWebRequest().ToUniTask(cancellationToken: cts.Token);
+
+                    if (request.responseCode == 200 || request.responseCode == 201)
+                    {
+                        Debug.Log($"<color=green>Data Send (Status {request.responseCode})</color>");
+                    }
+                    else
+                    {
+                        Debug.LogError($"failed. status code: {request.responseCode}\n{request.downloadHandler.text}");
+                    }
                 }
-                
-                if (request.result == UnityWebRequest.Result.ConnectionError)
+                catch (OperationCanceledException)
                 {
-                    return (false, "Network error: " + request.error);
+                    Debug.LogError("Time Limit Reached");
                 }
-                
-                if (request.responseCode == 200 || request.responseCode == 201)
+                catch (UnityWebRequestException ex)
                 {
-                    return (true, "Score saved successfully!");
+                    Debug.LogError($"Error: {ex.Message}");
                 }
-                
-                return (false, $"Rejected (Code {request.responseCode}): {request.downloadHandler.text}");
             }
         }
-        
-        public async Task<(bool success, LeaderboardData data, string message)> GetTop10Async()
+
+
+        //public async void FetchData()
+        //{
+        //    await SendGetRequestAsync(_getTop10URL);
+        //}
+
+        public async UniTask<LeaderboardData> FetchDataAsync()
         {
-            using UnityWebRequest request = UnityWebRequest.Get(_getTop10URL);
-            var operation = request.SendWebRequest();
-            while (!operation.isDone)
+            using (UnityWebRequest request = UnityWebRequest.Get(_getTop10URL))
             {
-                await Task.Yield();
-            }
+                try
+                {
+                    await request.SendWebRequest().ToUniTask();
 
-            if (request.result == UnityWebRequest.Result.ConnectionError)
-            {
-                return (false, default, "Network error: " + request.error);
+                    if (request.responseCode == 200)
+                    {
+                        string jsonResponse = request.downloadHandler.text.Trim();
+                        return JsonUtility.FromJson<LeaderboardData>(jsonResponse);
+                    }
+                    else
+                    {
+                        Debug.LogError($"Server denied request Code: {request.responseCode}");
+                        return new LeaderboardData();
+                    }
+                }
+                catch (UnityWebRequestException ex)
+                {
+                    Debug.LogError(ex.Message);
+                    return new LeaderboardData();
+                }
             }
-                
-            if (request.responseCode == 200)
-            {
-                string jsonResponse = request.downloadHandler.text.Trim();
-                LeaderboardData data = JsonUtility.FromJson<LeaderboardData>(jsonResponse);
-                return (true, data, "Leaderboard downloaded successfully.");
-            }
-
-            return (false, default, $"Server error (Code {request.responseCode}): {request.downloadHandler.text}");
         }
+
+        //public async UniTask SendGetRequestAsync(string url)
+        //{
+            
+        //}
+
+       
 
         private string GenerateSHA256(string input)
         {
             using SHA256 sha256 = SHA256.Create();
             byte[] bytes = Encoding.UTF8.GetBytes(input);
             byte[] hashBytes = sha256.ComputeHash(bytes);
-                
+
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < hashBytes.Length; i++)
             {
@@ -101,44 +127,40 @@ namespace DroneAssembly.DataBase
             }
             return builder.ToString();
         }
-        
-#if UNITY_EDITOR
-        [ContextMenu("Test Score Submission")]
-        private async void TestSave()
-        {
-            Debug.Log("Sending data to server...");
-            
-            var result = await SavePlayerScoreAsync("Test_Player", 42.5f);
-            
-            if (result.success) {
-                Debug.Log("<color=green>" + result.message + "</color>");
-            } else {
-                Debug.LogError("<color=red>" + result.message + "</color>");
-            }
-        }
 
-        [ContextMenu("Test Download Top 10")]
-        private async void TestDownload()
-        {   
-            Debug.Log("Downloading leaderboard from server...");
-            
-            var result = await GetTop10Async();
-            
-            if (result.success) 
-            {
-                Debug.Log("<color=green>" + result.message + "</color>");
-                int rank = 1;
-                foreach (PlayerScore player in result.data.top10)
-                {
-                    Debug.Log($"<b>Rank {rank}:</b> {player.player_name} | Time: {player.completion_time} s");
-                    rank++;
-                }
-            } 
-            else 
-            {
-                Debug.LogError("<color=red>" + result.message + "</color>");
-            }
-        }
-#endif
+
+
+//#if UNITY_EDITOR
+//        [ContextMenu("Test Score Submission")]
+//        private  void TestSave()
+//        {
+//            Debug.Log("Sending data to server...");
+//            SendData("Test_Player", 42.5f);
+//            Debug.Log("<color=green>Data sent (check server response above)</color>");
+//        }
+
+//        [ContextMenu("Test Download Top 10")]
+//        private async void TestDownload()
+//        {
+//            Debug.Log("Downloading leaderboard from server...");
+
+//            LeaderboardData data = await FetchDataAsync();
+
+//            if (data.top10 != null && data.top10.Length > 0)
+//            {
+//                Debug.Log($"<color=green>Loaded {data.top10.Length} entries</color>");
+//                int rank = 1;
+//                foreach (PlayerScore player in data.top10)
+//                {
+//                    Debug.Log($"<b>Rank {rank}:</b> {player.player_name} | Time: {player.completion_time} s");
+//                    rank++;
+//                }
+//            }
+//            else
+//            {
+//                Debug.LogError("<color=red>No data received or request failed</color>");
+//            }
+//        }
+//#endif
     }
 }
