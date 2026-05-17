@@ -10,7 +10,7 @@ public struct PlayerScore
 }
     
 [System.Serializable]
-public struct LeaderboardData
+public class LeaderboardData
 {
     public PlayerScore[] top10;
 }
