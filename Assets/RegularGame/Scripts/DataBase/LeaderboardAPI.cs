@@ -1,12 +1,13 @@
 using Cysharp.Threading.Tasks;
 using DroneAssembly.DataBase.Models;
+using Newtonsoft.Json;
 using System;
 using System.Globalization;
+using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using UnityEngine;
-using UnityEngine.Networking;
 
 namespace DroneAssembly.DataBase
 {
@@ -16,11 +17,13 @@ namespace DroneAssembly.DataBase
         private string _secretKey => Secrets.Secret.SecretKey;
         private string _getTop10URL => Secrets.Secret.GetTopScoresURL;
 
+        public static readonly HttpClient _httpClient = new HttpClient();
+
         [Serializable]
         public class ScorePayload
         {
-            public string player_name;
-            public string completion_time;
+            public string Name;
+            public float finishTime;
             public string hash;
         }
 
@@ -30,86 +33,78 @@ namespace DroneAssembly.DataBase
             string hash = GenerateSHA256(playerName + timeString + _secretKey);
             ScorePayload scorePayload = new ScorePayload
             {
-                player_name = playerName,
-                completion_time = timeString,
+                Name = playerName,
+                finishTime = time,
                 hash = hash
             };
 
-           return JsonUtility.ToJson(scorePayload);
+            return JsonUtility.ToJson(scorePayload);
         }
 
         public async UniTask<bool> SendPlayerDataAsync(string playerName, float time)
         {
+            Debug.Log($"Pokouším se odeslat data na: {_saveScoreURL}");
             string jsonPayload = PreparePostData(playerName, time);
-
             using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(60));
-            using (UnityWebRequest request = new UnityWebRequest(_saveScoreURL, "POST"))
+            using var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+            try 
             {
-                byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonPayload);
-                request.uploadHandler = new UploadHandlerRaw(bodyRaw);
-                request.downloadHandler = new DownloadHandlerBuffer();
-                request.SetRequestHeader("Content-Type", "application/json");
-
-                try
+                using var response = await _httpClient.PostAsync(_saveScoreURL, content, cts.Token);
+                if (response.IsSuccessStatusCode)
                 {
-                    await request.SendWebRequest().ToUniTask(cancellationToken: cts.Token);
-                    if (request.responseCode == 200 || request.responseCode == 201)
-                    {
-                        Debug.Log($"<color=green>Data Sent (Status {request.responseCode})</color>");
-                        return true;
-                    }
-
-                    Debug.LogError($"Rejected (Code {request.responseCode}): {request.downloadHandler.text}");
+                    return true;
+                }
+                else
+                {
+                    string errorText = await response.Content.ReadAsStringAsync();
+                    Debug.LogError($"Server denied request Code: {response.StatusCode}, Message: {errorText}");
                     return false;
                 }
-                catch (OperationCanceledException)
-                {
-                    Debug.LogError("Time Limit Reached (Timeout)");
-                    return false;
-                }
-                catch (UnityWebRequestException ex)
-                {
-                    Debug.LogError($"Network/Server Error: {ex.Message} \n {ex.Text}");
-                    return false;
-                }
+            }
+            catch (OperationCanceledException)
+            {
+                Debug.LogError("Request timeout");
+                return false;
+            }
+            catch (HttpRequestException ex)
+            {
+                Debug.LogError(ex.Message);
+                return false;
             }
         }
 
 
-      
 
-        public async UniTask<(bool isSuccess, LeaderboardData data)> FetchDataAsync()
+
+        public async UniTask<(bool isSuccess, PlayerScore[] data)> FetchDataAsync()
         {
             using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
-            using (UnityWebRequest request = UnityWebRequest.Get(_getTop10URL))
+            try
             {
-                try
+                using var response = await _httpClient.GetAsync(_getTop10URL, cts.Token);
+                if (response.IsSuccessStatusCode)
                 {
-                    await request.SendWebRequest().ToUniTask(cancellationToken: cts.Token);
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    PlayerScore[] data = JsonConvert.DeserializeObject<PlayerScore[]>(jsonResponse);
+                    return (true, data);
+                }
+                else
+                {
+                    string errorText = await response.Content.ReadAsStringAsync();
+                    Debug.LogError($"Server denied request Code: {response.StatusCode}, Message: {errorText}");
+                    return (false, null);
+                }
+            }
+            catch (OperationCanceledException)
+            {
+                Debug.LogError("Request timeout");
+                return (false, null);
+            }
+            catch (HttpRequestException ex)
+            {
+                Debug.LogError(ex.Message);
+                return (false, null);
 
-                    if (request.responseCode == 200)
-                    {
-                       
-                        string jsonResponse = request.downloadHandler.text.Trim();
-                        LeaderboardData data = JsonUtility.FromJson<LeaderboardData>(jsonResponse);
-                        return (true, data);
-                    }
-                    else
-                    {
-                        Debug.LogError($"Server denied request Code: {request.responseCode}");
-                        return (false, null);
-                    }
-                }
-                catch (OperationCanceledException)
-                {
-                    Debug.LogError("Fetch timeout");
-                    return (false, null);
-                }
-                catch (UnityWebRequestException ex)
-                {
-                    Debug.LogError(ex.Message);
-                    return (false, null);
-                }
             }
         }
 

@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 
 namespace DroneAssembly.DataBase.Models
 {
@@ -5,13 +6,16 @@ namespace DroneAssembly.DataBase.Models
 [System.Serializable]
 public struct PlayerScore
 {
-    public string player_name;
-    public float completion_time;
+        [JsonProperty("Name")]
+        public string Name;
+        [JsonProperty("FinishTime")]
+        public float FinishTime;
 }
     
 [System.Serializable]
 public class LeaderboardData
 {
-    public PlayerScore[] top10;
+            [JsonProperty("top10")]
+        public PlayerScore[] top10;
 }
 }
