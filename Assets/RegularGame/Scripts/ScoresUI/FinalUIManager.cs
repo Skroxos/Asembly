@@ -1,7 +1,5 @@
 using System;
 using Cysharp.Threading.Tasks;
-using DroneAssembly.DataBase;
-using DroneAssembly.DataBase.Models;
 using DroneAssembly.Radios.GeneralRadios;
 using TMPro;
 using UnityEngine;
@@ -13,7 +11,6 @@ namespace DroneAssembly.ScoresUI
     public class FinalUIManager : MonoBehaviour
     {
         [SerializeField] private SimpleEventRadio finishRadio;
-        [SerializeField] private LeaderboardAPI leaderboardAPI;
         [SerializeField] private GameObject inputFieldUI;
         [SerializeField] private GameObject leaderboardUI;
         [SerializeField] private GameObject prefabLeaderboardDisplayElement;
@@ -51,7 +48,7 @@ namespace DroneAssembly.ScoresUI
             _time = Time.timeSinceLevelLoad;
         }
 
-        public async UniTask OnSubmitButtonClicked()
+        public async void OnSubmitButtonClicked()
         {
             string playerName = inputField.text.Trim();
             if (string.IsNullOrWhiteSpace(playerName))
@@ -60,18 +57,18 @@ namespace DroneAssembly.ScoresUI
                 return;
             }
             submitButton.interactable = false;
-            inputFieldUI.SetActive(false);
             await _networkService.SendPlayerDataAsync(playerName, _time);
-            ShowLeaderboard();
+            inputFieldUI.SetActive(false);
+            ShowLeaderboard().Forget();
         }
 
         public void OnClickedCancel()
         {
             inputFieldUI.SetActive(false);
-            ShowLeaderboard();
+            ShowLeaderboard().Forget();
         }
 
-        public async void ShowLeaderboard()
+        public async UniTaskVoid ShowLeaderboard()
         {
             leaderboardPanel.SetActive(true);
             leaderboardUI.SetActive(true);
@@ -82,15 +79,15 @@ namespace DroneAssembly.ScoresUI
                 Destroy(child.gameObject);
             }
 
-            var data = await _networkService.FetchDataAsync();
+            var results = await _networkService.FetchDataAsync();
 
-            if (data.isSuccess)
+            if (results.isSuccess)
             {
-                foreach (var score in data.data.top10)
+                foreach (var score in results.data)
                 {
                     GameObject entry = Instantiate(prefabLeaderboardDisplayElement, leaderboardUI.transform);
                     TextMeshProUGUI entryText = entry.GetComponentInChildren<TextMeshProUGUI>();
-                    entryText.text = $"{score.player_name}: {FormatTime(score.completion_time)}";
+                    entryText.text = $"{score.Name}: {FormatTime(score.FinishTime)}";
                 }
             }
             else

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b056fe8f57f4b8bba4d5a908a67bb9f, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.Player.Movement.PlayerConfig
-  Speed: 2
+  Speed: 5
   MouseSensitivity: 5
   VerticalLookLimit: 80
   CrouchHeight: 1

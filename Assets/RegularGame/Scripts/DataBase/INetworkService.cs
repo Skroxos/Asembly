@@ -4,5 +4,5 @@ using DroneAssembly.DataBase.Models;
 public interface INetworkService
 {
     UniTask<bool> SendPlayerDataAsync(string playerName, float time);
-    UniTask<(bool isSuccess, LeaderboardData data)> FetchDataAsync();
+    UniTask<(bool isSuccess, PlayerScore[] data)> FetchDataAsync();
 }
