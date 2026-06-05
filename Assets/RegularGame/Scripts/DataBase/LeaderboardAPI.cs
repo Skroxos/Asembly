@@ -43,7 +43,6 @@ namespace DroneAssembly.DataBase
 
         public async UniTask<bool> SendPlayerDataAsync(string playerName, float time)
         {
-            Debug.Log($"Pokouším se odeslat data na: {_saveScoreURL}");
             string jsonPayload = PreparePostData(playerName, time);
             using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(60));
             using var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
