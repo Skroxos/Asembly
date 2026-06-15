@@ -1,14 +1,15 @@
-using System;
 using DG.Tweening;
 using DroneAssembly.Radios;
 using DroneAssembly.Socket;
 using DroneAssembly.Validator;
 using DroneAssembly.VR_Port.Part;
+using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Filtering;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit.Transformers;
 
 namespace DroneAssembly.VR_Port.Socket
 {
@@ -104,13 +105,18 @@ namespace DroneAssembly.VR_Port.Socket
         private void LockPartInteraction(VRAssemblyPart part, SelectEnterEventArgs args)
         {
             Transform attachPoint = _socket.attachTransform != null ? _socket.attachTransform : transform;
-            var rootGrab = this.gameObject.GetComponentInParent<XRGrabInteractable>();
+            var rootGrab = gameObject.GetComponentInParent<XRGrabInteractable>();
             
             if (rootGrab == null)
             {
                 Debug.LogWarning($"[{name}] No XRGrabInteractable found in parent hierarchy. Part will be snapped but may not behave correctly.", this);
                 return;
             }
+            part.transform.position = attachPoint.position;
+            part.transform.rotation = attachPoint.rotation;
+            part.transform.SetParent(rootGrab.transform, true);
+            RemoveComponentsAfterSnap(part);
+
             var partCollider = part.GetComponent<Collider>();
             if (partCollider != null)
             {
@@ -118,24 +124,13 @@ namespace DroneAssembly.VR_Port.Socket
                 {
                     rootGrab.colliders.Add(partCollider);
                 }
-                else            
-                {
-                    Debug.LogWarning($"[{name}] The part's collider is already in the root grab's colliders list.", this);
-                }
             }
-            
-            part.transform.position = attachPoint.position;
-            part.transform.rotation = attachPoint.rotation;
-            part.transform.SetParent(this.transform, true);
+            rootGrab.enabled = false;
+            rootGrab.enabled = true;
+
             part.gameObject.layer = LayerMask.NameToLayer("Snapped Part");
             _socket.socketActive = false;
-            RemoveComponentsAfterSnap(part);
-            if (!rootGrab.isSelected)
-            {
-                rootGrab.enabled = false;
-                rootGrab.enabled = true;
-            }
-             
+
         }
         
         
@@ -156,6 +151,22 @@ namespace DroneAssembly.VR_Port.Socket
             {
                 Destroy(rb);
             }
+
+            if (part.TryGetComponent<VRAssemblyPart>(out var assemblyPart))
+            {
+                Destroy(assemblyPart);
+            }
+
+            if (part.TryGetComponent<XRGrabInteractable>(out var grabInteractable))
+            {
+                Destroy(grabInteractable);
+            }
+
+            if (part.TryGetComponent<XRGeneralGrabTransformer>(out var transformer))
+            {
+                Destroy(transformer);
+            }
+            Destroy(gameObject);
         }
         
         

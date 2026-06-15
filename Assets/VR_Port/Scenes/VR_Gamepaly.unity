@@ -1051,7 +1051,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.ScoresUI.FinalUIManager
   finishRadio: {fileID: 11400000, guid: 3b7194dd986f3c943b2264866e52d85f, type: 2}
-  leaderboardAPI: {fileID: 1676251314}
   inputFieldUI: {fileID: 1779507990}
   leaderboardUI: {fileID: 402942827}
   prefabLeaderboardDisplayElement: {fileID: 6340305133560020218, guid: 3cac22f6f20b38c40b223d86594ecea5, type: 3}
@@ -4002,6 +4001,54 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8832995890228717850, guid: 99a7c3d64cbf6194abc4d25b923e2a3d, type: 3}
+--- !u!1 &849981214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849981216}
+  - component: {fileID: 849981215}
+  m_Layer: 0
+  m_Name: GameLifeTimeScope
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &849981215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849981214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6d7bfbb77b73b4eac979eb8d3e4b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentReference:
+    TypeName: 
+  autoRun: 1
+  autoInjectGameObjects: []
+--- !u!4 &849981216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849981214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 861.6412, y: 512.9369, z: 77.05655}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &854624360 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2446346521745156427, guid: 99a7c3d64cbf6194abc4d25b923e2a3d, type: 3}
@@ -5001,6 +5048,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8679351838198732210, guid: 2c039468fe7401d45b77090ee82dae2c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 461236740004435783, guid: 2c039468fe7401d45b77090ee82dae2c, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -5518,7 +5569,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 197950729}
         m_TargetAssemblyTypeName: DroneAssembly.ScoresUI.FinalUIManager, MainGameAssembly
-        m_MethodName: OnClickedSubmit
+        m_MethodName: OnSubmitButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5895,7 +5946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7587,50 +7638,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1563440520041826350, guid: 99a7c3d64cbf6194abc4d25b923e2a3d, type: 3}
---- !u!1 &1676251313
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1676251315}
-  - component: {fileID: 1676251314}
-  m_Layer: 0
-  m_Name: DataBaseManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1676251314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676251313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0111240457d1e414f8d08b48f0b8a3fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: MainGameAssembly::DroneAssembly.DataBase.DataBaseManager
---- !u!4 &1676251315
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676251313}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.86203, y: 1.79136, z: 16.73773}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1677961656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d9d36b07cb247824b9754cea3e7d6819, type: 3}
@@ -10839,10 +10846,10 @@ SceneRoots:
   - {fileID: 313485604}
   - {fileID: 1419165353}
   - {fileID: 434249738}
-  - {fileID: 1676251315}
   - {fileID: 1260204400}
   - {fileID: 2053996745}
   - {fileID: 1096862321}
   - {fileID: 26777333}
   - {fileID: 1911175415}
   - {fileID: 417684842}
+  - {fileID: 849981216}
