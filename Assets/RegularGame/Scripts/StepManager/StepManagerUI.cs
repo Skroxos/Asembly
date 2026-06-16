@@ -23,17 +23,17 @@ namespace DroneAssembly.StepManager
 
         private void UpdateUI(StepInfoData infoData)
         {
-            stepDescriptionText.text = infoData.info;
-            stepMissionProgressText.text = infoData.progress;
+            stepDescriptionText.SetText(infoData.info);
+            stepMissionProgressText.SetText(infoData.progress);
             if (infoData.stepIndex > infoData.totalSteps)
             {
-                stepCounterText.text = "Procedure Completed!";
+                stepCounterText.SetText("Procedure Completed!");
                 stepCounterText.color = Color.green;
                 stepDescriptionText.alpha = 0f;
             }
             else
             {
-                stepCounterText.text = $"Step {infoData.stepIndex} of {infoData.totalSteps}";
+                stepCounterText.SetText("Step {0} of {1}", infoData.stepIndex, infoData.totalSteps);
             }
         }
     }
