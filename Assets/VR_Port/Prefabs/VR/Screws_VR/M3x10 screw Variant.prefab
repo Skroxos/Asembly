@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1979264746408841872, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3377537433616809757, guid: f80e2280affc27e46a3bdf9d0e9acb58, type: 3}
       propertyPath: m_Name
       value: M3x10 screw Variant
