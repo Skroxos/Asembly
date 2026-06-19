@@ -72,7 +72,7 @@ namespace DroneAssembly.ScoresUI
         {
             leaderboardPanel.SetActive(true);
             leaderboardUI.SetActive(true);
-            playerTimeText.text = FormatTime(_time);
+            playerTimeText.SetText(FormatTime(_time));
 
             foreach (Transform child in leaderboardUI.transform)
             {
@@ -87,7 +87,7 @@ namespace DroneAssembly.ScoresUI
                 {
                     GameObject entry = Instantiate(prefabLeaderboardDisplayElement, leaderboardUI.transform);
                     TextMeshProUGUI entryText = entry.GetComponentInChildren<TextMeshProUGUI>();
-                    entryText.text = $"{score.Name}: {FormatTime(score.FinishTime)}";
+                    entryText.SetText($"{score.Name}: {FormatTime(score.FinishTime)}");
                 }
             }
             else
