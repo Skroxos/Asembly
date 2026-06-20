@@ -15,7 +15,7 @@ public struct PlayerScore
 [System.Serializable]
 public class LeaderboardData
 {
-            [JsonProperty("top10")]
-        public PlayerScore[] top10;
+       [JsonProperty("top10")]
+       public PlayerScore[] top10;
 }
 }
