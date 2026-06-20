@@ -1,9 +1,10 @@
-using System.Linq;
 using DroneAssembly.Procedure;
 using DroneAssembly.Radios;
 using DroneAssembly.Radios.GeneralRadios;
 using DroneAssembly.Socket;
 using DroneAssembly.Validator;
+using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace DroneAssembly.StepManager
@@ -19,7 +20,10 @@ namespace DroneAssembly.StepManager
 
         private Step _currentStep;
         private int _currentStepIndex;
-    
+
+        // Preallocate Stuff
+        private readonly StringBuilder _progressBuilder = new StringBuilder(100);
+        private readonly List<SocketIDSO> _allowedSocketsBuffer = new List<SocketIDSO>(20);
         private void Start()
         {
             InitializeSteps();
@@ -42,25 +46,34 @@ namespace DroneAssembly.StepManager
                 LoadStep(_currentStepIndex);
                 _currentStep = procedure.steps[0];
             }
-
-            BroadCastStepInfo();
         }
 
         private void HandlePartSnapped(SocketIDSO obj)
         {
             if (_currentStep == null) return;
 
-            var matchingRequirement = _currentStep.requiredParts.FirstOrDefault(req => req.requiredPartID == obj);
-
-            if (matchingRequirement != null)
+            StepRequirement requirement = null;
+            foreach (var req in _currentStep.requiredParts)
             {
-                if (matchingRequirement.amountRequired > matchingRequirement.currentAmount)
+                if (req.requiredPartID == obj)
                 {
-                    matchingRequirement.currentAmount++;
+                    requirement = req;
+                    break;
+                }
+            }
+
+            if (requirement != null)
+            {
+                if (requirement.amountRequired > requirement.currentAmount)
+                {
+                    requirement.currentAmount++;
                     BroadCastStepInfo();
                 }
 
-                if (_currentStep.IsCompleted()) AdvanceStep();
+                if (_currentStep.IsCompleted())
+                {
+                    AdvanceStep();
+                }
             }
         }
 
@@ -69,26 +82,32 @@ namespace DroneAssembly.StepManager
             _currentStepIndex++;
             if (_currentStepIndex < procedure.steps.Count)
             {
-                _currentStep = procedure.steps[_currentStepIndex];
-
-                foreach (var req in _currentStep.requiredParts) req.currentAmount = 0;
-                if(spawnPartRadio != null) spawnPartRadio.RaiseEvent(_currentStep.requiredParts);
+               LoadStep(_currentStepIndex);
             }
             else
             {
                 _currentStep = null;
-                if (procedureCompleteRadio != null) procedureCompleteRadio.RaiseEvent();
+                if (procedureCompleteRadio != null)
+                {
+                    procedureCompleteRadio.RaiseEvent();
+                }
+                BroadCastStepInfo();
+                UpdateAllowedSockets();
             }
 
-            BroadCastStepInfo();
-            UpdateAllowedSockets();
         }
 
         private void LoadStep(int index)
         {
             _currentStep = procedure.steps[index];
-            foreach (var req in _currentStep.requiredParts) req.currentAmount = 0;
-            if(spawnPartRadio != null) spawnPartRadio.RaiseEvent(_currentStep.requiredParts);
+            foreach (var req in _currentStep.requiredParts)
+            {
+                req.currentAmount = 0;
+            }
+            if(spawnPartRadio != null) 
+            {
+                spawnPartRadio.RaiseEvent(_currentStep.requiredParts);
+            }
 
             BroadCastStepInfo();
             UpdateAllowedSockets();
@@ -96,28 +115,34 @@ namespace DroneAssembly.StepManager
 
         private void UpdateAllowedSockets()
         {
-            if (stepValidation != null && _currentStep != null)
+            if (stepValidation == null || _currentStep == null) return;
+              
+            _allowedSocketsBuffer.Clear();
+            foreach (var req in _currentStep.requiredParts)
             {
-                var allowedSockets = _currentStep.requiredParts.Select(req => req.requiredPartID).ToList();
-                stepValidation.UpdateAllowedSockets(allowedSockets);
+              _allowedSocketsBuffer.Add(req.requiredPartID);
             }
+            stepValidation.UpdateAllowedSockets(_allowedSocketsBuffer);
+
         }
 
         private void BroadCastStepInfo()
         {
-            if (uiChannel != null)
-            {
+            if (uiChannel == null) return;
+
                 var description = "Done";
-                var progress = "";
-                if (_currentStep != null)
-                {
+                _progressBuilder.Clear();
+            if (_currentStep != null)
+            {
                     description = _currentStep.description;
                     foreach (var req in _currentStep.requiredParts)
-                        progress += $"{req.requiredPartID.name}: {req.currentAmount}/{req.amountRequired}\n";
-                }
-
-                uiChannel.RaiseEvent(new StepInfoData(description, progress, _currentStepIndex + 1, procedure.steps.Count));
+                    {
+                        _progressBuilder.AppendFormat("{0}: {1}/{2}\n", req.requiredPartID.name, req.currentAmount, req.amountRequired);
+                    }
             }
+
+                uiChannel.RaiseEvent(new StepInfoData(description, _progressBuilder.ToString(), _currentStepIndex + 1, procedure.steps.Count));
+            
         }
 
 
