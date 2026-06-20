@@ -1,7 +1,9 @@
-using System;
-using System.Collections;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using DroneAssembly.Radios.GeneralRadios;
+using System;
+using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 namespace DroneAssembly.EndGame
@@ -29,22 +31,22 @@ namespace DroneAssembly.EndGame
    
       private void Finish()
       {
-         StartCoroutine(FinishSequence());
+         FinishSequence().Forget();
       }
 
    
-      private IEnumerator FinishSequence()
+      private async UniTaskVoid FinishSequence()
       {
-         audioSource.Play();
-         onFinishRadio.RaiseEvent();
-         yield return new WaitForSeconds(warmUpDuration);
-      
-         droneRoot.DOMoveY(droneRoot.position.y + flightHeight, flightDuration)
-            .SetEase(Ease.InQuad); 
-    
-         droneRoot.DORotate(new Vector3(15, 0, 0), flightDuration * 0.5f);
-         yield return new WaitForSeconds(flightDuration);
-         finishRadio.RaiseEvent();
+            CancellationToken token = this.GetCancellationTokenOnDestroy();
+            audioSource.Play();
+            onFinishRadio.RaiseEvent();
+            await UniTask.Delay(TimeSpan.FromSeconds(warmUpDuration), cancellationToken: token);
+
+            await droneRoot.DOMoveY(droneRoot.position.y + flightHeight, flightDuration)
+            .SetEase(Ease.InQuad)
+            .ToUniTask(cancellationToken: token);
+
+            finishRadio.RaiseEvent();
       }
    }
 }
