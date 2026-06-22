@@ -60,6 +60,15 @@ This project was created as a portfolio piece, showcasing a complete **3-tier cl
 
 ---
 
+## Performance & Optimization (Standalone VR)
+
+For enterprise-grade XR applications, maintaining stable framerates and strict memory management is critical. The standalone VR build was rigorously profiled directly on the headset using the OVR Metrics Tool to ensure zero performance bottlenecks during heavy instantiation and manipulation of 3D assets.
+
+## Telemetry Insights
+* **Stable 72 FPS:** The application maintains a rock-solid framerate throughout the entire assembly process, ensuring visual comfort. CPU and GPU utilization remains highly optimized (averaging under 50%).
+* **Memory Management:** The App PSS (Proportional Set Size) curve remains completely flat during the core gameplay loop. This proves that the architecture efficiently prevents memory leaks and costly GC spikes.
+---
+
 ## Other Technical Highlights
 * **Automated CI Pipeline:** Configured GitHub Actions for headless Unity builds, secure secret management, and automated unit testing on every push/PR to ensure production stability.
 * **Code-First Database Migration:** The backend database schema is fully managed via Entity Framework Core migrations, ensuring seamless synchronization between C# models and the Azure MySQL database.
