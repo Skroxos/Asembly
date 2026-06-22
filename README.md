@@ -65,7 +65,6 @@ This project was created as a portfolio piece, showcasing a complete **3-tier cl
 * **Code-First Database Migration:** The backend database schema is fully managed via Entity Framework Core migrations, ensuring seamless synchronization between C# models and the Azure MySQL database.
 * **Data-Driven Architecture:** Extensive use of Scriptable Objects (Procedure SO) to allow rapid iteration of assembly logic without touching the codebase.
 * **Custom Editor Tools:** To help with level design and logic testing.
-* **API Rate Limiting:** Implemented custom IP-based request throttling (Cooldown for POST, Fixed Window for GET) to protect the endpoints against abuse and DDoS.
 * **Asynchronous Networking:** Utilizing modern C# async/await and UniTask for all API calls to ensure smooth UI thread performance without callback hell.
 
 ## Credits
