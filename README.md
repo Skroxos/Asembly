@@ -70,9 +70,9 @@ For enterprise-grade XR applications, maintaining stable framerates and strict m
 
 ## Charts
 <p align="center">
-  <img src="Media/Performance.png" alt="Performance Chart" width="420"/>
+  <img src="Media/Performance.png" alt="Performance Chart" width="390"/>
   &nbsp;
-  <img src="Media/Memory.png" alt="Memory Chart" width="420"/>
+  <img src="Media/Memory.png" alt="Memory Chart" width="390"/>
 </p>
 
 <p align="center">
