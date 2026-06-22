@@ -67,7 +67,17 @@ For enterprise-grade XR applications, maintaining stable framerates and strict m
 ## Telemetry Insights
 * **Stable 72 FPS:** The application maintains a rock-solid framerate throughout the entire assembly process, ensuring visual comfort. CPU and GPU utilization remains highly optimized (averaging under 50%).
 * **Memory Management:** The App PSS (Proportional Set Size) curve remains completely flat during the core gameplay loop. This proves that the architecture efficiently prevents memory leaks and costly GC spikes.
----
+
+## Charts
+<p align="center">
+  <img src="Media/Performance.png" alt="Performance Chart" width="420"/>
+  &nbsp;
+  <img src="Media/Memory.png" alt="Memory Chart" width="420"/>
+</p>
+
+<p align="center">
+  <img src="Media/Performancegif-optimize.gif" alt="Performance Recording Clip" width="500"/>
+</p>
 
 ## Other Technical Highlights
 * **Automated CI Pipeline:** Configured GitHub Actions for headless Unity builds, secure secret management, and automated unit testing on every push/PR to ensure production stability.
