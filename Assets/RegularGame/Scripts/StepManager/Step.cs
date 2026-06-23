@@ -15,12 +15,12 @@ namespace DroneAssembly.StepManager
         public bool IsCompleted()
         {
            for (int i = 0; i < requiredParts.Count; i++)
-            {
+           {
                 if (!requiredParts[i].IsComplete)
                 {
                     return false;
                 }
-            }
+           }
             return true;
         }
     }

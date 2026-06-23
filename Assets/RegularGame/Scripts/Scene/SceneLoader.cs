@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿using Cysharp.Threading.Tasks;
 using DroneAssembly.Radios;
 using DroneAssembly.Radios.GeneralRadios;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,21 +27,12 @@ namespace DroneAssembly.Scene
 
         private void HandleSceneTransition(SceneDataSO obj)
         {
-            StartCoroutine(LoadSceneAsync(obj));
+            LoadSceneAsync(obj, this.GetCancellationTokenOnDestroy()).Forget();
         }
 
-        private IEnumerator LoadSceneAsync(SceneDataSO sceneData)
+        private async UniTaskVoid LoadSceneAsync(SceneDataSO sceneData,CancellationToken token)
         {
-            var asyncLoad = SceneManager.LoadSceneAsync(sceneData.SceneName);
-            asyncLoad.allowSceneActivation = false;
-            while (asyncLoad.progress < 0.9f)
-            {
-                loadingProgressRadio.RaiseEvent(asyncLoad.progress);
-                yield return null;
-            }
-
-            loadingProgressRadio.RaiseEvent(1f);
-            asyncLoad.allowSceneActivation = true;
+            await SceneManager.LoadSceneAsync(sceneData.SceneName).WithCancellation(token);
             sceneLoadedRadio.RaiseEvent();
         }
     }
