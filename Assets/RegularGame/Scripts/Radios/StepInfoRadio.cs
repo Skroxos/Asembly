@@ -10,12 +10,12 @@ namespace DroneAssembly.Radios
     }
 
     [Serializable]
-    public struct StepInfoData
+    public readonly struct StepInfoData
     {
-        public string info;
-        public string progress;
-        public int stepIndex;
-        public int totalSteps;
+        public readonly string info;
+        public readonly string progress;
+        public readonly int stepIndex;
+        public readonly int totalSteps;
 
         public StepInfoData(string info, string progress, int stepIndex, int totalSteps)
         {
