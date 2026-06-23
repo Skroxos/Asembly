@@ -5684,6 +5684,10 @@ PrefabInstance:
       propertyPath: m_ShowInteractableHoverMeshes
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3404625371730051104, guid: 2c039468fe7401d45b77090ee82dae2c, type: 3}
+      propertyPath: m_StartingHoverFilters.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3649078751937248420, guid: 2c039468fe7401d45b77090ee82dae2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.158
@@ -6486,7 +6490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

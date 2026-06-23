@@ -6,6 +6,6 @@ namespace DroneAssembly.Socket
     {
         event Action OnPartSnapped;
         event Action OnPartExited;
-         event Action<BaseAssemblyPart> OnValidPartEntered;
+        event Action OnValidPartEntered;
     }
 }

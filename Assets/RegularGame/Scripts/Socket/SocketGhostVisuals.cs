@@ -51,7 +51,7 @@ namespace DroneAssembly.Socket
             socketEvents.OnPartExited -= HandlePartExited;
         }
 
-        private void HandleValidPartEntered(BaseAssemblyPart obj)
+        private void HandleValidPartEntered()
         {
             ghostPreviewManager.SetValidGhostMaterial();
         }

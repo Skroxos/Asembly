@@ -22,7 +22,7 @@ namespace DroneAssembly.VR_Port.Socket
         [SerializeField] private InteractionLayerMask _snappedLayerMask;
         public event Action OnPartSnapped;
         public event Action OnPartExited;
-        public event Action<BaseAssemblyPart> OnValidPartEntered;
+        public event Action OnValidPartEntered;
         
         private XRSocketInteractor _socket;
         private VRAssemblyPart _attachedPart;
@@ -67,11 +67,8 @@ namespace DroneAssembly.VR_Port.Socket
         
         private bool ValidatePart(GameObject partObject)
         {
-            if (_isOccupied) return false;
             if (!partObject.TryGetComponent(out VRAssemblyPart assemblyPart)) return false;
-            if (assemblyPart.socketIDSO != _typeIDSO) return false;
-            if (_socketStepValidationSO != null && !_socketStepValidationSO.IsSocketAllowed(_typeIDSO)) return false;
-            return true;
+            return IsPartValid(assemblyPart);
         }
 
         private void OnSelectEntered(SelectEnterEventArgs args)
@@ -96,7 +93,7 @@ namespace DroneAssembly.VR_Port.Socket
         }
         private void OnHoverEntered(HoverEnterEventArgs args)
         {
-            OnValidPartEntered?.Invoke(_attachedPart);
+            OnValidPartEntered?.Invoke();
         }
         private void OnHoverExited(HoverExitEventArgs args)
         {

@@ -18,7 +18,7 @@ namespace DroneAssembly.Socket
         
         public event Action OnPartSnapped;
         public event Action OnPartExited;
-        public event Action<BaseAssemblyPart> OnValidPartEntered;
+        public event Action OnValidPartEntered;
 
         private void Awake()
         {
@@ -31,7 +31,7 @@ namespace DroneAssembly.Socket
 
             if (other.TryGetComponent(out AsemblyPart part))
             {
-                OnValidPartEntered?.Invoke(part);
+                OnValidPartEntered?.Invoke();
                 if (!part.IsPickedUp)
                     if (TrySnapPart(part))
                         SnapToSocket();
